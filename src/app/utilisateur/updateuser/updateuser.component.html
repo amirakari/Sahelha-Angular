@@ -1,0 +1,133 @@
+<app-header></app-header>
+<div class="box js-box">
+  <!-- BEGIN HEADER-->
+
+  <!-- END HEADER-->
+  <!-- BEGIN NAVBAR-->
+  <div id="header-nav-offset"></div>
+
+  <!-- END NAVBAR-->
+  <div class="site-wrap js-site-wrap">
+    <!-- BEGIN BREADCRUMBS-->
+    <nav class="breadcrumbs">
+      <div class="container">
+        <ul>
+          <li class="breadcrumbs__item"><a href="" class="breadcrumbs__link">Acceuil</a></li>
+          <li class="breadcrumbs__item"><a href="" class="breadcrumbs__link">Ajouter Boutique</a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- END BREADCRUMBS-->
+    <div class="center">
+      <div class="container">
+        <div class="row">
+          <div class="site site--main">
+
+            <br><br><br><br>
+            <div class="site__main">
+              <div class="widget js-widget widget--main">
+                <div class="widget__content">
+                  <form #Ajouterboutique="ngForm" class="form form--flex form--profile js-form">
+
+                    <div id="form-block-1" class="form__block js-form-block">
+
+                      <div class="row">
+                        <div class="form-group">
+                          <label for="in-1" class="control-label">{{ 'user.nom' | translate }}</label>
+                          <input [ngModel]="user.nom" id="in-1" required name="nom" data-placeholder="---"  class="form-control">
+                        </div>
+                        <div class="form-group">
+                          <label for="in-2" class="control-label">{{ 'user.prenom' | translate }}</label>
+                          <input [ngModel]="user.prenom" id="in-2" required name="prenom" data-placeholder="---"  class="form-control">
+                        </div>
+                        <div class="form-group">
+                          <label for="in-3" class="control-label">{{ 'user.telephone' | translate }}</label>
+                          <input [ngModel]="user.numtel" id="in-3" required name="numtel" data-placeholder="---"  class="form-control">
+                        </div>
+                        <div class="form-group">
+                          <label for="in-35" class="control-label">{{ 'user.adresse' | translate }}</label>
+                          <input [ngModel]="user.adresse" id="in-35" required name="adresse" data-placeholder="---"  class="form-control">
+                        </div>
+                        <div class="form-group">
+                          <label for="in-38" class="control-label">{{ 'user.mdp' | translate }}</label>
+                          <input [ngModel]="user.password" id="in-38" required type="password" name="password"   class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                          <label for="in-6" class="control-label">{{ 'user.email' | translate }}</label>
+                          <input [ngModel]="user.mail" name="mailprofessionnelle" id="in-6" type="text" placeholder="" required class="form-control">
+                        </div>
+                        <div class="form-group">
+                          <label for="type" class="control-label">{{ 'user.type' | translate }}</label>
+                          <select  [ngModel]="user.type" name="type" id="type" placeholder="Type" class="form-control">
+                            <option></option>
+                            <option value="user">{{ 'user.utilisateur' | translate }}</option>
+                            <option value="fournisseur">{{ 'user.fournisseur' | translate }}</option>
+                          </select>
+                        </div>
+
+                      </div>
+                    </div>
+                    <div class="row">
+                      <button class="form__submit" (click)="update(Ajouterboutique)" >{{ 'user.enregistrer' | translate }}</button>
+                    </div>
+                  </form>
+                  <hr>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sidebar">
+            <div class="widget js-widget widget--sidebar widget--first-no-head">
+              <div class="widget__header"><a class="widget__btn js-widget-btn widget__btn--toggle">Show profile</a>
+              </div>
+              <div class="widget__content">
+                <!-- BEGIN WORKER PROFILE-->
+                <div class="worker sidebar-advanced">
+                  <h3 class="worker__name">{{user.nom}} {{user.prenom}}</h3>
+                  <div class="worker__photo">
+
+                    <img src="http://localhost:3000/utilisateur/profileimage/{{user.photodeprofil}}" class="photo" width="200" height="200">
+
+                    <div class="widget js-widget widget--main widget--no-margin widget--no-border widget--collapse">
+                      <div class="widget__header">
+                        <br>
+
+
+
+                      </div>
+
+
+                    </div>
+                  </div>
+
+
+                  <nav class="worker__nav">
+                    <ul>
+
+                      <li><a *ngIf="status" (click)="gotoprofil()">{{ 'user.profil' | translate }}</a></li>
+                      <li><a  (click)="gotoboutique()">{{ 'user.boutique' | translate }}</a></li>
+                    </ul>
+                  </nav>
+                  <!-- end of block .worker__nav-->
+                </div>
+                <!-- end of block .worker__item-->
+                <!-- END WORKER PROFILE-->
+              </div>
+            </div>
+
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+    <!-- END CENTER SECTION-->
+    <!-- BEGIN AFTER CENTER SECTION-->
+    <!-- END AFTER CENTER SECTION-->
+    <!-- BEGIN FOOTER-->
+
+    <!-- end of block .footer-->
+    <!-- END FOOTER-->
+  </div>
+</div>

@@ -1,0 +1,161 @@
+<app-header></app-header>
+<div class="box js-box">
+  <!-- BEGIN HEADER-->
+
+  <!-- END HEADER-->
+  <!-- BEGIN NAVBAR-->
+  <div id="header-nav-offset"></div>
+
+  <!-- END NAVBAR-->
+  <div class="site-wrap js-site-wrap">
+    <!-- BEGIN BREADCRUMBS-->
+    <nav class="breadcrumbs">
+      <div class="container">
+        <ul>
+          <li class="breadcrumbs__item"><a href="" class="breadcrumbs__link">Acceuil</a></li>
+          <li class="breadcrumbs__item"><a href="" class="breadcrumbs__link">Ajouter Produit</a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- END BREADCRUMBS-->
+    <div class="center">
+      <div class="container">
+        <div class="row">
+          <div class="site site--main">
+
+
+            <div class="site__main">
+              <div class="widget js-widget widget--main">
+                <div class="widget__content">
+                  <form #Produitboutique="ngForm" class="form form--flex form--profile js-form">
+
+                    <div id="form-block-1" class="form__block js-form-block">
+
+                      <div class="row">
+                        <div class="form-group">
+                          <label for="in-1" class="control-label">{{ 'pageboutique.nom' | translate }}</label>
+                          <input ngModel id="in-1" required name="nom" data-placeholder="---"  class="form-control">
+                        </div>
+                        <div class="form-group">
+                          <label for="in-4" class="control-label">{{ 'pageboutique.type' | translate }}</label>
+                          <select ngModel id="in-4" name="categorie" data-placeholder="----" required class="form-control">
+                            <option label=" "></option>
+                            <option value="Médicament">{{ 'pageboutique.medicament' | translate }}</option>
+                            <option value="Béauté">{{ 'pageboutique.beaute' | translate }}</option>
+                            <option value="bébé">{{ 'pageboutique.bebe' | translate }}</option>
+                            <option value="maison">{{ 'pageboutique.maison' | translate }}</option>
+                            <option value="alimentation">{{ 'pageboutique.alimentaire' | translate }}</option>
+                            <option value="hygiéne et entretien">{{ 'pageboutique.hydiene' | translate }}</option>
+                            <option value="bio et nature">{{ 'pageboutique.bio' | translate }}</option>
+                            <option value="brico et jardin">{{ 'pageboutique.brico' | translate }}</option>
+                            <option value="animalerie">{{ 'pageboutique.animalerie' | translate }}</option>
+                            <option value="mode et loisirs">{{ 'pageboutique.mode' | translate }}</option>
+                            <option value="librairie papeterie">{{ 'pageboutique.librairie' | translate }}</option>
+
+                          </select>
+                          <!-- end of block .form-property__control-->
+                        </div>
+
+                        <div class="form-group">
+                          <label for="in-6" class="control-label">{{ 'produit.reference' | translate }}</label>
+                          <input ngModel name="reference" id="in-6" type="text" placeholder="" required class="form-control">
+                        </div>
+                      </div>
+                    </div>
+
+                    <div id="form-block-2" class="form__block js-form-block">
+                      <div class="row">
+                        <div class="form-group">
+                          <label for="type" class="control-label">{{ 'pageboutique.status' | translate }}</label>
+                          <select #status (change)="changestatus(status)" ngModel name="status" id="type" placeholder="Type" class="form-control">
+                            <option></option>
+                            <option value="à vendre">{{ 'pageboutique.vendre' | translate }}</option>
+                            <option value="à donner">{{ 'pageboutique.donner' | translate }}</option>
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <label for="in-7a" class="control-label">{{ 'produit.quantite' | translate }}</label>
+                          <input ngModel name="quantite" id="in-7a" min="1" max="100" type="number" placeholder="" required  class="form-control">
+                        </div>
+                        <div class="form-group">
+                          <label for="dlc"  class="control-label">{{ 'pageboutique.dlc' | translate }}</label>
+                          <p-calendar type="date" [minDate]="mindate"  ngModel id="dlc" name="DLC" [(ngModel)]="value" dateFormat="yy-mm-dd" showButtonBar="true" ></p-calendar>
+                        </div>
+                      </div>
+
+                    </div>
+                    <div *ngIf="!status1" id="form-block-3" class="form__block js-form-block">
+                      <div class="row">
+                        <div class="form-group">
+                          <label for="in-7" class="control-label">{{ 'pageboutique.prixsansremise' | translate }}</label>
+                          <input ngModel name="prixsansremise" id="in-7" type="text" placeholder="" required  class="form-control">
+                        </div>
+                        <div class="form-group">
+                          <label for="in-0" class="control-label">{{ 'pageboutique.prixavecremise' | translate }}</label>
+                          <input ngModel name="prixavecremise" id="in-0" type="text" placeholder="" required  class="form-control">
+                        </div>
+
+
+
+
+
+                      </div>
+                    </div>
+                    <div id="form-block-4" >
+                      <div class="row">
+                        <div class="form-group">
+                          <label  class="control-label">{{ 'produit.code' | translate }}</label>
+                          <div class="video" id="camera"></div>
+                        </div>
+                      </div>
+
+                    </div>
+                    <div id="form-block-5" >
+                    <div class="row">
+                      <button class="form__submit" (click)="addProduit(Produitboutique)" >{{ 'ajoutboutique.ajouter' | translate }}</button>
+                    </div></div>
+                  </form>
+                  <hr>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sidebar">
+            <div class="widget js-widget widget--sidebar widget--first-no-head">
+              <div class="widget__header"><a class="widget__btn js-widget-btn widget__btn--toggle">Show profile</a>
+              </div>
+              <div class="widget__content">
+                <!-- BEGIN WORKER PROFILE-->
+                <div class="worker sidebar-advanced">
+                  <h3 class="worker__name">{{boutique1.nom}}</h3>
+                  <div class="worker__photo">
+                    <img src="http://localhost:3000/boutique/profileimage/{{boutique1.photo}}" class="photo" width="200" height="200">
+
+
+                  </div>
+                  <nav class="worker__nav">
+                    <ul>
+                      <li><a  (click)="gotoajout()">{{ 'user.profil' | translate }}</a></li>
+                      <li><a *ngIf="statis" (click)="gotoajoutProduit()" >{{ 'profilboutique.ajoutP' | translate }}</a></li>
+                      <li><a (click)="gotoproduit()" >{{ 'profilboutique.vendre' | translate }}</a></li>
+                      <li><a (click)="gotodon()" >{{ 'profilboutique.don' | translate }}</a></li>
+                      <li><a *ngIf="statis" (click)="gotoabonnement()" >{{ 'profilboutique.abo' | translate }}</a></li>
+                      <li><a *ngIf="statis" >{{ 'profilboutique.abon' | translate }}</a></li>
+                      <li><a *ngIf="statis"  (click)="gotostatistique()">{{ 'profilboutique.stat' | translate }}</a></li>
+                    </ul>
+                  </nav>
+                  <!-- end of block .worker__nav-->
+                </div>
+                <!-- end of block .worker__item-->
+                <!-- END WORKER PROFILE-->
+              </div>
+            </div>
+
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

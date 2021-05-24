@@ -1,0 +1,119 @@
+<app-header></app-header>
+<div class="box js-box">
+  <!-- BEGIN HEADER-->
+
+  <!-- END HEADER-->
+  <!-- BEGIN NAVBAR-->
+  <div id="header-nav-offset"></div>
+
+  <!-- END NAVBAR-->
+  <div class="site-wrap js-site-wrap">
+    <!-- BEGIN BREADCRUMBS-->
+    <nav class="breadcrumbs">
+      <div class="container">
+        <ul>
+          <li class="breadcrumbs__item"><a href="" class="breadcrumbs__link">{{ 'header.acceuil' | translate }}</a></li>
+          <li class="breadcrumbs__item"><a href="" class="breadcrumbs__link">{{ 'header.compte' | translate }}</a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- END BREADCRUMBS-->
+    <div class="center">
+      <div class="container">
+        <div class="row">
+          <div class="site site--main">
+
+<br><br><br><br>
+            <div class="widget js-widget widget--dashboard" *ngIf="user">
+              <div class="widget__header">
+                <h2 class="widget__title">{{ 'user.profil' | translate }}</h2>
+                <a  class="widget__btn js-widget-btn" (click)="modifier(user.id)" >{{ 'user.modifier' | translate }}</a>
+                <a  class="widget__btn js-widget-btn" (click)="supprimerUtilisateur(user.id)" >{{ 'user.supprimer' | translate }}</a>
+              </div>
+              <div class="widget__content">
+                <div class="worker worker--profile">
+                  <div class="worker__item">
+                    <div class="worker__photo" ><a href="agent_profile.html" class="item-photo item-photo--static"><img src="http://localhost:3000/utilisateur/profileimage/{{user.photodeprofil}}" class="photo">
+                      <figure class="item-photo__hover"><span class="item-photo__more">View Details</span></figure></a></div>
+                    <div class="worker__intro">
+                      <h3 class="worker__name fn">{{user.nom}} {{user.prenom}}</h3>
+
+
+                      <div class="clearfix"></div>
+                      <div class="worker__contacts">
+                        <div class="worker__intro-col">
+                          <div class="tel"><span class="type">{{ 'user.telephone' | translate }}</span>{{user.numtel}}</div>
+                          <div class="text"><span class="type">{{ 'user.email' | translate }}</span>{{user.adresse}}</div>
+                        </div>
+                        <div class="worker__intro-col">
+                          <div class="email"><span class="type">{{ 'user.adresse' | translate }}</span>{{user.mail}}</div>
+                          <div class="skype"><span class="type">{{ 'user.type' | translate }}</span>{{user.type}}</div>
+                        </div>
+                        <!-- end of block .worker__contacts-->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sidebar">
+            <div class="widget js-widget widget--sidebar widget--first-no-head">
+              <div class="widget__header"><a class="widget__btn js-widget-btn widget__btn--toggle">Show profile</a>
+              </div>
+              <div class="widget__content">
+                <!-- BEGIN WORKER PROFILE-->
+                <div class="worker sidebar-advanced">
+                  <h3 class="worker__name">{{user.nom}} {{user.prenom}}</h3>
+                  <div class="worker__photo">
+
+                      <img src="http://localhost:3000/utilisateur/profileimage/{{user.photodeprofil}}" class="photo" width="200" height="200">
+
+                    <div class="widget js-widget widget--main widget--no-margin widget--no-border widget--collapse">
+                      <div class="widget__header">
+                        <br>
+
+                          <div  class="form-property__upload-border">
+                            <input type="file" (change)="UploadImage($event)" class="form-property__upload-btn-choose">
+
+
+
+
+
+                          </div>
+
+                      </div>
+
+
+                    </div>
+                  </div>
+
+
+                  <nav class="worker__nav">
+                    <ul>
+
+                      <li><a  >{{ 'user.profil' | translate }}</a></li>
+                      <li><a *ngIf="status" (click)="gotoboutique()" >{{ 'user.boutique' | translate }}</a></li>
+                    </ul>
+                  </nav>
+                  <!-- end of block .worker__nav-->
+                </div>
+                <!-- end of block .worker__item-->
+                <!-- END WORKER PROFILE-->
+              </div>
+            </div>
+
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+    <!-- END CENTER SECTION-->
+    <!-- BEGIN AFTER CENTER SECTION-->
+    <!-- END AFTER CENTER SECTION-->
+    <!-- BEGIN FOOTER-->
+
+    <!-- end of block .footer-->
+    <!-- END FOOTER-->
+  </div>
+</div>

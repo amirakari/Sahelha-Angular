@@ -1,0 +1,31 @@
+<app-header></app-header>
+<br>
+<div id="amir" class="container">
+<div  class="coupon">
+  <div class="contai">
+    <img src="http://localhost:3000/boutique/profileimage/{{boutique1.produit.boutique.photo}}" alt="Avatar" class="image-ronde">
+    <div class="right"><h2>{{boutique1.produit.boutique.nom}}</h2></div>
+  </div>
+
+  <div class="contai" style="background-color:white">
+    <div class="right"><img src="http://localhost:3000/produit/image/{{boutique1.produit.photo1}}" alt="Avatar" class="image-ronde"></div>
+     <h2><b>{{boutique1.produit.nom}}</b></h2>
+    <p>Référence : {{boutique1.produit.reference}}</p>
+    <p>Catégorie : {{boutique1.produit.categorie}}</p>
+    <p>Status : {{boutique1.produit.status}}</p>
+    <p>Quantité : {{boutique1.quantite}}</p>
+    <p>Prix du produit : {{boutique1.produit.prixavecremise}}</p>
+    <p>Date Limite de Consommation: {{boutique1.produit.DLC}}</p>
+
+  </div>
+
+  <div class="contai">
+    <p>Prix Totale: <span class="promo">{{boutique1.prixtotale}}</span></p>
+    <p class="expire">Date du commande: {{boutique1.date}}</p>
+  </div>
+</div>
+<br></div>
+<div class="blocktext">
+<button type="submit" class="form__submit" (click)="download()">Télécharger</button></div>
+<br>
+<br><br>

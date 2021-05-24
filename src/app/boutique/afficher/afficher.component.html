@@ -1,0 +1,144 @@
+<app-header></app-header>
+
+<div class="box js-box">
+  <!-- BEGIN HEADER-->
+
+  <!-- END HEADER-->
+  <!-- BEGIN NAVBAR-->
+  <div id="header-nav-offset"></div>
+
+  <!-- END NAVBAR-->
+  <div class="site-wrap js-site-wrap">
+    <!-- BEGIN BREADCRUMBS-->
+    <nav class="breadcrumbs">
+      <div class="container">
+        <ul>
+          <li class="breadcrumbs__item"><a href="" class="breadcrumbs__link">Acceuil</a></li>
+          <li class="breadcrumbs__item"><a href="" class="breadcrumbs__link">Profil Boutique</a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- END BREADCRUMBS-->
+    <div class="center">
+      <div class="container">
+        <div class="row">
+          <div class="site site--main">
+<br><br>
+
+
+              <div class="widget js-widget widget--dashboard">
+                <div class="widget__header">
+                  <h2 class="widget__title">{{ 'user.profil' | translate }}</h2>
+                  <a *ngIf="status" class="widget__btn js-widget-btn" (click)="modifier()">{{ 'profilboutique.modifier' | translate }}</a>
+                  <a *ngIf="status" class="widget__btn js-widget-btn" (click)="deleteBoutique()">{{ 'profilboutique.supprimer' | translate }}</a>
+                </div>
+                <div class="widget__content">
+                  <div class="worker worker--profile">
+                    <div class="worker__item">
+                      <div class="worker__photo"><a  class="item-photo item-photo--static"><img src="http://localhost:3000/boutique/profileimage/{{boutique1.photo}}" class="photo" width="200" height="200">
+                        <figure class="item-photo__hover"><span class="item-photo__more">View Details</span></figure></a></div>
+                      <div class="worker__intro">
+                        <h3 class="worker__name fn">{{boutique1.nom}}</h3>
+                        <div class="worker__post">{{boutique1.domaine}}</div>
+                        <div class="clearfix"></div>
+                        <div class="worker__contacts">
+                          <div class="worker__intro-col">
+                            <div class="tel"><span class="type">{{ 'user.telephone' | translate }}</span><a class="uri value">{{boutique1.user.numtel}}</a></div>
+                            <div ><span class="type">{{ 'user.adresse' | translate }}</span><a  class="uri value">{{boutique1.adresse}}</a></div>
+                          </div>
+                          <div class="worker__intro-col">
+                            <div ><span class="type">{{ 'user.email' | translate }}</span><a  class="uri value">{{boutique1.mailprofessionnelle}}</a></div>
+                          </div>
+                          <div class="worker__intro-col">
+                            <div ><span class="type">{{ 'profilboutique.horaire' | translate }}</span><a  class="uri value">{{boutique1.horaire}}</a></div>
+                          </div>
+                          <!-- end of block .worker__contacts-->
+                          <div *ngIf="lat && lng">
+                            <agm-map [latitude]="lat" [longitude]="lng" >
+                              <agm-marker [latitude]="lat" [longitude]="lng" >
+                                <agm-info-window>
+                                  <h3><strong>{{boutique1.nom}}</strong></h3>
+                                  <p>{{boutique1.domaine}}</p>
+                                </agm-info-window>
+                              </agm-marker></agm-map>
+                          </div>
+
+                        </div>
+                          <div class="social social--worker"><a href="{{boutique1.facebook}}" class="social__item"><i class="fa fa-facebook"></i></a><a href="{{boutique1.instagram}}" class="social__item"><i class="fa fa-instagram"></i></a></div>
+
+                        </div>
+
+
+                    </div>
+                  </div>
+                  <div>
+                    <iframe width="90%" height="500px"  allow="accelerometer; magnetometer; gyroscope" style="display:block; margin:20px auto; border:0 none; max-width:880px;border-radius:8px; box-shadow: 0 1px 1px rgba(0,0,0,0.11),0 2px 2px rgba(0,0,0,0.11),0 4px 4px rgba(0,0,0,0.11),0 6px 8px rgba(0,0,0,0.11),0 8px 16px rgba(0,0,0,0.11);"
+                            [src]="controllerSrc"></iframe>
+                  </div>
+                </div>
+              </div>
+
+          </div>
+          <div class="sidebar">
+            <div class="widget js-widget widget--sidebar widget--first-no-head">
+              <div class="widget__header"><a class="widget__btn js-widget-btn widget__btn--toggle">Afficher profile</a>
+              </div>
+              <div class="widget__content">
+                <!-- BEGIN WORKER PROFILE-->
+                <div class="worker sidebar-advanced">
+                  <h3 class="worker__name">{{boutique1.nom}}</h3>
+                  <div class="worker__photo">
+                    <img src="http://localhost:3000/boutique/profileimage/{{boutique1.photo}}" class="photo" width="200" height="200">
+                    <div class="widget js-widget widget--main widget--no-margin widget--no-border widget--collapse">
+                      <div class="widget__header">
+                        <br>
+
+                        <div *ngIf="status"  class="form-property__upload-border">
+                          <input type="file" (change)="UploadImage($event)" class="form-property__upload-btn-choose">
+
+
+
+
+
+                        </div>
+
+                      </div>
+
+
+                    </div>
+
+                  </div>
+                  <nav class="worker__nav">
+                    <ul>
+                      <li><a  (click)="gotoajout()">{{ 'user.profil' | translate }}</a></li>
+                      <li><a *ngIf="statis" (click)="gotoajoutProduit()" >{{ 'profilboutique.ajoutP' | translate }}</a></li>
+                      <li><a (click)="gotoproduit()" >{{ 'profilboutique.vendre' | translate }}</a></li>
+                      <li><a (click)="gotodon()" >{{ 'profilboutique.don' | translate }}</a></li>
+                      <li><a *ngIf="statis" (click)="gotoabonnement()" >{{ 'profilboutique.abo' | translate }}</a></li>
+                      <li><a *ngIf="statis" >{{ 'profilboutique.abon' | translate }}</a></li>
+                      <li><a *ngIf="statis" (click)="gotostatistique()">{{ 'profilboutique.stat' | translate }}</a></li>
+                    </ul>
+                  </nav>
+                  <!-- end of block .worker__nav-->
+                </div>
+                <!-- end of block .worker__item-->
+                <!-- END WORKER PROFILE-->
+              </div>
+            </div>
+
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+    <!-- END CENTER SECTION-->
+    <!-- BEGIN AFTER CENTER SECTION-->
+    <!-- END AFTER CENTER SECTION-->
+    <!-- BEGIN FOOTER-->
+
+    <!-- end of block .footer-->
+    <!-- END FOOTER-->
+  </div>
+
+</div>
+

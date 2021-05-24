@@ -1,0 +1,124 @@
+<app-header></app-header>
+
+
+
+
+<div class="box js-box">
+  <!-- BEGIN HEADER-->
+
+  <!-- END HEADER-->
+  <!-- BEGIN NAVBAR-->
+  <div id="header-nav-offset"></div>
+
+  <!-- END NAVBAR-->
+  <div class="site-wrap js-site-wrap">
+    <!-- BEGIN BREADCRUMBS-->
+    <nav class="breadcrumbs">
+      <div class="container">
+        <ul>
+          <li class="breadcrumbs__item"><a href="" class="breadcrumbs__link">Acceuil</a></li>
+          <li class="breadcrumbs__item"><a href="" class="breadcrumbs__link">Produits Boutique</a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- END BREADCRUMBS-->
+    <div class="center">
+      <div class="container">
+        <div class="row">
+          <div class="site site--main">
+            <br><br>
+
+
+            <div class="listing listing--grid" >
+
+              <!-- end of block .properties__thumb-->
+              <div class="listing__item" *ngFor="let boutiques of boutique | paginate:{ id: 'listing_pagination',
+              itemsPerPage: 6,
+              currentPage: page,
+              totalItems: totalRecords}">
+                <div class="properties properties--grid">
+                  <div class="properties__thumb"><a   class="item-photo"><img src="http://localhost:3000/produit/image/{{boutiques.photo1}}" alt=""/>
+                    <figure class="item-photo__hover item-photo__hover--params"> <span class="properties__time">{{ 'pageboutique.ajouter' | translate }}: {{boutiques.createdAt}}</span><span class="properties__time">{{ 'pageboutique.dlc' | translate }}: {{boutiques.DLC}}</span><span  class="properties__more" (click)="gotoDetailsProduit(boutiques.id)">{{ 'pageboutique.info' | translate }}</span>
+                    </figure></a><span class="properties__ribon">{{boutiques.categorie}}</span>
+                  </div>
+                  <!-- end of block .properties__thumb-->
+                  <div class="properties__details">
+                    <div class="properties__info"><span class="properties__address-street">{{boutiques.nom}}</span>
+                      <div class="properties__offer">
+                        <div class="properties__offer-column">
+                          <div class="properties__offer-label">{{ 'pageboutique.prixsansremise' | translate }}</div>
+                          <div class="properties__offer-value"><strong> {{boutiques.prixsansremise}}</strong>
+                          </div>
+
+                        </div>
+                        <div class="properties__offer-column">
+                          <div class="properties__offer-label">{{ 'pageboutique.prixavecremise' | translate }}</div>
+                          <div class="properties__offer-value"><strong>{{boutiques.prixavecremise}}</strong>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="properties__params--mob">
+                        <span  class="properties__more" (click)="gotoDetailsProduit(boutiques.id)">{{ 'pageboutique.info' | translate }}</span>
+                        <br>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- end of block .properties__info-->
+                </div>
+                <!-- end of block .properties__item-->
+              </div>
+            </div>
+            <div class="ui__row">
+              <!-- BEGIN PAGINATION-->
+              <nav class="listing__pagination">
+                <ul class="pagination-custom">
+                  <pagination-controls id="listing_pagination" maxSize="5" directionLinks="true" (pageChange)="page = $event"></pagination-controls>
+                </ul>
+              </nav>
+              <!-- END PAGINATION-->
+            </div>
+          </div>
+          <div class="sidebar">
+            <div class="widget js-widget widget--sidebar widget--first-no-head">
+              <div class="widget__header"><a class="widget__btn js-widget-btn widget__btn--toggle">Show profile</a>
+              </div>
+              <div class="widget__content">
+                <!-- BEGIN WORKER PROFILE-->
+                <div class="worker sidebar-advanced">
+                  <h3 class="worker__name">{{boutique1.nom}}</h3>
+                  <div class="worker__photo">
+                    <img src="http://localhost:3000/boutique/profileimage/{{boutique1.photo}}" class="photo" width="200" height="200">
+
+                  </div>
+                  <nav class="worker__nav">
+                    <ul>
+                      <li><a  (click)="gotoajout()">{{ 'user.profil' | translate }}</a></li>
+                      <li><a *ngIf="statis" (click)="gotoajoutProduit()" >{{ 'profilboutique.ajoutP' | translate }}</a></li>
+                      <li><a (click)="gotoproduit()" >{{ 'profilboutique.vendre' | translate }}</a></li>
+                      <li><a (click)="gotodon()" >{{ 'profilboutique.don' | translate }}</a></li>
+                      <li><a *ngIf="statis" (click)="gotoabonnement()" >{{ 'profilboutique.abo' | translate }}</a></li>
+                      <li><a *ngIf="statis" >{{ 'profilboutique.abon' | translate }}</a></li>
+                      <li><a *ngIf="statis"  (click)="gotostatistique()">{{ 'profilboutique.stat' | translate }}</a></li>
+                    </ul>
+                  </nav>
+                  <!-- end of block .worker__nav-->
+                </div>
+                <!-- end of block .worker__item-->
+                <!-- END WORKER PROFILE-->
+              </div>
+            </div>
+
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+    <!-- END CENTER SECTION-->
+    <!-- BEGIN AFTER CENTER SECTION-->
+    <!-- END AFTER CENTER SECTION-->
+    <!-- BEGIN FOOTER-->
+
+    <!-- end of block .footer-->
+    <!-- END FOOTER-->
+  </div>
+</div>

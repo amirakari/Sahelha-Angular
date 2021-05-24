@@ -1,0 +1,85 @@
+<app-header></app-header>
+<div class="box js-box">
+  <!-- BEGIN HEADER-->
+
+  <!-- END HEADER-->
+  <!-- BEGIN NAVBAR-->
+  <div id="header-nav-offset"></div>
+
+  <!-- END NAVBAR-->
+  <div class="site-wrap js-site-wrap">
+    <!-- BEGIN BREADCRUMBS-->
+    <nav class="breadcrumbs">
+      <div class="container">
+        <ul>
+          <li class="breadcrumbs__item"><a href="" class="breadcrumbs__link">Acceuil</a></li>
+          <li class="breadcrumbs__item"><a href="" class="breadcrumbs__link">Statistique</a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- END BREADCRUMBS-->
+    <div class="center">
+      <div class="container">
+        <div class="row">
+          <div class="site site--main">
+            <br><br>
+
+            <canvas id="barChart" width="400" height="400"></canvas>
+
+
+          </div>
+          <div class="sidebar">
+            <div class="widget js-widget widget--sidebar widget--first-no-head">
+              <div class="widget__header"><a class="widget__btn js-widget-btn widget__btn--toggle">Show profile</a>
+              </div>
+              <div class="widget__content">
+                <!-- BEGIN WORKER PROFILE-->
+                <div class="worker sidebar-advanced">
+                  <h3 class="worker__name">{{boutique1.nom}}</h3>
+                  <div class="worker__photo">
+                    <img src="http://localhost:3000/boutique/profileimage/{{boutique1.photo}}" class="photo" width="200" height="200">
+                    <div class="widget js-widget widget--main widget--no-margin widget--no-border widget--collapse">
+                      <div class="widget__header">
+                        <br>
+
+
+                      </div>
+
+
+                    </div>
+
+                  </div>
+                  <nav class="worker__nav">
+                    <ul>
+                      <li><a  (click)="gotoajout()">{{ 'user.profil' | translate }}</a></li>
+                      <li><a (click)="gotoajoutProduit()" >{{ 'profilboutique.ajoutP' | translate }}</a></li>
+                      <li><a (click)="gotoproduit()" >{{ 'profilboutique.vendre' | translate }}</a></li>
+                      <li><a (click)="gotodon()" >{{ 'profilboutique.don' | translate }}</a></li>
+                      <li><a (click)="gotoabonnement()" >{{ 'profilboutique.abo' | translate }}</a></li>
+                      <li><a  >{{ 'profilboutique.abon' | translate }}</a></li>
+                      <li><a  (click)="gotostatistique()">{{ 'profilboutique.stat' | translate }}</a></li>
+                    </ul>
+                  </nav>
+                  <!-- end of block .worker__nav-->
+                </div>
+                <!-- end of block .worker__item-->
+                <!-- END WORKER PROFILE-->
+              </div>
+            </div>
+
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+    <!-- END CENTER SECTION-->
+    <!-- BEGIN AFTER CENTER SECTION-->
+    <!-- END AFTER CENTER SECTION-->
+    <!-- BEGIN FOOTER-->
+
+    <!-- end of block .footer-->
+    <!-- END FOOTER-->
+  </div>
+
+</div>
+

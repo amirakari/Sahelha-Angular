@@ -1,0 +1,160 @@
+<app-header></app-header>
+
+<div class="box js-box">
+  <!-- BEGIN HEADER-->
+
+  <!-- END HEADER-->
+  <!-- BEGIN NAVBAR-->
+  <div id="header-nav-offset"></div>
+
+  <!-- END NAVBAR-->
+  <div class="site-wrap js-site-wrap">
+    <!-- BEGIN BREADCRUMBS-->
+    <nav class="breadcrumbs">
+      <div class="container">
+        <ul>
+          <li class="breadcrumbs__item"><a href="" class="breadcrumbs__link">Acceuil</a></li>
+          <li class="breadcrumbs__item"><a href="" class="breadcrumbs__link">Ajouter Boutique</a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- END BREADCRUMBS-->
+    <div class="center">
+      <div class="container">
+        <div class="row">
+          <div class="site site--main">
+            <br><br>
+
+
+            <div class="site__main">
+              <div class="widget js-widget widget--main">
+                <div class="widget__content">
+                  <form #Ajouterboutique="ngForm" class="form form--flex form--profile js-form">
+
+                    <div id="form-block-1" class="form__block js-form-block">
+
+                      <div class="row">
+                        <div class="form-group">
+                          <label for="in-1" class="control-label">Nom de produit</label>
+                          <input [ngModel]="boutique.nom" id="in-1" required name="nom" data-placeholder="---"  class="form-control">
+                        </div>
+                        <div class="form-group">
+                          <label for="in-4" class="control-label">Catégorie</label>
+                          <select [ngModel]="boutique.categorie" name="categorie" id="in-4" placeholder="Type" class="form-control">
+                            <option label=" "></option>
+                            <option value="Médicament">Médicament</option>
+                            <option value="Béauté">Béauté</option>
+                            <option value="bébé">bébé</option>
+                            <option value="maison">maison</option>
+                            <option value="alimentation">alimentation</option>
+                            <option value="hygiéne et entretien">hygiéne et entretien</option>
+                            <option value="bio et nature">bio et nature</option>
+                            <option value="brico et jardin">brico et jardin</option>
+                            <option value="animalerie">animalerie</option>
+                            <option value="mode et loisirs">mode et loisirs</option>
+                            <option value="librairie papeterie">librairie papeterie</option>
+
+                          </select>
+                          <!-- end of block .form-property__control-->
+                        </div>
+
+                        <div class="form-group">
+                          <label for="in-6" class="control-label">référence</label>
+                          <input [ngModel]="boutique.reference" name="reference" id="in-6" type="text" placeholder="" required class="form-control">
+                        </div>
+                      </div>
+                    </div>
+
+                    <div id="form-block-2" class="form__block js-form-block">
+                      <div class="row">
+                        <div class="form-group">
+                          <label for="in-7" class="control-label">Prix sans remise</label>
+                          <input [ngModel]="boutique.prixsansremise" name="prixsansremise" id="in-7" type="text" placeholder="" required  class="form-control">
+                        </div>
+
+                        <div class="form-group ">
+                          <label for="in-0" class="control-label">Prix avec remise</label>
+                          <input [ngModel]="boutique.prixavecremise" name="prixavecremise" id="in-0" type="text" placeholder="" required  class="form-control">
+                        </div>
+                        <div class="form-group">
+                          <label for="dlc"  class="control-label">Date limite de consommation</label>
+                          <p-calendar type="date" [minDate]="mindate"  [ngModel]="boutique.DLC" id="dlc" name="DLC" [(ngModel)]="value" dateFormat="yy-mm-dd" showButtonBar="true" ></p-calendar>
+                        </div>
+
+
+                      </div>
+                    </div>
+
+                    <div id="form-block-3" class="form__block js-form-block">
+                      <div class="row">
+
+                      </div>
+                    </div>
+
+                    <div id="form-block-45" class="form__block js-form-block">
+                      <div class="row">
+
+                        <div class="form-group">
+                          <label for="type" class="control-label">Status</label>
+                          <select  [ngModel]="boutique.status" name="status" id="type" placeholder="Type" class="form-control">
+                            <option></option>
+                            <option value="à vendre">à vendre</option>
+                            <option value="à donner">à donner</option>
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <label for="in-7a" class="control-label">Quantité</label>
+                          <input [ngModel]="boutique.quantite" name="quantite" id="in-7a" min="1" max="100" type="number" placeholder="" required  class="form-control">
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <button class="form__submit" (click)="addProduit(Ajouterboutique)">Enregistrer</button>
+                    </div>
+                  </form>
+                  <hr>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="sidebar">
+            <div class="widget js-widget widget--sidebar widget--first-no-head">
+              <div class="widget__header"><a class="widget__btn js-widget-btn widget__btn--toggle">Show profile</a>
+              </div>
+              <div class="widget__content">
+                <!-- BEGIN WORKER PROFILE-->
+                <div class="worker sidebar-advanced">
+                  <h3 class="worker__name">{{boutique1.nom}}</h3>
+                  <div class="worker__photo">
+                    <img src="http://localhost:3000/boutique/profileimage/{{boutique1.photo}}" class="photo" width="200" height="200">
+
+
+                  </div>
+                  <nav class="worker__nav">
+                    <ul>
+                      <li><a  (click)="gotoajout()">Profil</a></li>
+                      <li><a (click)="gotoajoutProduit()" >Ajouter produit</a></li>
+                      <li><a (click)="gotoproduit()" >produits (à vendre)</a></li>
+                      <li><a (click)="gotodon()" >produits (à donner)</a></li>
+                      <li><a (click)="gotoabonnement()" >Faire un abonnement</a></li>
+                      <li><a  >Vos abonnement</a></li>
+                      <li><a  (click)="gotostatistique()">Statistique</a></li>
+                    </ul>
+                  </nav>
+                  <!-- end of block .worker__nav-->
+                </div>
+                <!-- end of block .worker__item-->
+                <!-- END WORKER PROFILE-->
+              </div>
+            </div>
+
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

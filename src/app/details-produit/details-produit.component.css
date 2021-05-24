@@ -1,0 +1,23 @@
+.champ {
+  position:relative;
+  height:5px;
+  width:14%;
+}
+.centrage {text-align: center;}
+.droite
+{
+  position:relative;
+  left:60%;
+  width:40%;
+}
+.Global
+{
+  width:100%;
+}
+.image-ronde{
+  width : 70px; height : 70px;
+  border: none;
+  -moz-border-radius : 75px;
+  -webkit-border-radius : 75px;
+  border-radius : 75px;
+}

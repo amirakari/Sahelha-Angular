@@ -1,0 +1,202 @@
+<div class="box js-box">
+<header class="header header--brand">
+  <div class="container">
+    <div class="header__row">
+      <a href="index.html" class="header__logo">
+      <div>
+        <img src="/assets/img/acceuil/zéro-gaspii-3 (2).png" height="30" width="200">
+      </div></a>
+      <div class="header__settings">
+
+        <!-- end of block .header__settings-column-->
+
+        <!-- end of block .header__settings-column-->
+        <div class="header__settings-column">
+          <div class="dropdown dropdown--header">
+            <button (click)="changeLang1()" data-toggle="dropdown" type="button" class="dropdown-toggle dropdown__btn">
+              <svg class="header__settings-icon">
+                <use xlink:href="#icon-earth"></use>
+              </svg>FR
+            </button>
+            <div class="dropdown__menu">
+              <ul>
+                <li class="dropdown__item"><a (click)="changeLang2()" class="dropdown__link">عربية</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header__contacts"><a href="tel:+21652817963" class="header__phone">
+        <svg class="header__phone-icon">
+          <use xlink:href="#icon-phone"></use>
+        </svg><span class="header__span">+216 52 817 963</span></a></div>
+      <!-- end of block .header__contacts-->
+      <div class="header__social">
+        <div class="social social--header social--circles"><a href="#" class="social__item"><i class="fa fa-facebook"></i></a><a href="#" class="social__item"><i class="fa fa-twitter"></i></a><a href="#" class="social__item"><i class="fa fa-google-plus"></i></a></div>
+      </div>
+      <div class="auth auth--header">
+        <ul class="auth__nav">
+          <li class="dropdown auth__nav-item">
+            <div class="dropdown__menu auth__dropdown--restore">
+              <!-- BEGIN AUTH RESTORE-->
+              <h5 class="auth__title">Reset password</h5>
+              <form action="#" class="form form--flex form--auth form--restore js-restore-form js-parsley">
+                <div class="row">
+                  <div class="form-group">
+                    <label for="restore-email-dropdown" class="control-label">Enter your User Name or Email</label>
+                    <input type="email" name="email" id="restore-email-dropdown" required class="form-control">
+                  </div>
+                </div>
+                <div class="row">
+                  <button type="submit" class="form__submit">Reset password</button>
+                </div>
+                <div class="row">
+                  <div class="form__options">Back to
+                    <button type="button" class="js-user-login">Log In</button>or
+                    <button type="button" class="js-user-register">Registration</button>
+                  </div>
+                  <!-- end of block .auth__links-->
+                </div>
+              </form>
+              <!-- end of block .auth__form-->
+              <!-- END AUTH RESTORE-->
+            </div>
+          </li>
+          <li class="dropdown auth__nav-item" *ngIf="!loginService.islogged()">
+
+            <button (click)="login()" data-toggle="dropdown" type="button" class="dropdown-toggle auth__nav-btn">
+              <svg class="auth__icon-user">
+                <use xlink:href="#icon-user"></use>
+              </svg>
+              <span class="header__span">  {{ 'login1.login' | translate }}</span>
+            </button>
+
+          </li>
+          <li class="dropdown auth__nav-item" *ngIf="loginService.islogged()">
+
+            <button (click)="logout()" data-toggle="dropdown" type="button" class="dropdown-toggle auth__nav-btn">
+              <svg class="auth__icon-user">
+                <use xlink:href="#icon-user"></use>
+              </svg>
+              <span class="header__span">  {{ 'login1.logout' | translate }}</span>
+            </button>
+
+          </li>
+        </ul>
+        <!-- end of block .auth header-->
+      </div>
+      <button type="button" class="header__navbar-toggle js-navbar-toggle"
+              data-toggle="collapse"
+              data-target="#navbar-collapse-1"
+              aria-controls="navbar-collapse-1"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+              (click)="show()">
+        <svg class="header__navbar-show" >
+          <use xlink:href="#icon-menu"></use>
+        </svg>
+        <svg class="header__navbar-hide">
+          <use xlink:href="#icon-menu-close"></use>
+        </svg>
+      </button>
+      <!-- end of block .header__navbar-toggle-->
+    </div>
+  </div>
+</header>
+<!-- END HEADER-->
+<!-- BEGIN NAVBAR-->
+<div id="header-nav-offset"></div>
+<nav id="header-nav" class="navbar navbar--header">
+  <div class="container">
+    <div class="navbar__row js-navbar-row">
+      <a href="index.html" class="navbar__brand">
+      <div class="navbar__brand-logo">
+        <img src="/assets/img/acceuil/CHARTE-GRAPHIQUE-ZERO-GASPII-3.png" height="90" width="200">
+      </div></a>
+      <div id="navbar-collapse-1" [ngClass]="{'show':visibility}" class="navbar__wrap navbar__wrap--init">
+        <ul class="navbar__nav">
+          <li class="navbar__item js-dropdown"><a class="navbar__link" (click)="gotoacceuil()" routerLinkActive="active" >{{ 'header.acceuil' | translate }}
+            <svg class="navbar__arrow">
+              <use xlink:href="#icon-arrow-right"></use>
+            </svg></a>
+            <div role="menu" class="js-dropdown-menu navbar__dropdown navbar__dropdown--colls-1">
+              <button class="navbar__back js-navbar-submenu-back">
+                <svg class="navbar__arrow">
+                  <use xlink:href="#icon-arrow-left"></use>
+                </svg>Back
+              </button>
+              <div class="navbar__submenu">
+              </div>
+            </div>
+          </li>
+          <li class="navbar__item js-dropdown"><a class="navbar__link">{{ 'header.utilisateur' | translate }}
+          </a>
+            <div role="menu" class="js-dropdown-menu navbar__dropdown navbar__dropdown--colls-1">
+
+
+              <div class="navbar__submenu">
+                <ul class="navbar__subnav">
+                  <li class="navbar__subitem"><a [routerLink]="['']" class="navbar__sublink js-navbar-sublink">{{ 'header.login' | translate }}</a></li>
+                  <li class="navbar__subitem"><a (click)="gotoprofilutilisateur()" class="navbar__sublink js-navbar-sublink">{{ 'header.compte' | translate }}</a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="navbar__item js-dropdown active" ><a class="navbar__link" (click)="gotopageboutique()" routerLinkActive="active">{{ 'header.boutique' | translate }}
+            <svg class="navbar__arrow">
+              <use xlink:href="#icon-arrow-right"></use>
+            </svg></a>
+            <div role="menu" class="js-dropdown-menu navbar__dropdown">
+              <button class="navbar__back js-navbar-submenu-back">
+                <svg class="navbar__arrow">
+                  <use xlink:href="#icon-arrow-left"></use>
+                </svg>Back
+              </button>
+              <div class="navbar__submenu">
+                <ul class="navbar__subnav">
+                  <li class="navbar__subitem active"><a (click)="gotopageboutique()"  class="navbar__sublink js-navbar-sub-sublink">{{ 'header.pageboutique' | translate }}</a></li>
+
+                  <li class="navbar__subitem"><a (click)="gotoboutique()" class="navbar__sublink js-navbar-sub-sublink">{{ 'header.listeboutiques' | translate }}</a></li>
+                  <li class="navbar__subitem active" *ngIf="!status" ><a (click)="gotoajboutique()"  class="navbar__sublink js-navbar-sub-sublink">{{ 'header.ajouterboutique' | translate }}</a></li>
+
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="navbar__item js-dropdown" *ngIf="status" ><a class="navbar__link"  (click)="gotocommande()" routerLinkActive="active">{{ 'header.commande' | translate }}
+
+
+            <svg class="navbar__arrow">
+              <use xlink:href="#icon-arrow-right"></use>
+            </svg></a>
+            <div role="menu" class="js-dropdown-menu navbar__dropdown navbar__dropdown--colls-1">
+              <button class="navbar__back js-navbar-submenu-back">
+                <svg class="navbar__arrow">
+                  <use xlink:href="#icon-arrow-left"></use>
+                </svg>Back
+              </button>
+              <div class="navbar__submenu">
+
+              </div>
+            </div>
+          </li>
+          <li class="navbar__item js-dropdown"><a class="navbar__link" (click)="gotocontact()" routerLinkActive="active">{{ 'header.contact' | translate }}
+          </a>
+            <div role="menu" class="js-dropdown-menu navbar__dropdown navbar__dropdown--colls-1">
+              <button class="navbar__back js-navbar-submenu-back">
+                <svg class="navbar__arrow">
+                  <use xlink:href="#icon-arrow-left"></use>
+                </svg>Back
+              </button>
+              <div class="navbar__submenu">
+
+              </div>
+            </div>
+          </li>
+        </ul>
+        <!-- end of block  navbar__nav-->
+      </div>
+    </div>
+  </div>
+</nav>
+</div>

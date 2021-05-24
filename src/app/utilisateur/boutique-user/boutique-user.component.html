@@ -1,0 +1,117 @@
+<app-header></app-header>
+<div class="box js-box">
+  <!-- BEGIN HEADER-->
+
+  <!-- END HEADER-->
+  <!-- BEGIN NAVBAR-->
+  <div id="header-nav-offset"></div>
+
+  <!-- END NAVBAR-->
+  <div class="site-wrap js-site-wrap">
+    <!-- BEGIN BREADCRUMBS-->
+    <nav class="breadcrumbs">
+      <div class="container">
+        <ul>
+          <li class="breadcrumbs__item"><a href="" class="breadcrumbs__link">Acceuil</a></li>
+          <li class="breadcrumbs__item"><a href="" class="breadcrumbs__link">Ajouter Boutique</a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- END BREADCRUMBS-->
+    <div class="center">
+      <div class="container">
+        <div class="row">
+          <div class="site site--main">
+            <br><br>
+            <div class="listing listing--grid" *ngIf="boutique">
+            <div class="listing__item" *ngFor="let boutiques of boutique | paginate:{ id: 'listing_pagination',
+              itemsPerPage: 6,
+              currentPage: page,
+              totalItems: totalRecords}">
+              <div class="properties properties--grid">
+                <div class="properties__thumb"><img src="http://localhost:3000/boutique/profileimage/{{boutiques.photo}}" width="270" height="120" alt=""/>
+                </div>
+                <!-- end of block .properties__thumb-->
+                <div class="properties__details">
+                  <div class="properties__info"><a href="property_details.html" class="properties__address">
+                    <span class="properties__address-street">{{ 'listeboutique.nom' | translate }} :{{boutiques.nom}}</span>
+                    <span class="properties__address-city">{{ 'listeboutique.domaine' | translate }} :{{boutiques.domaine}}</span>
+                    <span class="properties__address-city">{{ 'listeboutique.adresse' | translate }} :{{boutiques.adresse}}</span>
+                    <span class="properties__address-city">{{ 'listeboutique.mail' | translate }} :{{boutiques.mailprofessionnelle}}</span>
+
+                  </a>
+                    <div class="properties__offer">
+                      <br>
+                      <div class="properties__offer-column">
+                        <span  class="properties__more" (click)="afficherboutique(boutiques.id)">{{ 'listeboutique.afficher' | translate }}</span>
+
+                      </div>
+                    </div>
+                    <div class="properties__params--mob"><a href="#" class="properties__more">View details</a><span class="properties__params">Built-Up - 85 Sq Ft</span><span class="properties__params">Land Size - 153 Sq Ft</span></div>
+                  </div>
+                </div>
+                <!-- end of block .properties__info-->
+              </div>
+              <!-- end of block .properties__item-->
+            </div></div>
+            <div class="ui__row">
+              <!-- BEGIN PAGINATION-->
+              <nav class="listing__pagination">
+                <ul class="pagination-custom">
+                  <pagination-controls id="listing_pagination" maxSize="5" directionLinks="true" (pageChange)="page = $event"></pagination-controls>
+                </ul>
+              </nav>
+              <!-- END PAGINATION-->
+            </div>
+          </div>
+
+          <div class="sidebar">
+            <div class="widget js-widget widget--sidebar widget--first-no-head">
+              <div class="widget__header"><a class="widget__btn js-widget-btn widget__btn--toggle">Show profile</a>
+              </div>
+              <div class="widget__content">
+                <!-- BEGIN WORKER PROFILE-->
+                <div class="worker sidebar-advanced">
+                  <h3 class="worker__name">{{user1.nom}} {{user1.prenom}}</h3>
+                  <div class="worker__photo">
+                    <img src="http://localhost:3000/utilisateur/profileimage/{{user1.photodeprofil}}" class="photo" width="200" height="200">
+                    <div class="widget js-widget widget--main widget--no-margin widget--no-border widget--collapse">
+                      <div class="widget__header">
+
+
+
+                      </div>
+
+
+                    </div>
+                  </div>
+
+
+                  <nav class="worker__nav">
+                    <ul>
+
+                      <li><a (click)="gotoprofil()" >{{ 'user.profil' | translate }}</a></li>
+                      <li><a  >{{ 'user.boutique' | translate }}</a></li>
+                    </ul>
+                  </nav>
+                  <!-- end of block .worker__nav-->
+                </div>
+                <!-- end of block .worker__item-->
+                <!-- END WORKER PROFILE-->
+              </div>
+            </div>
+
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+    <!-- END CENTER SECTION-->
+    <!-- BEGIN AFTER CENTER SECTION-->
+    <!-- END AFTER CENTER SECTION-->
+    <!-- BEGIN FOOTER-->
+
+    <!-- end of block .footer-->
+    <!-- END FOOTER-->
+  </div>
+</div>
