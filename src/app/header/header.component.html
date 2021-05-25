@@ -85,21 +85,106 @@
         </ul>
         <!-- end of block .auth header-->
       </div>
-      <button type="button" class="header__navbar-toggle js-navbar-toggle"
+      <button type="button"
+              class="header__navbar-toggle js-navbar-toggle"
               data-toggle="collapse"
-              data-target="#navbar-collapse-1"
-              aria-controls="navbar-collapse-1"
+              data-target="#navbar-collapse-11"
+              aria-controls="navbar-collapse-11"
               aria-expanded="false"
               aria-label="Toggle navigation"
-              (click)="show()">
-        <svg class="header__navbar-show" >
+              (click)="show()"
+      >
+        <svg  class="header__navbar-show">
           <use xlink:href="#icon-menu"></use>
         </svg>
-        <svg class="header__navbar-hide">
+        <svg  class="header__navbar-hide">
           <use xlink:href="#icon-menu-close"></use>
         </svg>
       </button>
       <!-- end of block .header__navbar-toggle-->
+    </div>
+    <div *ngIf="visibility" id="navbar-collapse-11" [ngClass]="{'show':visibility}" class="navbar__wrap">
+      <ul class="navbar__nav">
+        <li class="navbar__item js-dropdown"><a class="navbar__link" (click)="gotoacceuil()" routerLinkActive="active" >{{ 'header.acceuil' | translate }}
+          </a>
+          <div role="menu" class="js-dropdown-menu navbar__dropdown navbar__dropdown--colls-1" >
+
+            <div class="navbar__submenu">
+            </div>
+          </div>
+        </li>
+        <li  class="navbar__item js-dropdown"><a class="navbar__link" (click)="gotoprofilutilisateur()">{{ 'header.compte' | translate }}
+          </a>
+          <div *ngIf="visibility1" role="menu" class="js-dropdown-menu navbar__dropdown navbar__dropdown--colls-1"  >
+            <button class="navbar__back js-navbar-submenu-back">
+              <svg class="navbar__arrow">
+                <use xlink:href="#icon-arrow-left"></use>
+              </svg>Back
+            </button>
+          </div>
+        </li>
+        <li  class="navbar__item js-dropdown"><a class="navbar__link" (click)="gotopageboutique()">{{ 'header.pageboutique' | translate }}
+        </a>
+          <div *ngIf="visibility1" role="menu" class="js-dropdown-menu navbar__dropdown navbar__dropdown--colls-1"  >
+            <button class="navbar__back js-navbar-submenu-back">
+              <svg class="navbar__arrow">
+                <use xlink:href="#icon-arrow-left"></use>
+              </svg>Back
+            </button>
+          </div>
+        </li>
+        <li  class="navbar__item js-dropdown"><a class="navbar__link" (click)="gotoboutique()">{{ 'header.listeboutiques' | translate }}
+        </a>
+          <div *ngIf="visibility1" role="menu" class="js-dropdown-menu navbar__dropdown navbar__dropdown--colls-1"  >
+            <button class="navbar__back js-navbar-submenu-back">
+              <svg class="navbar__arrow">
+                <use xlink:href="#icon-arrow-left"></use>
+              </svg>Back
+            </button>
+          </div>
+        </li>
+        <li  class="navbar__item js-dropdown" *ngIf="!status"><a class="navbar__link" (click)="gotoajboutique()">{{ 'header.ajouterboutique' | translate }}
+        </a>
+          <div *ngIf="visibility1" role="menu" class="js-dropdown-menu navbar__dropdown navbar__dropdown--colls-1"  >
+            <button class="navbar__back js-navbar-submenu-back">
+              <svg class="navbar__arrow">
+                <use xlink:href="#icon-arrow-left"></use>
+              </svg>Back
+            </button>
+          </div>
+        </li>
+        <li class="navbar__item js-dropdown" *ngIf="status" ><a class="navbar__link"  (click)="gotocommande()" routerLinkActive="active">{{ 'header.commande' | translate }}
+
+
+          <svg class="navbar__arrow">
+            <use xlink:href="#icon-arrow-right"></use>
+          </svg></a>
+          <div role="menu" class="js-dropdown-menu navbar__dropdown navbar__dropdown--colls-1">
+            <button class="navbar__back js-navbar-submenu-back">
+              <svg class="navbar__arrow">
+                <use xlink:href="#icon-arrow-left"></use>
+              </svg>Back
+            </button>
+            <div class="navbar__submenu">
+
+            </div>
+          </div>
+        </li>
+        <li class="navbar__item js-dropdown"><a class="navbar__link" (click)="gotocontact()" routerLinkActive="active">{{ 'header.contact' | translate }}
+        </a>
+          <div role="menu" class="js-dropdown-menu navbar__dropdown navbar__dropdown--colls-1">
+            <button class="navbar__back js-navbar-submenu-back">
+              <svg class="navbar__arrow">
+                <use xlink:href="#icon-arrow-left"></use>
+              </svg>Back
+            </button>
+            <div class="navbar__submenu">
+
+            </div>
+          </div>
+        </li>
+      </ul>
+      <!-- end of block  navbar__nav-->
     </div>
   </div>
 </header>
@@ -113,7 +198,7 @@
       <div class="navbar__brand-logo">
         <img src="/assets/img/acceuil/CHARTE-GRAPHIQUE-ZERO-GASPII-3.png" height="90" width="200">
       </div></a>
-      <div id="navbar-collapse-1" [ngClass]="{'show':visibility}" class="navbar__wrap navbar__wrap--init">
+      <div id="navbar-collapse-1"  class="navbar__wrap">
         <ul class="navbar__nav">
           <li class="navbar__item js-dropdown"><a class="navbar__link" (click)="gotoacceuil()" routerLinkActive="active" >{{ 'header.acceuil' | translate }}
             <svg class="navbar__arrow">

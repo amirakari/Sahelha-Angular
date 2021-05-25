@@ -14,6 +14,7 @@ export class HeaderComponent implements OnInit {
   user: Utilisateur;
   user1: Utilisateur;
   visibility = false;
+  visibility1 = false;
   status: boolean;
   constructor(public loginService: LoginService,
               private profiluserservice: AffService,
@@ -76,6 +77,11 @@ show(){
     this.visibility = !this.visibility;
     console.log(this.visibility);
 }
+show1(){
+    console.log(this.visibility1);
+    this.visibility1 = !this.visibility1;
+    console.log(this.visibility1);
+  }
 getRole(): boolean{
   this.profiluserservice.getUtilisateur().subscribe(
     (user) => {this.user = user;
