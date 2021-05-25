@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import {environment} from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StatistiqueService {
-  link = 'http://localhost:3000/commande';
+  link = environment.http + '/commande';
   constructor(private http: HttpClient) { }
   getCommandeEnJanvier(id: number){
     const link1 = this.link + '/Janvier' + `/${id}`;

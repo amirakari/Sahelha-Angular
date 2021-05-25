@@ -4,12 +4,13 @@ import {Observable} from 'rxjs';
 import {Produit} from '../Model/Produit';
 import {Commande} from '../Model/commande';
 import {Utilisateur} from '../Model/Utilisateur';
+import {environment} from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DetailsProduitService {
-  link = 'http://localhost:3000/';
+  link = environment.http ;
   constructor(private http: HttpClient) {}
   getBoutique(id): Observable<Produit>{
     return this.http.get<Produit>(this.link + `produit` +  `/${id}`); }

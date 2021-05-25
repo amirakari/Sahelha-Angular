@@ -3,12 +3,13 @@ import {Boutique} from '../Model/Boutique';
 import {HttpClient, HttpParams} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Utilisateur} from '../Model/Utilisateur';
+import {environment} from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ListeService {
-  link = 'http://localhost:3000/boutique';
+  link = environment.http + '/boutique';
   constructor(private http: HttpClient) { }
   getBoutique(): Observable<Boutique[]>{
       return this.http.get<Boutique[]>(this.link);

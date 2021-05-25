@@ -7,6 +7,7 @@ import {LoginService} from './login.service';
 import {Router} from '@angular/router';
 import {GoogleService} from './google.service';
 import {TranslateService} from '@ngx-translate/core';
+import {environment} from '../../environments/environment';
 
 @Component({
   selector: 'app-utilisateur',
@@ -29,7 +30,7 @@ export class UtilisateurComponent implements OnInit {
               private translate: TranslateService,
               private http: HttpClient) {
     translate.setDefaultLang('fr');
-    this.siteKey = '6LfcvH0aAAAAAJHHlhuW547XmFI6Mz4oga1Z_k3h';
+    this.siteKey = environment.capatcha;
   }
 
   ngOnInit(): void {

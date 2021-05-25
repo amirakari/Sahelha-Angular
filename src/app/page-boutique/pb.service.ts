@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs';
 import {Produit} from '../Model/Produit';
 import {HttpClient, HttpParams} from '@angular/common/http';
+import {environment} from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PbService {
-  link = 'http://localhost:3000/produit';
+  link = environment.http + '/produit';
   constructor(private http: HttpClient) { }
   getBoutique(): Observable<Produit[]>{
     return this.http.get<Produit[]>(this.link);

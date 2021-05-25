@@ -5,14 +5,14 @@ import {Observable} from 'rxjs';
 import {NgForm} from '@angular/forms';
 import {Router} from '@angular/router';
 import {AffService} from './profilutilisateur/aff.service';
-
+import {environment} from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
   private utilisateurs: Utilisateur[];
-  link = 'http://localhost:3000/utilisateur/login';
-  link1 = 'http://localhost:3000/utilisateur/userconnecte';
+  link = environment.http + '/utilisateur/login';
+  link1 = environment.http + '/utilisateur/userconnecte';
   user: Utilisateur;
   status: boolean;
   constructor(

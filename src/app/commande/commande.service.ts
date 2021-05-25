@@ -3,12 +3,13 @@ import {HttpClient} from '@angular/common/http';
 import {Commande} from '../Model/commande';
 import {Observable} from 'rxjs';
 import {Produit} from '../Model/Produit';
+import {environment} from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CommandeService {
-  link = 'http://localhost:3000/';
+  link = environment.http ;
   constructor(private http: HttpClient) { }
   getCommande(quantite: number): Observable<Commande[]>{
     return this.http.get<Commande[]>(this.link + 'commande' + `/${quantite}`);

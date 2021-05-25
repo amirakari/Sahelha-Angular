@@ -3,13 +3,14 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Commentaire} from '../Model/Commentaire';
 import {Produit} from '../Model/Produit';
+import {environment} from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CommentaireService {
   private Boutique: Commentaire[];
-  link = 'http://localhost:3000/commentaire';
+  link = environment.http + '/commentaire';
   constructor(private http: HttpClient) { }
   addBoutique(boutique: Commentaire, id): Observable<any>{
     return  this.http.post(this.link + `/${id}`, boutique);

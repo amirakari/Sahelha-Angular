@@ -3,13 +3,14 @@ import {Utilisateur} from '../Model/Utilisateur';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Produit} from '../Model/Produit';
+import {environment} from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AjProduitService {
   private utilisateurs: Utilisateur[];
-  link = 'http://localhost:3000/produit';
+  link = environment.http + '/produit';
   constructor(
     private http: HttpClient
   ) {
