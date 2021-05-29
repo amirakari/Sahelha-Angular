@@ -217,6 +217,7 @@
                         <div class="widget__content">
 
                           <div class="auth__wrap auth__wrap--login">
+                            <div class="alert alert-danger" role="alert" *ngIf="errorMessage">{{errorMessage}}</div>
                             <!-- BEGIN AUTH LOGIN-->
 
                             <br>
@@ -234,7 +235,7 @@
                                 <div class="form-group">
 
 
-                                  <input ngModel name="password"  #pwdInput="ngModel"  type="password"  id="password1" placeholder="{{ 'login.mot' | translate }}" required class="form-control">
+                                  <input ngModel name="password"  #pwdInput="ngModel"  type="password"  id="password1" placeholder="{{ 'login.mdp' | translate }}" required class="form-control">
 
                                   <div class="alert alert-danger" role="alert" *ngIf="pwdInput.invalid && pwdInput.touched" >
                                     le mode passe doit au minimum 4 caratéres et au maximum 8 caractéres

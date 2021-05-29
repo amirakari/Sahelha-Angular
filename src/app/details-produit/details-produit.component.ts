@@ -47,7 +47,6 @@ quantite: any;
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(
       (params) => {
-        console.log(params);
         this.listeService1.getBoutiqueByid(params.id).subscribe(
           (boutique) => {
             this.boutique1 = boutique;
@@ -67,8 +66,6 @@ quantite: any;
                 }else{
                   this.status = false;
                 }
-                         console.log(this.user);
-                         console.log(this.boutique.boutique.user.id);
                          if (this.user.type === 'user'){
                            this.status2 = true;
                          }else{

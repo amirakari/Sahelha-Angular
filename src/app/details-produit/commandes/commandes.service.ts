@@ -11,6 +11,6 @@ export class CommandesService {
   link = environment.http ;
   constructor(private http: HttpClient) { }
   getCommande(quantite: number): Observable<Commande[]>{
-    return this.http.get<Commande[]>(this.link + 'commande' + '/boutique' + `/${quantite}`);
+    return this.http.get<Commande[]>(this.link + '/commande' + '/boutique' + `/${quantite}`);
   }
 }

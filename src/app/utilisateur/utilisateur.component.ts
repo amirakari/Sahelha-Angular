@@ -78,6 +78,8 @@ export class UtilisateurComponent implements OnInit {
       },
       (error) => {
         console.log(error);
+        this.errorMessage = 'ces informations ne correspond à aucun compte';
+        console.log(this.errorMessage);
       }
   );
   }
