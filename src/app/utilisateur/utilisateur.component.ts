@@ -20,6 +20,8 @@ export class UtilisateurComponent implements OnInit {
   theme: string;
    aFormGroup: FormGroup;
   errorMessage = '';
+  Message = '';
+  errorMessage1 = '';
   message = '';
   e = true;
   constructor(private formBuilder: FormBuilder,
@@ -61,9 +63,10 @@ export class UtilisateurComponent implements OnInit {
     this.userService.addUtilisateur(formulaire.value).subscribe(
       (response) => {
         console.log(formulaire);
+        this.Message = 'Succès de création du compte';
       },
       (error) => {
-        this.errorMessage = 'probleme de connexion à votre serveur';
+        this.errorMessage1 = 'probléme de création du compte . vérifier les champs';
         console.log(error);
       }
     );

@@ -24,6 +24,7 @@ export class ProfilutilisateurComponent implements OnInit {
               private activatedRoute: ActivatedRoute,
               private uploadService: UploadService) { }
    file: any;
+  visibility = false;
    user: Utilisateur;
   status: boolean;
    userFile;
@@ -40,6 +41,11 @@ export class ProfilutilisateurComponent implements OnInit {
       (error) => {alert(`erreur d'accés à l'api`);
                   console.log(error); }
     );
+  }
+  show(){
+    console.log(this.visibility);
+    this.visibility = !this.visibility;
+    console.log(this.visibility);
   }
   gotoboutique(){
     const link = ['profilutilisateur' + '/boutique'];

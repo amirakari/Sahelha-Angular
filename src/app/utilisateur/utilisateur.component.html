@@ -146,7 +146,8 @@
                      <div class="dropdown__menu auth__dropdown--register">
                         <!-- BEGIN AUTH REGISTER-->
                         <br><br><br>
-                       <div *ngIf="errorMessage">{{errorMessage}}</div>
+                       <div class="alert alert-success" role="alert" *ngIf="Message">{{Message}}</div>
+                       <div class="alert alert-danger" role="alert" *ngIf="errorMessage1">{{errorMessage1}}</div>
                         <form #formulaire="ngForm" class="form form--flex form--auth js-register-form js-parsley">
                           <div class="row">
                             <div class="form-group form-group--col-6">
@@ -207,7 +208,7 @@
                         </form>
                         <!-- end of block .auth__form-->
                         <!-- END AUTH REGISTER-->
-                      </div>
+                      </div><br><br><br><br><br>
                     </li></div>
                 </div>
                 <div class="container">
