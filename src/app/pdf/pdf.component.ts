@@ -7,17 +7,20 @@ import {PdfService} from './pdf.service';
 import {Commande} from '../Model/commande';
 import * as html2pdf from 'html2pdf.js';
 import {ActivatedRoute} from '@angular/router';
+import {environment} from '../../environments/environment';
 @Component({
   selector: 'app-pdf',
   templateUrl: './pdf.component.html',
   styleUrls: ['./pdf.component.css']
 })
 export class PdfComponent implements OnInit {
+  http: string;
   @Input() boutique1: Commande;
   constructor(private listeService: PdfService,
               private profiluserservice: AffService,
-              private activatedRoute: ActivatedRoute,) { }
+              private activatedRoute: ActivatedRoute, ) { }
   ngOnInit(): void {
+    this.http = environment.http;
     this.activatedRoute.params.subscribe(
       (params) => {
         console.log(params.value);

@@ -8,6 +8,7 @@ import {Address} from 'ngx-google-places-autocomplete/objects/address';
 import {Boutique} from '../Model/Boutique';
 import {ListeService} from '../liste-boutique/liste.service';
 import {NgForm} from '@angular/forms';
+import {environment} from '../../environments/environment';
 
 
 
@@ -21,6 +22,7 @@ export class PageBoutiqueComponent implements OnInit {
   @Input() boutique1: Boutique[];
   totalRecords: number;
   page = 1;
+  http: string;
   val: number;
   lat: number;
   lng: number;
@@ -36,6 +38,7 @@ export class PageBoutiqueComponent implements OnInit {
     console.log(address);
   }
   ngOnInit(): void {
+    this.http = environment.http;
     this.lat = 36.87736913231115;
     this.lng = 10.100964380174375;
     this.listeService.getBoutique().subscribe(

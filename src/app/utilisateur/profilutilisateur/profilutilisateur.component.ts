@@ -9,13 +9,14 @@ import {UploadService} from './upload.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {UserService} from '../user.service';
 import {LoginService} from '../login.service';
-
+import {environment} from '../../../environments/environment';
 @Component({
   selector: 'app-profilutilisateur',
   templateUrl: './profilutilisateur.component.html',
   styleUrls: ['./profilutilisateur.component.css']
 })
 export class ProfilutilisateurComponent implements OnInit {
+  http: string;
   constructor(private profiluserservice: AffService,
               public loginService: LoginService,
               private userservice: UserService,
@@ -31,6 +32,7 @@ export class ProfilutilisateurComponent implements OnInit {
    imgURL: any;
    public imagePath;
   ngOnInit(): void {
+    this.http = environment.http;
     this.profiluserservice.getUtilisateur().subscribe(
       (user) => {this.user = user;
                  if (this.user.type === 'user'){

@@ -13,6 +13,7 @@ import {AffService} from '../utilisateur/profilutilisateur/aff.service';
 import {Utilisateur} from '../Model/Utilisateur';
 import {ListeService} from '../liste-boutique/liste.service';
 import {Boutique} from '../Model/Boutique';
+import {environment} from '../../environments/environment';
 
 @Component({
   selector: 'app-details-produit',
@@ -25,6 +26,7 @@ export class DetailsProduitComponent implements OnInit {
   val: object;
   totalRecords: number;
   page = 1;
+  http: string;
   file1: any;
   file2: any;
   file3: any;
@@ -45,6 +47,7 @@ export class DetailsProduitComponent implements OnInit {
 quantite: any;
   boutique1: Boutique;
   ngOnInit(): void {
+    this.http = environment.http;
     this.activatedRoute.params.subscribe(
       (params) => {
         this.listeService1.getBoutiqueByid(params.id).subscribe(

@@ -3,6 +3,7 @@ import {CommandeService} from '../../commande/commande.service';
 import {CommandesService} from './commandes.service';
 import {Commande} from '../../Model/commande';
 import {Router} from '@angular/router';
+import {environment} from '../../../environments/environment';
 
 @Component({
   selector: 'app-commandes',
@@ -11,6 +12,7 @@ import {Router} from '@angular/router';
 })
 export class CommandesComponent implements OnInit {
   @Input() boutique: Commande[];
+  http: string;
   totalRecords: number;
   page = 1;
   constructor(private listeService: CommandesService,
@@ -18,6 +20,7 @@ export class CommandesComponent implements OnInit {
               private router: Router, ) { }
 
   ngOnInit(): void {
+    this.http = environment.http;
     this.listeService.getCommande(1).subscribe(
       (boutique) => { this.boutique = boutique;
                       this.totalRecords = boutique.length; },

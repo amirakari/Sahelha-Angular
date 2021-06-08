@@ -5,7 +5,7 @@ import {UploadService} from '../afficher/upload.service';
 import {Boutique} from '../../Model/Boutique';
 import {NgForm} from '@angular/forms';
 import {UpdateService} from './update.service';
-
+import {environment} from '../../../environments/environment';
 @Component({
   selector: 'app-update-boutique',
   templateUrl: './update-boutique.component.html',
@@ -13,6 +13,7 @@ import {UpdateService} from './update.service';
 })
 export class UpdateBoutiqueComponent implements OnInit {
   boutique1: Boutique;
+  http: string;
   constructor(private router: Router,
               private activatedRoute: ActivatedRoute,
               private listeService: ListeService,
@@ -20,6 +21,7 @@ export class UpdateBoutiqueComponent implements OnInit {
               private uploadService: UploadService) { }
 
   ngOnInit(): void {
+    this.http = environment.http;
     this.activatedRoute.params.subscribe(
       (params) => {
         console.log(params.value);

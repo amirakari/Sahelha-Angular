@@ -8,12 +8,14 @@ import {UploadService} from './upload.service';
 import { DomSanitizer} from '@angular/platform-browser';
 import {AffService} from '../../utilisateur/profilutilisateur/aff.service';
 import {Utilisateur} from '../../Model/Utilisateur';
+import {environment} from '../../../environments/environment';
 @Component({
   selector: 'app-afficher',
   templateUrl: './afficher.component.html',
   styleUrls: ['./afficher.component.css']
 })
 export class AfficherComponent implements OnInit {
+  http: string;
   boutique1: Boutique;
   file: any;
   lat: number;
@@ -31,6 +33,7 @@ export class AfficherComponent implements OnInit {
               private uploadService: UploadService) { }
 
   ngOnInit(): void {
+    this.http = environment.http;
     this.activatedRoute.params.subscribe(
       (params) => {
         console.log(params);

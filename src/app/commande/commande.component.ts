@@ -11,6 +11,7 @@ import pdfMake from 'pdfmake/build/pdfmake';
 import { map } from 'rxjs/operators';
 import pdfFronts from 'pdfmake/build/vfs_fonts';
 import {Router} from '@angular/router';
+import {environment} from '../../environments/environment';
 import {MenuItem} from 'primeng/api';
 pdfMake.vfs = pdfFronts.pdfMake.vfs;
 @Component({
@@ -20,6 +21,7 @@ pdfMake.vfs = pdfFronts.pdfMake.vfs;
 })
 export class CommandeComponent implements OnInit {
   @Input() boutique1: Boutique;
+  http: string;
   @Input() user1: Utilisateur;
   totalRecords: number;
   page = 1;
@@ -30,6 +32,7 @@ export class CommandeComponent implements OnInit {
               private router: Router, ) { }
 
   ngOnInit(): void {
+    this.http = environment.http;
     this.profiluserservice.getUtilisateur().subscribe(
       (user) => {
         this.user1 = user;

@@ -7,13 +7,14 @@ import {AffService} from '../profilutilisateur/aff.service';
 import {ImageService} from '../profilutilisateur/image.service';
 import {UploadService} from '../profilutilisateur/upload.service';
 import {Utilisateur} from '../../Model/Utilisateur';
-
+import {environment} from '../../../environments/environment';
 @Component({
   selector: 'app-boutique-user',
   templateUrl: './boutique-user.component.html',
   styleUrls: ['./boutique-user.component.css']
 })
 export class BoutiqueUserComponent implements OnInit {
+  http: string;
   @Input() boutique: Boutique[];
   @Input() boutique1: Boutique;
   @Input() user1: Utilisateur;
@@ -23,6 +24,7 @@ export class BoutiqueUserComponent implements OnInit {
               private profiluserservice: AffService,
               private router: Router, ) { }
   ngOnInit(): void {
+    this.http = environment.http;
     this.profiluserservice.getUtilisateur().subscribe(
       (user) => {
         this.user1 = user;

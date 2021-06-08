@@ -7,13 +7,14 @@ import {DetailsProduitService} from '../details-produit.service';
 import {Produit} from '../../Model/Produit';
 import {NgForm} from '@angular/forms';
 import {UpdateService} from './update.service';
-
+import {environment} from '../../../environments/environment';
 @Component({
   selector: 'app-update',
   templateUrl: './update.component.html',
   styleUrls: ['./update.component.css']
 })
 export class UpdateComponent implements OnInit {
+  http: string;
   mindate = new Date();
   value: Date;
   codeabare: any;
@@ -26,6 +27,7 @@ export class UpdateComponent implements OnInit {
               private uploadService: UpdateService) { }
 
   ngOnInit(): void {
+    this.http = environment.http;
     this.activatedRoute.params.subscribe(
       (params) => {
         this.liste1Service.getBoutique(params.idproduit).subscribe(

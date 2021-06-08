@@ -4,6 +4,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {Produit} from '../../Model/Produit';
 import {NgForm} from '@angular/forms';
 import {EvaluerService} from './evaluer.service';
+import {environment} from '../../../environments/environment';
 
 @Component({
   selector: 'app-evaluer-produit',
@@ -12,6 +13,7 @@ import {EvaluerService} from './evaluer.service';
 })
 export class EvaluerProduitComponent implements OnInit {
   @Input() boutique: Produit;
+  http: string;
   val: number;
   constructor(private listeService: DetailsProduitService,
               private activatedRoute: ActivatedRoute,
@@ -19,6 +21,7 @@ export class EvaluerProduitComponent implements OnInit {
               private router: Router, ) { }
 
   ngOnInit(): void {
+    this.http = environment.http;
     this.activatedRoute.params.subscribe(
       (params) => {
         this.listeService.getBoutique(params.idproduit).subscribe(

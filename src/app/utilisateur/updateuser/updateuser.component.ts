@@ -6,6 +6,7 @@ import {UploadService} from '../profilutilisateur/upload.service';
 import {Utilisateur} from '../../Model/Utilisateur';
 import {NgForm} from '@angular/forms';
 import {UpdateService} from './update.service';
+import {environment} from '../../../environments/environment';
 
 @Component({
   selector: 'app-updateuser',
@@ -21,12 +22,14 @@ export class UpdateuserComponent implements OnInit {
               private activatedRoute: ActivatedRoute,
               private uploadService: UploadService) { }
   file: any;
+  http: string;
   status: boolean;
   user: Utilisateur;
   userFile;
   imgURL: any;
   public imagePath;
   ngOnInit(): void {
+    this.http = environment.http;
     this.profiluserservice.getUtilisateur().subscribe(
       (user) => {this.user = user;
                  if (this.user.type === 'user'){

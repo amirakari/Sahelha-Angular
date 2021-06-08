@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {ListeService} from './liste.service';
 import {Boutique} from '../Model/Boutique';
 import {ActivatedRoute, Router} from '@angular/router';
+import {environment} from '../../environments/environment';
 @Component({
   selector: 'app-liste-boutique',
   templateUrl: './liste-boutique.component.html',
@@ -10,6 +11,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 export class ListeBoutiqueComponent implements OnInit {
 @Input() boutique: Boutique[];
   @Input() boutique1: Boutique;
+  http: string;
   totalRecords: number;
   page = 1;
   constructor(private listeService: ListeService,
@@ -17,6 +19,7 @@ export class ListeBoutiqueComponent implements OnInit {
               private activatedRoute: ActivatedRoute) {
   }
   ngOnInit(): void {
+    this.http = environment.http;
     this.listeService.getBoutique().subscribe(
       (boutique) => { this.boutique = boutique;
                       this.totalRecords = boutique.length; },

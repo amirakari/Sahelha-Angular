@@ -7,7 +7,7 @@ import {ProduitBoutiqueService} from '../produit-boutique/produit-boutique.servi
 import {BoutiqueDonService} from './boutique-don.service';
 import {AffService} from '../../utilisateur/profilutilisateur/aff.service';
 import {Utilisateur} from '../../Model/Utilisateur';
-
+import {environment} from '../../../environments/environment';
 @Component({
   selector: 'app-boutique-don',
   templateUrl: './boutique-don.component.html',
@@ -15,6 +15,7 @@ import {Utilisateur} from '../../Model/Utilisateur';
 })
 export class BoutiqueDonComponent implements OnInit {
   @Input() boutique: Produit[];
+  http: string;
   boutique1: Boutique;
   totalRecords: number;
   page = 1;
@@ -28,6 +29,7 @@ export class BoutiqueDonComponent implements OnInit {
               private listeService: BoutiqueDonService, ) { }
 
   ngOnInit(): void {
+    this.http = environment.http;
     this.activatedRoute.params.subscribe(
       (params) => {
         console.log(params);

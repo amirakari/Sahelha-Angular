@@ -37,7 +37,7 @@
               currentPage: page,
               totalItems: totalRecords}">
                 <div class="properties properties--grid">
-                  <div class="properties__thumb"><a   class="item-photo"><img src="http://localhost:3000/produit/image/{{boutiques.photo1}}" alt=""/>
+                  <div class="properties__thumb"><a   class="item-photo"><img src="{{http}}/produit/image/{{boutiques.photo1}}" alt=""/>
                     <figure class="item-photo__hover item-photo__hover--params"> <span class="properties__time">{{ 'pageboutique.ajouter' | translate }}: {{boutiques.createdAt}}</span><span class="properties__time">{{ 'pageboutique.dlc' | translate }}: {{boutiques.DLC}}</span><span  class="properties__more" (click)="gotoDetailsProduit(boutiques.id)">{{ 'pageboutique.info' | translate }}</span>
                     </figure></a><span class="properties__ribon">{{boutiques.categorie}}</span>
                   </div>
@@ -82,7 +82,7 @@
                 <div class="worker sidebar-advanced">
                   <h3 class="worker__name">{{boutique1.nom}}</h3>
                   <div class="worker__photo">
-                    <img src="http://localhost:3000/boutique/profileimage/{{boutique1.photo}}" class="photo" width="200" height="200">
+                    <img src="{{http}}/boutique/profileimage/{{boutique1.photo}}" class="photo" width="200" height="200">
 
                   </div>
                   <nav class="worker__nav">

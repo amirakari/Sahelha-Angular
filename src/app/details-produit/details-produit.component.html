@@ -63,7 +63,7 @@ becomes
                 <div class="listing listing--list js-properties-list">
                   <div class="listing__item">
                     <div class="properties properties--list">
-                      <div class="properties__thumb"><a href="property_details.html" class="item-photo"><img src="http://localhost:3000/produit/image/{{boutique.photo1}}" alt=""/>
+                      <div class="properties__thumb"><a href="property_details.html" class="item-photo"><img src="{{http}}/produit/image/{{boutique.photo1}}" alt=""/>
 
                         <figure class="item-photo__hover item-photo__hover--params"><span class="properties__time">Réference: {{boutique.reference}}</span>
                         </figure></a>
@@ -158,7 +158,7 @@ becomes
               currentPage: page,
               totalItems: totalRecords}">
                           <div class="comment__item-body js-comment-item">
-                            <div class="comment__avatar" width="6" height="5"><img src="http://localhost:3000/utilisateur/profileimage/{{commentaires.user.photodeprofil}}" width="66" height="50" class="image-ronde"alt=""></div>
+                            <div class="comment__avatar" width="6" height="5"><img src="{{http}}/utilisateur/profileimage/{{commentaires.user.photodeprofil}}" width="66" height="50" class="image-ronde"alt=""></div>
                             <div class="comment__item-right" *ngIf="user.id===commentaires.user.id">
                               <button class="comment__item-btn"  (click)="changestatus()">{{ 'detailsproduit.modifier' | translate }}</button>
                               <button class="comment__item-btn" (click)="supprimerCommentaire(commentaires.id)">{{ 'detailsproduit.supprimer' | translate }}</button>
@@ -255,7 +255,7 @@ becomes
               <div class="worker sidebar-advanced">
                 <h3 class="worker__name">{{boutique1.nom}}</h3>
                 <div class="worker__photo">
-                  <img src="http://localhost:3000/boutique/profileimage/{{boutique1.photo}}" class="photo" width="200" height="200">
+                  <img src="{{http}}/boutique/profileimage/{{boutique1.photo}}" class="photo" width="200" height="200">
                   <div class="widget js-widget widget--main widget--no-margin widget--no-border widget--collapse">
                     <div class="widget__header">
                       <br>

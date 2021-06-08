@@ -7,7 +7,7 @@ import {Produit} from '../../Model/Produit';
 import {EvaluationService} from '../../page-boutique/evaluation.service';
 import {Utilisateur} from '../../Model/Utilisateur';
 import {AffService} from '../../utilisateur/profilutilisateur/aff.service';
-
+import {environment} from '../../../environments/environment';
 @Component({
   selector: 'app-produit-boutique',
   templateUrl: './produit-boutique.component.html',
@@ -15,6 +15,7 @@ import {AffService} from '../../utilisateur/profilutilisateur/aff.service';
 })
 export class ProduitBoutiqueComponent implements OnInit {
   @Input() boutique: Produit[];
+  http: string;
   boutique1: Boutique;
   totalRecords: number;
   page = 1;
@@ -29,6 +30,7 @@ export class ProduitBoutiqueComponent implements OnInit {
               private listeService: ProduitBoutiqueService, ) { }
 
   ngOnInit(): void {
+    this.http = environment.http;
     this.activatedRoute.params.subscribe(
       (params) => {
         console.log(params);

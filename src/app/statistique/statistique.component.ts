@@ -6,6 +6,7 @@ import {ListeService} from '../liste-boutique/liste.service';
 import {UploadService} from '../boutique/afficher/upload.service';
 import {Boutique} from '../Model/Boutique';
 import {StatistiqueService} from './statistique.service';
+import {environment} from '../../environments/environment';
 Chart.register(...registerables);
 @Component({
   selector: 'app-statistique',
@@ -14,6 +15,7 @@ Chart.register(...registerables);
 })
 export class StatistiqueComponent implements OnInit {
   boutique1: Boutique;
+  http: string;
   constructor(private router: Router,
               private sanitizer: DomSanitizer,
               private activatedRoute: ActivatedRoute,
@@ -34,6 +36,7 @@ export class StatistiqueComponent implements OnInit {
   n: any;
   data = [];
   ngOnInit(): void {
+    this.http = environment.http;
     this.activatedRoute.params.subscribe(
       (params) => {
         this.statistique.getCommandeEnJanvier(params.id).subscribe(
