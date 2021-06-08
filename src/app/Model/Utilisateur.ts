@@ -8,6 +8,7 @@ export class Utilisateur{
   mail: string;
   password: string;
   photodeprofil: string;
+  deletedAt: Date;
 
   constructor( id, nom, prenom, mail, password, adresse, numtel, type, photodeprofil) {
     this.id = id;

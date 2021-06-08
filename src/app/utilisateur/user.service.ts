@@ -19,6 +19,9 @@ link = environment.http + '/utilisateur';
   addUtilisateur(utilisateur: Utilisateur): Observable<any>{
     return  this.http.post(this.link, utilisateur);
   }
+  getUsers(): Observable<any>{
+    return  this.http.get(this.link);
+  }
   supprimertilisateur(id: number): Observable<any>{
     const link = this.link + `/${id}`;
     return  this.http.delete(link);

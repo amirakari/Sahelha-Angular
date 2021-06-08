@@ -214,6 +214,19 @@
               </div>
             </div>
           </li>
+          <li *ngIf="status1" class="navbar__item js-dropdown"><a class="navbar__link">Administrateur
+          </a>
+            <div role="menu" class="js-dropdown-menu navbar__dropdown navbar__dropdown--colls-1">
+
+
+              <div class="navbar__submenu">
+                <ul class="navbar__subnav">
+                  <li class="navbar__subitem"><a (click)="gotolisteUser()" class="navbar__sublink js-navbar-sublink">Liste des utilisateurs</a></li>
+                  <li class="navbar__subitem"><a  class="navbar__sublink js-navbar-sublink">Liste des abonnements</a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
           <li class="navbar__item js-dropdown"><a class="navbar__link">{{ 'header.utilisateur' | translate }}
           </a>
             <div role="menu" class="js-dropdown-menu navbar__dropdown navbar__dropdown--colls-1">
@@ -242,7 +255,7 @@
                   <li class="navbar__subitem active"><a (click)="gotopageboutique()"  class="navbar__sublink js-navbar-sub-sublink">{{ 'header.pageboutique' | translate }}</a></li>
 
                   <li class="navbar__subitem"><a (click)="gotoboutique()" class="navbar__sublink js-navbar-sub-sublink">{{ 'header.listeboutiques' | translate }}</a></li>
-                  <li class="navbar__subitem active" *ngIf="!status" ><a (click)="gotoajboutique()"  class="navbar__sublink js-navbar-sub-sublink">{{ 'header.ajouterboutique' | translate }}</a></li>
+                  <li class="navbar__subitem active" *ngIf="!status && !status1" ><a (click)="gotoajboutique()"  class="navbar__sublink js-navbar-sub-sublink">{{ 'header.ajouterboutique' | translate }}</a></li>
 
                 </ul>
               </div>

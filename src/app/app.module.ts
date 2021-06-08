@@ -52,6 +52,7 @@ import {UpdateBoutiqueComponent} from './boutique/update-boutique/update-boutiqu
 import {EvaluerProduitComponent} from './commande/evaluer-produit/evaluer-produit.component';
 import {CommandesComponent} from './details-produit/commandes/commandes.component';
 import {GooglePlaceModule} from 'ngx-google-places-autocomplete';
+import { ListeusersComponent } from './utilisateur/listeusers/listeusers.component';
 export function HttpLoaderFactory(http: HttpClient){
   return new TranslateHttpLoader(http);
 }
@@ -87,6 +88,7 @@ export function HttpLoaderFactory(http: HttpClient){
     EvaluerProduitComponent,
     StatistiqueComponent,
     CommandesComponent,
+    ListeusersComponent,
   ],
   imports: [
     BrowserModule,

@@ -59,4 +59,43 @@ export class AbonnementComponent implements OnInit {
     const link = ['boutique' + `/${this.boutique1.id}` + '/' + 'Abonnement'];
     this.router.navigate(link);
   }
+  addAbo1(){
+    this.activatedRoute.params.subscribe(
+      (params) => {
+        console.log(params);
+        this.aboService.addAbo1(params.id).subscribe(
+          (response) => {
+          },
+          (error) => {
+          }
+        ); }
+    );
+
+  }
+  addAbo2(){
+    this.activatedRoute.params.subscribe(
+      (params) => {
+        console.log(params);
+        this.aboService.addAbo2(params.id).subscribe(
+          (response) => {
+          },
+          (error) => {
+          }
+        ); }
+    );
+
+  }
+  addAbo3(){
+    this.activatedRoute.params.subscribe(
+      (params) => {
+        console.log(params);
+        this.aboService.addAbo3(params.id).subscribe(
+          (response) => {
+          },
+          (error) => {
+          }
+        ); }
+    );
+
+  }
 }

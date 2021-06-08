@@ -16,6 +16,7 @@ export class HeaderComponent implements OnInit {
   visibility = false;
   visibility1 = false;
   status: boolean;
+  status1: boolean;
   constructor(public loginService: LoginService,
               private profiluserservice: AffService,
               private translate: TranslateService,
@@ -27,10 +28,15 @@ export class HeaderComponent implements OnInit {
     this.profiluserservice.getUtilisateur().subscribe(
       (user) => {this.user = user;
                  console.log(this.user);
-                 if (this.user.type === 'user' || this.user.type === 'admin'){
+                 if (this.user.type === 'user' ){
                    this.status = true;
                  }else{
                    this.status = false;
+                 }
+                 if (this.user.type === 'admin'){
+                   this.status1 = true;
+                 }else{
+                   this.status1 = false;
                  }
       },
       (error) => {alert(`erreur d'accés à l'api`);
@@ -55,6 +61,10 @@ export class HeaderComponent implements OnInit {
   }
   gotoajboutique(){
     const link = ['boutique/addBoutique'];
+    this.router.navigate(link);
+  }
+  gotolisteUser(){
+    const link = ['listeusers'];
     this.router.navigate(link);
   }
   gotocommande(){
