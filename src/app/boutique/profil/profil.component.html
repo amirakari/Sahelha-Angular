@@ -26,6 +26,7 @@
 
             <div class="site__main">
               <div class="widget js-widget widget--main">
+                <div class="alert alert-danger" role="alert" *ngIf="errorMessage">{{errorMessage}}</div>
                 <div class="widget__content">
                   <form #Ajouterboutique="ngForm" class="form form--flex form--profile js-form">
 

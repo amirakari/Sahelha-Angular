@@ -29,7 +29,7 @@ export class ProfilComponent implements OnInit {
         this.router.navigate(link);
       },
       (error) => {
-        this.errorMessage = 'probleme de connexion à votre serveur';
+        this.errorMessage = 'Problème de création de la boutique';
         console.log(error);
       }
     );
