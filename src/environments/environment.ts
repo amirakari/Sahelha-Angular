@@ -5,8 +5,8 @@
 export const environment = {
   production: false,
  // googleMapsKey: 'AIzaSyDyKbqeWTkZVdS99nz6SO3ypKlY_sJ2HRU',
-  http: 'http://localhost:3000',
-  capatcha: '6LfcvH0aAAAAAJHHlhuW547XmFI6Mz4oga1Z_k3h'
+  http: 'http://zerogaspii.com:3000',
+  capatcha: '6Lc_fisbAAAAAJAbIrixt09cUMvEUyTpo-IwPhqH'
 };
 
 /*
