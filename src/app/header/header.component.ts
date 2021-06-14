@@ -55,6 +55,10 @@ export class HeaderComponent implements OnInit {
     const link = ['pageBoutique'];
     this.router.navigate(link);
   }
+  gotopageListeabo(){
+    const link = ['listeabo'];
+    this.router.navigate(link);
+  }
   gotoboutique(){
     const link = ['boutique'];
     this.router.navigate(link);

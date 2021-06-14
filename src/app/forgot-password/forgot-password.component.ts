@@ -11,7 +11,8 @@ import {TranslateService} from '@ngx-translate/core';
   styleUrls: ['./forgot-password.component.css']
 })
 export class ForgotPasswordComponent implements OnInit {
-
+  errorMessage1 = '';
+  message = '';
   constructor(private userService: ForgotPasswordService,
               private router: Router,
               private translate: TranslateService) {
@@ -24,10 +25,12 @@ export class ForgotPasswordComponent implements OnInit {
     this.userService.ForgotPassword(formulaire.value).subscribe(
       (response) => {
         console.log(formulaire);
+        this.message = 'Mail envoyé avec succès . vérifie votre compte mail';
       },
       (error) => {
         console.log(error);
         console.log(formulaire.value);
+        this.errorMessage1 = `Il n'existe aucun compte avec cette adresse`;
       }
     );
 

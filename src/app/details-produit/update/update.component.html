@@ -122,7 +122,32 @@
           </div>
           <div class="sidebar">
             <div class="widget js-widget widget--sidebar widget--first-no-head">
-              <div class="widget__header"><a class="widget__btn js-widget-btn widget__btn--toggle">Show profile</a>
+              <div class="widget__header"><a class="widget__btn js-widget-btn widget__btn--toggle" (click)="show()">barre de navigation boutique</a>
+              </div>
+              <div class="widget__content" *ngIf="visibility" [ngClass]="{'show':visibility}">
+                <!-- BEGIN WORKER PROFILE-->
+                <div class="worker sidebar-advanced">
+                  <h3 class="worker__name">{{boutique1.nom}}</h3>
+                  <div class="worker__photo">
+                    <img src="{{http}}/boutique/profileimage/{{boutique1.photo}}" class="photo" width="200" height="200">
+
+
+                  </div>
+                  <nav class="worker__nav">
+                    <ul>
+                      <li><a  (click)="gotoajout()">Profil</a></li>
+                      <li><a (click)="gotoajoutProduit()" >Ajouter produit</a></li>
+                      <li><a (click)="gotoproduit()" >produits (à vendre)</a></li>
+                      <li><a (click)="gotodon()" >produits (à donner)</a></li>
+                      <li><a (click)="gotoabonnement()" >Faire un abonnement</a></li>
+                      <li><a  >Vos abonnement</a></li>
+                      <li><a  (click)="gotostatistique()">Statistique</a></li>
+                    </ul>
+                  </nav>
+                  <!-- end of block .worker__nav-->
+                </div>
+                <!-- end of block .worker__item-->
+                <!-- END WORKER PROFILE-->
               </div>
               <div class="widget__content">
                 <!-- BEGIN WORKER PROFILE-->

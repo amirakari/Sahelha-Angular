@@ -14,6 +14,7 @@ import {UploadService} from '../afficher/upload.service';
 })
 export class AbonnementComponent implements OnInit {
   boutique1: Boutique;
+  visibility = false;
   constructor(private router: Router,
               private aboService: AboService,
               private activatedRoute: ActivatedRoute,
@@ -32,6 +33,11 @@ export class AbonnementComponent implements OnInit {
         );
       }
     );
+  }
+  show(){
+    console.log(this.visibility);
+    this.visibility = !this.visibility;
+    console.log(this.visibility);
   }
   gotodon(){
     const link = ['boutique' + `/${this.boutique1.id}` + '/' + 'produitboutique' + '/' + 'don'];

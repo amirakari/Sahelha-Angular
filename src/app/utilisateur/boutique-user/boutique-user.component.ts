@@ -20,6 +20,7 @@ export class BoutiqueUserComponent implements OnInit {
   @Input() user1: Utilisateur;
   totalRecords: number;
   page = 1;
+  visibility = false;
   constructor(private listeService: BoutiqueUserService,
               private profiluserservice: AffService,
               private router: Router, ) { }
@@ -38,6 +39,11 @@ export class BoutiqueUserComponent implements OnInit {
   afficherboutique(id: number){
     const link = [ 'boutique' , id ];
     this.router.navigate(link);
+  }
+  show(){
+    console.log(this.visibility);
+    this.visibility = !this.visibility;
+    console.log(this.visibility);
   }
   gotoprofil(){
     const link = ['profilutilisateur' ];

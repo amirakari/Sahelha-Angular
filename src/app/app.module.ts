@@ -53,6 +53,8 @@ import {EvaluerProduitComponent} from './commande/evaluer-produit/evaluer-produi
 import {CommandesComponent} from './details-produit/commandes/commandes.component';
 import {GooglePlaceModule} from 'ngx-google-places-autocomplete';
 import { ListeusersComponent } from './utilisateur/listeusers/listeusers.component';
+import { AboboutiqueComponent } from './boutique/abonnement/aboboutique/aboboutique.component';
+import { ListeaboComponent } from './boutique/abonnement/listeabo/listeabo.component';
 export function HttpLoaderFactory(http: HttpClient){
   return new TranslateHttpLoader(http);
 }
@@ -89,6 +91,8 @@ export function HttpLoaderFactory(http: HttpClient){
     StatistiqueComponent,
     CommandesComponent,
     ListeusersComponent,
+    AboboutiqueComponent,
+    ListeaboComponent,
   ],
   imports: [
     BrowserModule,

@@ -29,10 +29,13 @@ import {EvaluerProduitComponent} from './commande/evaluer-produit/evaluer-produi
 import {StatistiqueComponent} from './statistique/statistique.component';
 import {CommandesComponent} from './details-produit/commandes/commandes.component';
 import {ListeusersComponent} from './utilisateur/listeusers/listeusers.component';
+import {AboboutiqueComponent} from './boutique/abonnement/aboboutique/aboboutique.component';
+import {ListeaboComponent} from './boutique/abonnement/listeabo/listeabo.component';
 const Routes: Routes = [
   {path: 'acceuil', component:  AcceuilComponent},
   {path: 'contact', component:  ContactComponent},
   {path: 'listeusers', component:  ListeusersComponent},
+  {path: 'listeabo', component:  ListeaboComponent},
   {path: '', component:  UtilisateurComponent},
   {path: 'forgotPassword', component:  ForgotPasswordComponent, canActivate: [LogoutGuard]},
   {path: 'resetPassword/:id', component:  ResetPasswordComponent, canActivate: [LogoutGuard]},
@@ -65,6 +68,7 @@ const Routes: Routes = [
                 ]},
             ]},
           {path: 'Abonnement' , component : AbonnementComponent},
+          {path: 'AfficherAbo' , component : AboboutiqueComponent},
         ]}
     ]},
 ];

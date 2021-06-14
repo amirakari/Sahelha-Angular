@@ -19,6 +19,7 @@ export class UpdateComponent implements OnInit {
   value: Date;
   codeabare: any;
   boutique1: Boutique;
+  visibility = false;
   @Input() boutique: Produit;
   constructor(private router: Router,
               private activatedRoute: ActivatedRoute,
@@ -61,6 +62,11 @@ export class UpdateComponent implements OnInit {
   gotoajoutProduit(){
     const link = ['boutique' + `/${this.boutique1.id}` + '/' + 'ajouterProduit'];
     this.router.navigate(link);
+  }
+  show(){
+    console.log(this.visibility);
+    this.visibility = !this.visibility;
+    console.log(this.visibility);
   }
   gotomodifier(){
   }

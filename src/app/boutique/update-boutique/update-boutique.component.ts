@@ -14,6 +14,7 @@ import {environment} from '../../../environments/environment';
 export class UpdateBoutiqueComponent implements OnInit {
   boutique1: Boutique;
   http: string;
+  visibility = false;
   constructor(private router: Router,
               private activatedRoute: ActivatedRoute,
               private listeService: ListeService,
@@ -55,6 +56,11 @@ export class UpdateBoutiqueComponent implements OnInit {
   gotoproduit(){
     const link = ['boutique' + `/${this.boutique1.id}` + '/' + 'produitboutique'];
     this.router.navigate(link);
+  }
+  show(){
+    console.log(this.visibility);
+    this.visibility = !this.visibility;
+    console.log(this.visibility);
   }
   gotoabonnement(){
     const link = ['boutique' + `/${this.boutique1.id}` + '/' + 'Abonnement'];

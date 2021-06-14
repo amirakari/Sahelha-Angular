@@ -30,6 +30,7 @@ export class AjouterProduitComponent implements OnInit {
   status1: boolean;
   statis: boolean;
   urls = [];
+  visibility = false;
   ngOnInit(): void {
     console.log(this.status);
     if (this.status === 'à donner' ){
@@ -82,6 +83,11 @@ export class AjouterProduitComponent implements OnInit {
         this.codeabare = result.codeResult.code;
       });
     }
+  }
+  show(){
+    console.log(this.visibility);
+    this.visibility = !this.visibility;
+    console.log(this.visibility);
   }
   changestatus(input){
       console.log(input.value);

@@ -22,6 +22,7 @@ export class BoutiqueDonComponent implements OnInit {
   val: number;
   user: Utilisateur;
   statis: boolean;
+  visibility = false;
   constructor(private router: Router,
               private activatedRoute: ActivatedRoute,
               private listemService: ListeService,
@@ -69,6 +70,11 @@ export class BoutiqueDonComponent implements OnInit {
         );
       }
     );
+  }
+  show(){
+    console.log(this.visibility);
+    this.visibility = !this.visibility;
+    console.log(this.visibility);
   }
   gotodon(){
     const link = ['boutique' + `/${this.boutique1.id}` + '/' + 'produitboutique' + '/' + 'don'];

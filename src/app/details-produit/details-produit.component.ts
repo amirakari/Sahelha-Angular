@@ -46,6 +46,7 @@ export class DetailsProduitComponent implements OnInit {
               ) { }
 quantite: any;
   boutique1: Boutique;
+  visibility = false;
   ngOnInit(): void {
     this.http = environment.http;
     this.activatedRoute.params.subscribe(
@@ -115,6 +116,11 @@ quantite: any;
     this.router.navigate(link);
   }
   gotomodifier(){
+  }
+  show(){
+    console.log(this.visibility);
+    this.visibility = !this.visibility;
+    console.log(this.visibility);
   }
   gotoproduit(){
     const link = ['boutique' + `/${this.boutique1.id}` + '/' + 'produitboutique'];

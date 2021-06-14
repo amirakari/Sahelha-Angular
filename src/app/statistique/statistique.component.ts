@@ -16,6 +16,7 @@ Chart.register(...registerables);
 export class StatistiqueComponent implements OnInit {
   boutique1: Boutique;
   http: string;
+  visibility = false;
   constructor(private router: Router,
               private sanitizer: DomSanitizer,
               private activatedRoute: ActivatedRoute,
@@ -183,5 +184,10 @@ export class StatistiqueComponent implements OnInit {
   gotoabonnement(){
     const link = ['boutique' + `/${this.boutique1.id}` + '/' + 'Abonnement'];
     this.router.navigate(link);
+  }
+  show(){
+    console.log(this.visibility);
+    this.visibility = !this.visibility;
+    console.log(this.visibility);
   }
 }

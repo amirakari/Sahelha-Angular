@@ -25,6 +25,7 @@ export class AfficherComponent implements OnInit {
   user: Utilisateur;
   status: boolean;
   statis: boolean;
+  visibility = false;
   constructor(private router: Router,
               private sanitizer: DomSanitizer,
               private activatedRoute: ActivatedRoute,
@@ -115,6 +116,15 @@ export class AfficherComponent implements OnInit {
   }
   gotoabonnement(){
     const link = ['boutique' + `/${this.boutique1.id}` + '/' + 'Abonnement'];
+    this.router.navigate(link);
+  }
+  show(){
+    console.log(this.visibility);
+    this.visibility = !this.visibility;
+    console.log(this.visibility);
+  }
+  gotoaboboutique(){
+    const link = ['boutique' + `/${this.boutique1.id}` + '/' + 'AfficherAbo'];
     this.router.navigate(link);
   }
   UploadImage(event: any){

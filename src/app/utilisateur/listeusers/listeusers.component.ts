@@ -16,6 +16,7 @@ export class ListeusersComponent implements OnInit {
               private router: Router, ) { }
   @Input() user1: Utilisateur[];
   http: string;
+  status1: boolean;
   totalRecords: number;
   page = 1;
   items: MenuItem[];

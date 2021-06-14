@@ -22,6 +22,7 @@ export class ProduitBoutiqueComponent implements OnInit {
   val: object;
   user: Utilisateur;
   statis: boolean;
+  visibility = false;
   constructor(private router: Router,
               private profiluserservice: AffService,
               private activatedRoute: ActivatedRoute,
@@ -69,6 +70,11 @@ export class ProduitBoutiqueComponent implements OnInit {
         );
       }
     );
+  }
+  show(){
+    console.log(this.visibility);
+    this.visibility = !this.visibility;
+    console.log(this.visibility);
   }
   gotoajoutProduit(){
     const link = ['boutique' + `/${this.boutique1.id}` + '/' + 'ajouterProduit'];
