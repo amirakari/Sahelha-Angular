@@ -137,7 +137,14 @@ becomes
                           <br>
                           <br>
 
-                          <div class="champ centrage" *ngIf="status2"><input [(ngModel)]="quantite" name="quantite" class="champ" id="in-7a" min="1" max="{{boutique.quantite}}" type="number" placeholder="" required  class="form-control"></div><div class="droite" *ngIf="status2"><a  class="properties__more" type="submit" (click)="PasserUneCommande()">{{ 'detailsproduit.pcommande' | translate }}</a></div>
+                          <div class="champ centrage" *ngIf="status2">
+                            <p-inputNumber [(ngModel)]="quantite" name="quantite" id="in-7a" min="1" required max="{{boutique.quantite}}" mode="decimal" [showButtons]="true" buttonLayout="horizontal" spinnerMode="horizontal"
+                                           decrementButtonClass="p-button-danger" incrementButtonClass="p-button-success" incrementButtonIcon="pi pi-plus" decrementButtonIcon="pi pi-minus" ></p-inputNumber>
+
+                          </div>
+                          <div class="droite" *ngIf="status2">
+                          <a  class="properties__more" type="submit" (click)="PasserUneCommande()">
+                          {{ 'detailsproduit.pcommande' | translate }}</a></div>
 
                         </div>
 

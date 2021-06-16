@@ -72,6 +72,10 @@ export class UtilisateurComponent implements OnInit {
     );
 
   }
+  gotopageboutique(){
+    const link = ['pageB'];
+    this.router.navigate(link);
+  }
   login(credentials){
     this.loginService.login(credentials).subscribe(
       (response) => {

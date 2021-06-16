@@ -55,6 +55,8 @@ import {GooglePlaceModule} from 'ngx-google-places-autocomplete';
 import { ListeusersComponent } from './utilisateur/listeusers/listeusers.component';
 import { AboboutiqueComponent } from './boutique/abonnement/aboboutique/aboboutique.component';
 import { ListeaboComponent } from './boutique/abonnement/listeabo/listeabo.component';
+import {InputNumberModule} from 'primeng/inputnumber';
+import { RecherchePrComponent } from './utilisateur/recherche-pr/recherche-pr.component';
 export function HttpLoaderFactory(http: HttpClient){
   return new TranslateHttpLoader(http);
 }
@@ -93,6 +95,7 @@ export function HttpLoaderFactory(http: HttpClient){
     ListeusersComponent,
     AboboutiqueComponent,
     ListeaboComponent,
+    RecherchePrComponent,
   ],
   imports: [
     BrowserModule,
@@ -122,6 +125,7 @@ export function HttpLoaderFactory(http: HttpClient){
     TableModule,
     DragDropModule,
     SplitButtonModule,
+    InputNumberModule,
   ],
   providers: [{provide: APP_BASE_HREF , useValue: '/'},
     LoginGuard, LogoutGuard, UserGuard, LoginInterceptorProvider],

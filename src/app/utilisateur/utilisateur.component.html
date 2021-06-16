@@ -25,13 +25,18 @@
             </div>
           </div>
         </div>
-        <div class="header__contacts"><a href="tel:+12025550135" class="header__phone">
-          <svg class="header__phone-icon">
-            <use xlink:href="#icon-phone"></use>
-          </svg><span class="header__span">+1 202 555 0135</span></a></div>
+        <div class="header__contacts"><a (click)="gotopageboutique()" class="header__phone">
+          <svg class="header__phone-icon"  >
+            <use xlink:href="#icon-lens"></use>
+          </svg>
+          <span class="header__span">
+
+            Chercher un produit
+
+        </span></a></div>
         <!-- end of block .header__contacts-->
         <div class="header__social">
-          <div class="social social--header social--circles"><a href="#" class="social__item"><i class="fa fa-facebook"></i></a><a href="#" class="social__item"><i class="fa fa-twitter"></i></a><a href="#" class="social__item"><i class="fa fa-google-plus"></i></a></div>
+          <div class="social social--header social--circles"><a href="https://www.facebook.com/zerogaspii" class="social__item"><i class="fa fa-facebook"></i></a><a href="https://www.instagram.com/zerogaspii/" class="social__item"><i class="fa fa-instagram"></i></a></div>
         </div>
         <div class="auth auth--header">
           <ul class="auth__nav">
@@ -101,6 +106,7 @@
         <div class="navbar__brand-logo">
           <img src="/assets/img/acceuil/CHARTE-GRAPHIQUE-ZERO-GASPII-3.png" height="90" width="200">
         </div></a>
+
       </div>
     </div>
   </nav>
@@ -224,19 +230,19 @@
                             <br>
                             <form #loginformulaire="ngForm" class="form form--flex form--auth js-login-form js-parsley">
                               <div class="row">
-                                <div class="form-group">
+                                <div >
 
 
-                                  <input email ngModel name="mail" #inputMail="ngModel" type="text"   placeholder="{{ 'login.mail' | translate }}" id="mail1" required data-parsley-trigger="keyup" data-parsley-minlength="6" data-parsley-validation-threshold="5" data-parsley-minlength-message="Login should be at least 6 chars" class="form-control">
+                                  <input email ngModel name="mail" maxlength="60" size="60" #inputMail="ngModel" type="text"   placeholder="{{ 'login.mail' | translate }}" id="mail1"  required   class="form-control">
                                   <div class="alert alert-danger" role="alert" *ngIf="inputMail.invalid && inputMail.dirty" >
                                    Votre  adresse  e-mail  n'est  pas  valide (Entrer une adresse de cette forme : ***@****.**)
                                   </div>
                                 </div>
                                 <br><br>
-                                <div class="form-group">
+                                <div >
 
 
-                                  <input ngModel name="password"  #pwdInput="ngModel"  type="password"  id="password1" placeholder="{{ 'login.mdp' | translate }}" required class="form-control">
+                                  <input ngModel name="password" maxlength="60" size="60" #pwdInput="ngModel"  type="password"  id="password1" placeholder="{{ 'login.mdp' | translate }}" required class="form-control">
 
                                   <div class="alert alert-danger" role="alert" *ngIf="pwdInput.invalid && pwdInput.touched" >
                                     le mode passe doit au minimum 4 caratéres et au maximum 8 caractéres

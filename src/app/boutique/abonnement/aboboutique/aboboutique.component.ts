@@ -4,6 +4,7 @@ import {Boutique} from '../../../Model/Boutique';
 import {AboService} from '../abo.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Abonnement} from '../../../Model/Abonnement';
+import {environment} from '../../../../environments/environment';
 
 @Component({
   selector: 'app-aboboutique',
@@ -14,12 +15,14 @@ export class AboboutiqueComponent implements OnInit {
   boutique1: Abonnement[];
   boutique2: Boutique;
   visibility = false;
+  http: string;
   constructor(private router: Router,
               private listeService: AboService,
               private activatedRoute: ActivatedRoute,
               private listeService1: ListeService) { }
 
   ngOnInit(): void {
+    this.http = environment.http;
     this.activatedRoute.params.subscribe(
       (params) => {
         console.log(params);

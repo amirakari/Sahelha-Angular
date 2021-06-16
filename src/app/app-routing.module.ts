@@ -31,6 +31,7 @@ import {CommandesComponent} from './details-produit/commandes/commandes.componen
 import {ListeusersComponent} from './utilisateur/listeusers/listeusers.component';
 import {AboboutiqueComponent} from './boutique/abonnement/aboboutique/aboboutique.component';
 import {ListeaboComponent} from './boutique/abonnement/listeabo/listeabo.component';
+import {RecherchePrComponent} from './utilisateur/recherche-pr/recherche-pr.component';
 const Routes: Routes = [
   {path: 'acceuil', component:  AcceuilComponent},
   {path: 'contact', component:  ContactComponent},
@@ -45,6 +46,7 @@ const Routes: Routes = [
       {path: 'boutique', component: BoutiqueUserComponent , canActivate: [LoginGuard]},
     ]},
   {path: 'pageBoutique', component:  PageBoutiqueComponent},
+  {path: 'pageB', component:  RecherchePrComponent},
   {path: 'commande', children : [
       {path: '', component:  CommandeComponent , canActivate: [LoginGuard]},
       {path: ':id', component:  PdfComponent , canActivate: [LoginGuard]},
