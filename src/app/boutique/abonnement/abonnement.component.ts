@@ -74,6 +74,8 @@ export class AbonnementComponent implements OnInit {
         console.log(params);
         this.aboService.addAbo1(params.id).subscribe(
           (response) => {
+            const link = ['boutique' + `/${this.boutique1.id}`];
+            this.router.navigate(link);
           },
           (error) => {
           }
@@ -87,6 +89,8 @@ export class AbonnementComponent implements OnInit {
         console.log(params);
         this.aboService.addAbo2(params.id).subscribe(
           (response) => {
+            const link = ['boutique' + `/${this.boutique1.id}`];
+            this.router.navigate(link);
           },
           (error) => {
           }
@@ -100,6 +104,8 @@ export class AbonnementComponent implements OnInit {
         console.log(params);
         this.aboService.addAbo3(params.id).subscribe(
           (response) => {
+            const link = ['boutique' + `/${this.boutique1.id}`];
+            this.router.navigate(link);
           },
           (error) => {
           }

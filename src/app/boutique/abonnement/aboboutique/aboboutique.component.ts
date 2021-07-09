@@ -5,6 +5,9 @@ import {AboService} from '../abo.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Abonnement} from '../../../Model/Abonnement';
 import {environment} from '../../../../environments/environment';
+import {NgForm} from '@angular/forms';
+import {Paymme} from '../../../Model/Paymme';
+import {DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-aboboutique',
@@ -15,10 +18,18 @@ export class AboboutiqueComponent implements OnInit {
   boutique1: Abonnement[];
   boutique2: Boutique;
   visibility = false;
+  vendor: number;
+  amount: number;
+  note: string;
   http: string;
+  paymee: Paymme;
+  url: string;
+  status: boolean;
+  urlSafe: SafeResourceUrl;
   constructor(private router: Router,
               private listeService: AboService,
               private activatedRoute: ActivatedRoute,
+              public sanitizer: DomSanitizer,
               private listeService1: ListeService) { }
 
   ngOnInit(): void {
@@ -75,11 +86,53 @@ export class AboboutiqueComponent implements OnInit {
     const link = ['boutique' + `/${this.boutique2.id}` + '/' + 'Abonnement'];
     this.router.navigate(link);
   }
+  paiement(id){
+    if (this.status){
+      this.listeService.Paiement(id).subscribe(
+        (ressponse) => {
+          const link = ['boutique' + `/${this.boutique2.id}`];
+          this.router.navigate(link);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+    }
+  }
   deleteBoutique(id){
     this.listeService.deleteboutique(id).subscribe(
       (response) => {
         const link = [ 'boutique' + `/${this.boutique2.id}`];
         this.router.navigate(link);
+      }
+    );
+  }
+  Paymee(id, vendor, amount, note){
+    this.paymee = {vendor, amount, note};
+    const json = JSON.stringify(this.paymee);
+    this.listeService.ajouterMaClasse(this.paymee).subscribe(
+      (response) => {
+        this.url = 'https://sandbox.paymee.tn/gateway/' + `${response.data.token}`;
+        this.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(this.url);
+        console.log(response.data.token);
+        console.log(this.url);
+        console.log(response);
+        window.addEventListener('message', event => {
+          if (event.data.event_id === 'paymee.complete') {
+            // Execute Step 3
+            // window.location.replace('https://sandbox.paymee.tn/api/v1/payments/' + `${response.data.token}` + '/check');
+            this.listeService.CheckPaiement(response.data.token).subscribe(
+              (reponse) => {
+                console.log(response.status);
+                this.status = true;
+              }
+            );
+          }
+        }, false);
+      },
+      (error) => {
+        console.log(error);
+        console.log(this.paymee);
       }
     );
   }

@@ -106,7 +106,10 @@
                         <div class="form-group">
                           <label  class="control-label">{{ 'produit.code' | translate }}</label>
                           <div *ngIf="codeabare" class="site__panel"><span class="site__header-text">{{codeabare}}</span></div>
-                          <div class="video" id="camera"></div>
+                          <div id="barcode-scanner">
+                            <video src=""></video>
+                            <canvas class="drawingBuffer"></canvas>
+                          </div>
 
                         </div>
 
@@ -133,7 +136,7 @@
                 <div class="worker sidebar-advanced">
                   <h3 class="worker__name">{{boutique1.nom}}</h3>
                   <div class="worker__photo">
-                    <img src="http://localhost:3000/boutique/profileimage/{{boutique1.photo}}" class="photo" width="200" height="200">
+                    <img src="{{http}}/boutique/profileimage/{{boutique1.photo}}" class="photo" width="200" height="200">
 
 
                   </div>
@@ -158,7 +161,7 @@
                 <div class="worker sidebar-advanced">
                   <h3 class="worker__name">{{boutique1.nom}}</h3>
                   <div class="worker__photo">
-                    <img src="http://localhost:3000/boutique/profileimage/{{boutique1.photo}}" class="photo" width="200" height="200">
+                    <img src="{{http}}/boutique/profileimage/{{boutique1.photo}}" class="photo" width="200" height="200">
 
 
                   </div>
@@ -184,6 +187,10 @@
           <div class="clearfix"></div>
         </div>
       </div>
+      <br><br><br><br><br><br>
     </div>
+
   </div>
+
 </div>
+

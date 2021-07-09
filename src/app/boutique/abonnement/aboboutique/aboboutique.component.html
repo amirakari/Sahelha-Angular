@@ -30,7 +30,7 @@
               <div class="pricing__row">
 
                 <div class="pricing__col3" *ngFor="let abonnement of boutique1">
-                  <div class="pricing__item" >
+                  <div class="pricing__item" *ngIf="!url">
                     <dl class="pricing__list">
                       <dt class="pricing__type" *ngIf="abonnement.prix===10">Standard</dt>
                       <dt class="pricing__type" *ngIf="abonnement.prix===20">Premium</dt>
@@ -45,18 +45,27 @@
                       <img src="/assets/img/payments.png" width="260">
                     </dl>
                     <div class="pricing__actions">
-                      <button class="pricing__button" >Payer</button>
+                      <form class="form form--flex form--auth form--restore js-restore-form js-parsley">
+                        <input [(ngModel)]="vendor" *ngIf="abonnement.status==='non payé'" type="number" placeholder="Numéro de compte" name="vendor" id="vendor" required class="form-control">
+
+                        <input [(ngModel)]="note" *ngIf="abonnement.status==='non payé'" type="text" placeholder="Note" name="note"  id="note" required class="form-control">
+
+                      </form>
+                      <br>
+                      <button class="pricing__button" *ngIf="abonnement.status==='non payé'" (click)="Paymee(abonnement.id, vendor, abonnement.prix, note)">Payer</button>
                       <br><br>
                       <button class="pricing__button" (click)="deleteBoutique(abonnement.id)">Supprimer</button>
 
                     </div>
-                  </div>
+                  </div><button *ngIf="status && abonnement.status==='non payé'" class="pricing__button" (click)="paiement(abonnement.id)">Confirmer paiement</button>
                 </div>
+                <iframe *ngIf="url" width="100%" height="100%" frameBorder="0" [src]="urlSafe"></iframe>
+                <br>
 
                 </div>
-
             </div>
           </div>
+
         </div>
       </div>
       <div class="sidebar">
@@ -92,7 +101,7 @@
             <div class="worker sidebar-advanced">
               <h3 class="worker__name">{{boutique2.nom}}</h3>
               <div class="worker__photo">
-                <img src="http://localhost:3000/boutique/profileimage/{{boutique2.photo}}" class="photo" width="200" height="200">
+                <img src="{{http}}/boutique/profileimage/{{boutique2.photo}}" class="photo" width="200" height="200">
 
               </div>
               <nav class="worker__nav">

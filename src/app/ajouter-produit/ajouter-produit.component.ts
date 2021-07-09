@@ -10,6 +10,7 @@ import Quagga from 'quagga';
 import {$} from 'protractor';
 import {AffService} from '../utilisateur/profilutilisateur/aff.service';
 import {Utilisateur} from '../Model/Utilisateur';
+import {environment} from '../../environments/environment';
 @Component({
   selector: 'app-ajouter-produit',
   templateUrl: './ajouter-produit.component.html',
@@ -22,6 +23,7 @@ export class AjouterProduitComponent implements OnInit {
               private listeService: ListeService,
               private uploadService: AjProduitService) { }
   boutique1: Boutique;
+  http: string;
    mindate = new Date();
   value: Date;
   user: Utilisateur;
@@ -32,6 +34,7 @@ export class AjouterProduitComponent implements OnInit {
   urls = [];
   visibility = false;
   ngOnInit(): void {
+    this.http = environment.http;
     console.log(this.status);
     if (this.status === 'à donner' ){
       this.status1 = true;
@@ -65,7 +68,7 @@ export class AjouterProduitComponent implements OnInit {
           name: 'Live',
           type: 'LiveStream',
           numOfWorkers: navigator.hardwareConcurrency,
-          target: document.querySelector('#camera'),
+          target: document.querySelector('#barcode-scanner'),
         },
         decoder: {
           readers: ['ean_reader', 'ean_8_reader', 'code_39_reader', 'code_39_vin_reader', 'codabar_reader', 'upc_reader', 'upc_e_reader']

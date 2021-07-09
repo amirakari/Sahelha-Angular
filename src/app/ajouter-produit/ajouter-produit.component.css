@@ -1,4 +1,8 @@
-#camera{
-  width: 330px;
-  height: 500px;
+#barcode-scanner video, canvas {
+  width:120%;
+  height: auto;
+}
+
+#barcode-scanner video.drawingBuffer, canvas.drawingBuffer {
+  display: none;
 }
