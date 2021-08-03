@@ -93,7 +93,7 @@
                   <nav class="worker__nav">
                     <ul>
                       <li><a  (click)="gotoajout()">{{ 'user.profil' | translate }}</a></li>
-                      <li><a *ngIf="statis" (click)="gotoajoutProduit()" >{{ 'profilboutique.ajoutP' | translate }}</a></li>
+                      <li><a *ngIf="statis && payement" (click)="gotoajoutProduit()" >{{ 'profilboutique.ajoutP' | translate }}</a></li>
                       <li><a (click)="gotoproduit()" >{{ 'profilboutique.vendre' | translate }}</a></li>
                       <li><a (click)="gotodon()" >{{ 'profilboutique.don' | translate }}</a></li>
                       <li><a *ngIf="statis" (click)="gotoabonnement()" >{{ 'profilboutique.abo' | translate }}</a></li>
@@ -117,7 +117,7 @@
                   <nav class="worker__nav">
                     <ul>
                       <li><a  (click)="gotoajout()">{{ 'user.profil' | translate }}</a></li>
-                      <li><a *ngIf="statis" (click)="gotoajoutProduit()" >{{ 'profilboutique.ajoutP' | translate }}</a></li>
+                      <li><a *ngIf="statis && payement" (click)="gotoajoutProduit()" >{{ 'profilboutique.ajoutP' | translate }}</a></li>
                       <li><a (click)="gotoproduit()" >{{ 'profilboutique.vendre' | translate }}</a></li>
                       <li><a (click)="gotodon()" >{{ 'profilboutique.don' | translate }}</a></li>
                       <li><a *ngIf="statis" (click)="gotoabonnement()" >{{ 'profilboutique.abo' | translate }}</a></li>

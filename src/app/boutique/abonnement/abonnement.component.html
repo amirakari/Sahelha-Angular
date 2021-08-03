@@ -94,7 +94,7 @@
                 <nav class="worker__nav">
                   <ul>
                     <li><a  (click)="gotoajout()">Profil</a></li>
-                    <li><a (click)="gotoajoutProduit()" >Ajouter produit</a></li>
+                    <li><a *ngIf="payement" (click)="gotoajoutProduit()" >Ajouter produit</a></li>
                     <li><a (click)="gotoproduit()" >produits (à vendre)</a></li>
                     <li><a (click)="gotodon()" >produits (à donner)</a></li>
                     <li><a (click)="gotoabonnement()" >Faire un abonnement</a></li>
@@ -118,7 +118,7 @@
                 <nav class="worker__nav">
                   <ul>
                     <li><a  (click)="gotoajout()">Profil</a></li>
-                    <li><a (click)="gotoajoutProduit()" >Ajouter produit</a></li>
+                    <li><a *ngIf="payement" (click)="gotoajoutProduit()" >Ajouter produit</a></li>
                     <li><a (click)="gotoproduit()" >produits (à vendre)</a></li>
                     <li><a (click)="gotodon()" >produits (à donner)</a></li>
                     <li><a (click)="gotoabonnement()" >Faire un abonnement</a></li>

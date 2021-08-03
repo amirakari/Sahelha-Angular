@@ -9,6 +9,7 @@ import { DomSanitizer} from '@angular/platform-browser';
 import {AffService} from '../../utilisateur/profilutilisateur/aff.service';
 import {Utilisateur} from '../../Model/Utilisateur';
 import {environment} from '../../../environments/environment';
+import {Abonnement} from '../../Model/Abonnement';
 @Component({
   selector: 'app-afficher',
   templateUrl: './afficher.component.html',
@@ -24,16 +25,34 @@ export class AfficherComponent implements OnInit {
   url1: string;
   user: Utilisateur;
   status: boolean;
+  payement: boolean;
   statis: boolean;
   visibility = false;
   constructor(private router: Router,
               private sanitizer: DomSanitizer,
               private activatedRoute: ActivatedRoute,
               private listeService: ListeService,
+              private afficheService: AfficheService,
               private profiluserservice: AffService,
               private uploadService: UploadService) { }
 
   ngOnInit(): void {
+    this.activatedRoute.params.subscribe(
+      (params) => {
+        console.log(params);
+        this.afficheService.getUsers(params.id).subscribe(
+          (response) => {
+            console.log(response);
+            if (response === true){
+              this.payement = true;
+            }else {
+              this.payement = false;
+            }
+            console.log(this.payement);
+          }
+        );
+      }
+    );
     this.http = environment.http;
     this.activatedRoute.params.subscribe(
       (params) => {

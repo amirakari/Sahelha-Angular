@@ -7,6 +7,7 @@ import {UploadService} from '../boutique/afficher/upload.service';
 import {Boutique} from '../Model/Boutique';
 import {StatistiqueService} from './statistique.service';
 import {environment} from '../../environments/environment';
+import {AfficheService} from '../boutique/afficher/affiche.service';
 Chart.register(...registerables);
 @Component({
   selector: 'app-statistique',
@@ -16,11 +17,13 @@ Chart.register(...registerables);
 export class StatistiqueComponent implements OnInit {
   boutique1: Boutique;
   http: string;
+  payement: boolean;
   visibility = false;
   constructor(private router: Router,
               private sanitizer: DomSanitizer,
               private activatedRoute: ActivatedRoute,
               private listeService: ListeService,
+              private afficheService: AfficheService,
               private statistique: StatistiqueService,
               private uploadService: UploadService) { }
   a: any;
@@ -37,6 +40,22 @@ export class StatistiqueComponent implements OnInit {
   n: any;
   data = [];
   ngOnInit(): void {
+    this.activatedRoute.params.subscribe(
+      (params) => {
+        console.log(params);
+        this.afficheService.getUsers(params.id).subscribe(
+          (response) => {
+            console.log(response);
+            if (response === true){
+              this.payement = true;
+            }else {
+              this.payement = false;
+            }
+            console.log(this.payement);
+          }
+        );
+      }
+    );
     this.http = environment.http;
     this.activatedRoute.params.subscribe(
       (params) => {

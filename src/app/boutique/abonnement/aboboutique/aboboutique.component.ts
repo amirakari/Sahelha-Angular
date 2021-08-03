@@ -8,6 +8,7 @@ import {environment} from '../../../../environments/environment';
 import {NgForm} from '@angular/forms';
 import {Paymme} from '../../../Model/Paymme';
 import {DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
+import {AfficheService} from '../../afficher/affiche.service';
 
 @Component({
   selector: 'app-aboboutique',
@@ -22,6 +23,7 @@ export class AboboutiqueComponent implements OnInit {
   amount: number;
   note: string;
   http: string;
+  payement: boolean;
   paymee: Paymme;
   url: string;
   status: boolean;
@@ -29,10 +31,27 @@ export class AboboutiqueComponent implements OnInit {
   constructor(private router: Router,
               private listeService: AboService,
               private activatedRoute: ActivatedRoute,
+              private afficheService: AfficheService,
               public sanitizer: DomSanitizer,
               private listeService1: ListeService) { }
 
   ngOnInit(): void {
+    this.activatedRoute.params.subscribe(
+      (params) => {
+        console.log(params);
+        this.afficheService.getUsers(params.id).subscribe(
+          (response) => {
+            console.log(response);
+            if (response === true){
+              this.payement = true;
+            }else {
+              this.payement = false;
+            }
+            console.log(this.payement);
+          }
+        );
+      }
+    );
     this.http = environment.http;
     this.activatedRoute.params.subscribe(
       (params) => {

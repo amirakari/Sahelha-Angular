@@ -7,6 +7,7 @@ import {Abonnement} from '../../Model/Abonnement';
 import {ListeService} from '../../liste-boutique/liste.service';
 import {UploadService} from '../afficher/upload.service';
 import {environment} from '../../../environments/environment';
+import {AfficheService} from '../afficher/affiche.service';
 
 @Component({
   selector: 'app-abonnement',
@@ -16,15 +17,33 @@ import {environment} from '../../../environments/environment';
 export class AbonnementComponent implements OnInit {
   boutique1: Boutique;
   visibility = false;
+  payement: boolean;
   http: string;
   constructor(private router: Router,
               private aboService: AboService,
               private activatedRoute: ActivatedRoute,
+              private afficheService: AfficheService,
               private listeService: ListeService,
               private uploadService: UploadService
               ) { }
 
   ngOnInit(): void {
+    this.activatedRoute.params.subscribe(
+      (params) => {
+        console.log(params);
+        this.afficheService.getUsers(params.id).subscribe(
+          (response) => {
+            console.log(response);
+            if (response === true){
+              this.payement = true;
+            }else {
+              this.payement = false;
+            }
+            console.log(this.payement);
+          }
+        );
+      }
+    );
     this.http = environment.http;
     this.activatedRoute.params.subscribe(
       (params) => {

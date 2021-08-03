@@ -14,6 +14,7 @@ import {Utilisateur} from '../Model/Utilisateur';
 import {ListeService} from '../liste-boutique/liste.service';
 import {Boutique} from '../Model/Boutique';
 import {environment} from '../../environments/environment';
+import {AfficheService} from '../boutique/afficher/affiche.service';
 
 @Component({
   selector: 'app-details-produit',
@@ -33,12 +34,14 @@ export class DetailsProduitComponent implements OnInit {
   user: Utilisateur;
   status1 = false;
   status: boolean;
+  payement: boolean;
   status2: boolean;
   constructor(private router: Router,
               private listeService1: ListeService,
               private activatedRoute: ActivatedRoute,
               private evaluationService: EvaluationService,
               private listeService: DetailsProduitService,
+              private afficheService: AfficheService,
               private profiluserservice: AffService,
               private commentaireService: CommentaireService,
               private supprimerService: SupprimerproduitService,
@@ -48,6 +51,22 @@ quantite: any;
   boutique1: Boutique;
   visibility = false;
   ngOnInit(): void {
+    this.activatedRoute.params.subscribe(
+      (params) => {
+        console.log(params);
+        this.afficheService.getUsers(params.id).subscribe(
+          (response) => {
+            console.log(response);
+            if (response === true){
+              this.payement = true;
+            }else {
+              this.payement = false;
+            }
+            console.log(this.payement);
+          }
+        );
+      }
+    );
     this.http = environment.http;
     this.activatedRoute.params.subscribe(
       (params) => {

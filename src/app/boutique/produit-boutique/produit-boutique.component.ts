@@ -8,6 +8,7 @@ import {EvaluationService} from '../../page-boutique/evaluation.service';
 import {Utilisateur} from '../../Model/Utilisateur';
 import {AffService} from '../../utilisateur/profilutilisateur/aff.service';
 import {environment} from '../../../environments/environment';
+import {AfficheService} from '../afficher/affiche.service';
 @Component({
   selector: 'app-produit-boutique',
   templateUrl: './produit-boutique.component.html',
@@ -20,17 +21,35 @@ export class ProduitBoutiqueComponent implements OnInit {
   totalRecords: number;
   page = 1;
   val: object;
+  payement: boolean;
   user: Utilisateur;
   statis: boolean;
   visibility = false;
   constructor(private router: Router,
               private profiluserservice: AffService,
               private activatedRoute: ActivatedRoute,
+              private afficheService: AfficheService,
               private listemService: ListeService,
               private evaluationService: EvaluationService,
               private listeService: ProduitBoutiqueService, ) { }
 
   ngOnInit(): void {
+    this.activatedRoute.params.subscribe(
+      (params) => {
+        console.log(params);
+        this.afficheService.getUsers(params.id).subscribe(
+          (response) => {
+            console.log(response);
+            if (response === true){
+              this.payement = true;
+            }else {
+              this.payement = false;
+            }
+            console.log(this.payement);
+          }
+        );
+      }
+    );
     this.http = environment.http;
     this.activatedRoute.params.subscribe(
       (params) => {

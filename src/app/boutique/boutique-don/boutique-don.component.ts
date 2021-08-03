@@ -8,6 +8,7 @@ import {BoutiqueDonService} from './boutique-don.service';
 import {AffService} from '../../utilisateur/profilutilisateur/aff.service';
 import {Utilisateur} from '../../Model/Utilisateur';
 import {environment} from '../../../environments/environment';
+import {AfficheService} from '../afficher/affiche.service';
 @Component({
   selector: 'app-boutique-don',
   templateUrl: './boutique-don.component.html',
@@ -18,6 +19,7 @@ export class BoutiqueDonComponent implements OnInit {
   http: string;
   boutique1: Boutique;
   totalRecords: number;
+  payement: boolean;
   page = 1;
   val: number;
   user: Utilisateur;
@@ -26,10 +28,27 @@ export class BoutiqueDonComponent implements OnInit {
   constructor(private router: Router,
               private activatedRoute: ActivatedRoute,
               private listemService: ListeService,
+              private afficheService: AfficheService,
               private profiluserservice: AffService,
               private listeService: BoutiqueDonService, ) { }
 
   ngOnInit(): void {
+    this.activatedRoute.params.subscribe(
+      (params) => {
+        console.log(params);
+        this.afficheService.getUsers(params.id).subscribe(
+          (response) => {
+            console.log(response);
+            if (response === true){
+              this.payement = true;
+            }else {
+              this.payement = false;
+            }
+            console.log(this.payement);
+          }
+        );
+      }
+    );
     this.http = environment.http;
     this.activatedRoute.params.subscribe(
       (params) => {
