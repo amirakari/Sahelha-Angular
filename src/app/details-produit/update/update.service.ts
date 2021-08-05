@@ -8,7 +8,7 @@ import {environment} from '../../../environments/environment';
   providedIn: 'root'
 })
 export class UpdateService {
-  link = 'http://165.22.85.49:3000' + '/produit';
+  link = 'https://api.zerogaspii.com' + '/produit';
   constructor(private http: HttpClient) { }
   addUtilisateur(utilisateur: Produit, id): Observable<any>{
     return  this.http.patch(this.link + `/${id}` , utilisateur);
