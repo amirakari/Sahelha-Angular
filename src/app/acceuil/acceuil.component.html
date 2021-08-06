@@ -14,15 +14,18 @@
 </div>
 <div class="container">
 <div class="cont">
-  <img src="/assets/img/acceuil/185123389_297967001822268_7233354558132029891_n.jpg" height="350" width="1000"></div></div>
-<div *ngIf="user" class="cont">
+
+  <img src="/assets/img/acceuil/185123389_297967001822268_7233354558132029891_n.jpg"  style="width:100% ;"></div></div>
+
+  <div *ngIf="user" class="cont">
+    <div class="feature__content1">
   <span class="text1">{{ 'acceuil.bienvenue' | translate }}</span>
-  <span class="text2">{{user.nom}} {{user.prenom}}</span></div>
+  <span class="text2">{{user.nom}} {{user.prenom}}</span></div></div>
 <div class="container">
 
-  <br><br><br><br>
+  <br><br><br><br><br>
 <div class="player">
-  <iframe width="1200" height="600" src="https://www.youtube.com/embed/UOm0Ra3bwis" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="1200" height="600" style="width:100% ;" src="https://www.youtube.com/embed/UOm0Ra3bwis" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   <!--button.article__preview-play.js-player-play-->
 </div>
 <br><br>
