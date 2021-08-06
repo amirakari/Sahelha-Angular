@@ -142,81 +142,9 @@
 
               <section class="feature">
                 <div class="bg-brickwall">
-                <div>
-
-                  <div class="form__options">
-
-
-                    <li class="dropdown auth__nav-item">
-                      <button class="form__" data-toggle="dropdown" type="button" ><span class="header__span">  {{ 'login.creer' | translate }}</span></button>
-                     <div class="dropdown__menu auth__dropdown--register">
-                        <!-- BEGIN AUTH REGISTER-->
-                        <br><br><br>
-                       <div class="alert alert-success" role="alert" *ngIf="Message">{{Message}}</div>
-                       <div class="alert alert-danger" role="alert" *ngIf="errorMessage1">{{errorMessage1}}</div>
-                        <form #formulaire="ngForm" class="form form--flex form--auth js-register-form js-parsley">
-                          <div class="row">
-                            <div class="form-group form-group--col-6">
-
-                              <input type="text" ngModel name="nom" id="nom" placeholder="{{ 'login.nom' | translate }}" required class="form-control">
-                            </div>
-                            <div class="form-group form-group--col-6">
-
-                              <input type="text" ngModel name="prenom" id="prenom" placeholder="{{ 'login.prenom' | translate }}" required class="form-control">
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="form-group form-group--col-6">
-
-                              <input type="email" ngModel name="mail" id="mail" placeholder="{{ 'login.email' | translate }}" required class="form-control">
-                            </div>
-                            <div class="form-group form-group--col-6">
-
-                              <input type="password" ngModel name="password" id="password" placeholder="{{ 'login.mdp' | translate }}" required class="form-control">
-                            </div>
-
-                          </div>
-                          <div class="row">
-                            <div class="form-group form-group--col-6">
-
-                              <input type="text" ngModel name="adresse" id="adresse" placeholder="{{ 'login.adresse' | translate }}" required class="form-control">
-                            </div>
-                            <div class="form-group form-group--col-6">
-
-                              <input type="text" ngModel name="numtel" id="numtel" placeholder="{{ 'login.num' | translate }}" required class="form-control">
-                            </div>
-
-                          </div>
-                          <div class="row">
-                            <div class="form-group form-group--col-6">
-
-                              <select  ngModel name="type" id="type" placeholder="Type" class="form-control">
-                                <option></option>
-                                <option value="user">{{ 'login.user' | translate }}</option>
-                                <option value="fournisseur">{{ 'login.fournisseur' | translate }}</option>
-                              </select>
-
-                            </div>
-
-
-                          </div>
-                          <form [formGroup]="aFormGroup">
-                            <ngx-recaptcha2 #captchaElem
-                                            [siteKey]="siteKey"
-                                            formControlName="recaptcha">
-                            </ngx-recaptcha2>
-                          </form>
-                          <div class="row">
-
-                            <button  type="submit" class="form__submit" (click)="addUtilisateur(formulaire)">{{ 'login.ajout' | translate }}</button>
-                          </div>
-<br><br><br>
-                        </form>
-                        <!-- end of block .auth__form-->
-                        <!-- END AUTH REGISTER-->
-                      </div><br><br><br><br><br>
-                    </li></div>
-                </div>
+                  <div class="feature__picture">
+                  <div class="form__options"><div style="padding-top:53.833%;position:relative;"><iframe src="https://gifer.com/embed/X0XF" width="100%" height="150%" style='position:absolute;top:0;left:0;' frameBorder="0" allowFullScreen></iframe></div></div>
+                  </div>
                 <div class="container">
                   <div class="feature__content">
                     <div class="site__main">
@@ -256,7 +184,9 @@
 
                               </div>
                               <button type="submit" [disabled]="loginformulaire.invalid" (click)="login(loginformulaire.value)" class="form__submit" >{{ 'login.Connexion' | translate }}</button>
-                                <div class="form__options"><a (click)="forgotPassword()">{{ 'login.oublie' | translate }}</a>
+                                <div class="form__options">Mot de passe oublié?<a (click)="forgotPassword()">{{ 'login.oublie' | translate }}</a>
+                                  <div class="form__options">Vous n'avez pas de compte ?<a (click)="CreerCompte()">Créer Compte</a>
+                                  </div>
                                 </div>
 
 <br><br><br>
@@ -278,27 +208,7 @@
       </div>
 
       <!-- END BREADCRUMBS-->
-      <div class="center">
-        <div class="container">
-          <div class="row">
-            <!-- BEGIN site-->
-            <div class="site site--main">
 
-
-
-
-            </div>
-          </div>
-          <!-- END site-->
-          <!-- BEGIN SIDEBAR-->
-          <div class="sidebar">
-
-          </div>
-        </div>
-        <!-- END SIDEBAR-->
-        <div class="clearfix"></div>
-
-      </div>
     </div></div>
 
   <!-- END CENTER SECTION-->

@@ -23,6 +23,7 @@ export class UtilisateurComponent implements OnInit {
   Message = '';
   errorMessage1 = '';
   message = '';
+  visibility = false;
   e = true;
   constructor(private formBuilder: FormBuilder,
               private userService: UserService,
@@ -44,6 +45,10 @@ export class UtilisateurComponent implements OnInit {
     const link = ['forgotPassword'];
     this.router.navigate(link);
   }
+  CreerCompte(){
+    const link = ['ajouterUser'];
+    this.router.navigate(link);
+  }
   changer(){
     if (this.e){
       document.getElementById('password1').setAttribute('type', 'text');
@@ -58,6 +63,11 @@ export class UtilisateurComponent implements OnInit {
   login1(){
     const link = [''];
     this.router.navigate(link);
+  }
+  show(){
+    console.log(this.visibility);
+    this.visibility = !this.visibility;
+    console.log(this.visibility);
   }
   addUtilisateur(formulaire: NgForm){
     this.userService.addUtilisateur(formulaire.value).subscribe(

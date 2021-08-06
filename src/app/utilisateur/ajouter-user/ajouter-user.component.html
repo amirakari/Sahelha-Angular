@@ -1,0 +1,270 @@
+<div class="box js-box">
+  <header class="header header--brand">
+    <div class="container">
+      <div class="header__row"><a href="index.html" class="header__logo">
+        <div>
+          <img src="/assets/img/acceuil/zéro-gaspii-3 (2).png" height="30" width="200">
+        </div></a>
+        <div class="header__settings">
+
+          <!-- end of block .header__settings-column-->
+
+          <!-- end of block .header__settings-column-->
+          <div class="header__settings-column">
+            <div class="dropdown dropdown--header">
+              <button (click)="changeLang1()" data-toggle="dropdown" type="button" class="dropdown-toggle dropdown__btn">
+                <svg class="header__settings-icon">
+                  <use xlink:href="#icon-earth"></use>
+                </svg>FR
+              </button>
+              <div class="dropdown__menu">
+                <ul>
+                  <li class="dropdown__item"><a (click)="changeLang2()" class="dropdown__link">عربية</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="header__contacts"><a href="tel:+12025550135" class="header__phone">
+          <svg class="header__phone-icon">
+            <use xlink:href="#icon-phone"></use>
+          </svg><span class="header__span">+1 202 555 0135</span></a></div>
+        <!-- end of block .header__contacts-->
+        <div class="header__social">
+          <div class="social social--header social--circles"><a href="#" class="social__item"><i class="fa fa-facebook"></i></a><a href="#" class="social__item"><i class="fa fa-twitter"></i></a><a href="#" class="social__item"><i class="fa fa-google-plus"></i></a></div>
+        </div>
+        <div class="auth auth--header">
+          <ul class="auth__nav">
+            <li class="dropdown auth__nav-item">
+              <div class="dropdown__menu auth__dropdown--restore">
+                <!-- BEGIN AUTH RESTORE-->
+                <h5 class="auth__title">Reset password</h5>
+                <form action="#" class="form form--flex form--auth form--restore js-restore-form js-parsley">
+                  <div class="row">
+                    <div class="form-group">
+                      <label for="restore-email-dropdown" class="control-label">Enter your User Name or Email</label>
+                      <input type="email" name="email" id="restore-email-dropdown" required class="form-control">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <button type="submit" class="form__submit">Reset password</button>
+                  </div>
+                  <div class="row">
+                    <div class="form__options">Back to
+                      <button type="button" class="js-user-login">Log In</button>or
+                      <button type="button" class="js-user-register">Registration</button>
+                    </div>
+                    <!-- end of block .auth__links-->
+                  </div>
+                </form>
+                <!-- end of block .auth__form-->
+                <!-- END AUTH RESTORE-->
+              </div>
+            </li>
+            <li class="dropdown auth__nav-item" >
+
+              <button (click)="login1()" data-toggle="dropdown" type="button" class="dropdown-toggle auth__nav-btn">
+                <svg class="auth__icon-user">
+                  <use xlink:href="#icon-user"></use>
+                </svg>
+                <span class="header__span">  Login</span>
+              </button>
+
+            </li>
+          </ul>
+          <!-- end of block .auth header-->
+        </div>
+        <button type="button" class="header__navbar-toggle js-navbar-toggle"
+                data-toggle="collapse"
+                data-target="#navbar-collapse-1"
+                aria-controls="navbar-collapse-1"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+        >
+          <svg class="header__navbar-show" >
+            <use xlink:href="#icon-menu"></use>
+          </svg>
+          <svg class="header__navbar-hide">
+            <use xlink:href="#icon-menu-close"></use>
+          </svg>
+        </button>
+        <!-- end of block .header__navbar-toggle-->
+      </div>
+    </div>
+  </header>
+  <!-- END HEADER-->
+  <!-- BEGIN NAVBAR-->
+  <div id="header1-nav-offset"></div>
+  <nav id="header-nav" class="navbar navbar--header">
+    <div class="container">
+      <div class="navbar__row js-navbar-row"><a href="index.html" class="navbar__brand">
+        <div class="navbar__brand-logo">
+          <img src="/assets/img/acceuil/CHARTE-GRAPHIQUE-ZERO-GASPII-3.png" height="90" width="200">
+        </div></a>
+      </div>
+    </div>
+  </nav>
+</div>
+
+<!-- END HEADER-->
+<!-- BEGIN NAVBAR-->
+
+<div id="header-nav-offset"></div>
+
+<!-- END NAVBAR-->
+<div class="site-wrap js-site-wrap">
+
+  <!-- BEGIN BREADCRUMBS-->
+  <nav class="breadcrumbs">
+
+    <div class="container">
+      <ul>
+        <li class="breadcrumbs__item"><a href="" class="breadcrumbs__link">Home</a></li>
+        <li class="breadcrumbs__item"><a href="" class="breadcrumbs__link">Créer Compte</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="center">
+    <div class="container">
+
+      <div class="row">
+        <section class="site">
+          <header class="site__header">
+
+            <br>
+
+            <section class="feature">
+              <div class="bg-brickwall">
+                <div>
+
+
+                </div>
+                <div class="container">
+                  <div class="feature__picture">
+
+                  </div>
+                  <div class="feature__content">
+                    <div class="site__main">
+                      <div class="widget js-widget widget--main widget--no-border">
+                        <div class="widget__content">
+
+                          <div class="auth__wrap auth__wrap--login">
+                            <div class="alert alert-success" role="alert" *ngIf="Message">{{Message}}</div>
+                            <div class="alert alert-danger" role="alert" *ngIf="errorMessage1">{{errorMessage1}}</div>
+                            <form #formulaire="ngForm" class="form form--flex form--auth js-register-form js-parsley">
+                              <div class="row">
+
+                                <div class="form-group form-group--col-6">
+                                  <input type="text" ngModel name="nom" id="nom" placeholder="{{ 'login.nom' | translate }}" required class="form-control">
+                                </div></div><div class="row">
+                                <div class="form-group form-group--col-6">
+
+                                  <input type="text" ngModel name="prenom" id="prenom" placeholder="{{ 'login.prenom' | translate }}" required class="form-control">
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="form-group form-group--col-6">
+
+                                  <input type="email" ngModel name="mail" id="mail" placeholder="{{ 'login.email' | translate }}" required class="form-control">
+                                </div></div>
+
+                              <div class="row">
+                                <div class="form-group form-group--col-6">
+                                  <input type="password" ngModel name="password" id="password" placeholder="{{ 'login.mdp' | translate }}" required class="form-control">
+                                </div></div>
+
+
+                              <div class="row">
+                                <div class="form-group form-group--col-6">
+
+                                  <input type="text" ngModel name="adresse" id="adresse" placeholder="{{ 'login.adresse' | translate }}" required class="form-control">
+
+                                </div></div>
+                              <div class="row">
+                                <div class="form-group form-group--col-6">
+                                  <input type="text" ngModel name="numtel" id="numtel" placeholder="{{ 'login.num' | translate }}" required class="form-control">
+                                </div>
+
+                              </div>
+                              <div class="row">
+                                <div class="form-group form-group--col-6">
+
+                                  <select  ngModel name="type" id="type" placeholder="Type" class="form-control">
+                                    <option></option>
+                                    <option value="user">{{ 'login.user' | translate }}</option>
+                                    <option value="fournisseur">{{ 'login.fournisseur' | translate }}</option>
+                                  </select>
+
+                                </div>
+
+
+                              </div>
+                              <div class="row">
+                                <div class="form-group form-group--col-6">
+                              <form [formGroup]="aFormGroup">
+                                <ngx-recaptcha2 #captchaElem
+                                                [siteKey]="siteKey"
+                                                formControlName="recaptcha">
+                                </ngx-recaptcha2>
+                              </form></div></div>
+                              <div class="row">
+                                <div class="form-group form-group--col-6">
+                                <button  type="submit" class="form__submit" (click)="addUtilisateur(formulaire)">{{ 'login.ajout' | translate }}</button>
+                                </div></div>
+                              <br><br><br>
+                            </form>
+                          </div></div>
+                        <!-- end of block .auth__form-->
+                        <!-- END AUTH LOGIN-->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div></section>
+          </header></section>
+      </div>
+    </div>
+
+    <!-- END BREADCRUMBS-->
+    <div class="center">
+      <div class="container">
+        <div class="row">
+          <!-- BEGIN site-->
+          <div class="site site--main">
+
+
+
+
+          </div>
+        </div>
+        <!-- END site-->
+        <!-- BEGIN SIDEBAR-->
+        <div class="sidebar">
+
+        </div>
+      </div>
+      <!-- END SIDEBAR-->
+      <div class="clearfix"></div>
+
+    </div>
+  </div></div>
+
+<!-- END CENTER SECTION-->
+<!-- BEGIN AFTER CENTER SECTION-->
+<!-- END AFTER CENTER SECTION-->
+
+
+<!-- BEGIN FOOTER-->
+
+<!-- end of block .footer-->
+<!-- END FOOTER-->
+
+<button type="button" class="scrollup js-scrollup"></button>
+<!-- end of block .scrollup-->
+<!-- BEGIN SCRIPTS and INCLUDES-->
+
+
+
+
+

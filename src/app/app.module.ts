@@ -57,6 +57,7 @@ import { AboboutiqueComponent } from './boutique/abonnement/aboboutique/abobouti
 import { ListeaboComponent } from './boutique/abonnement/listeabo/listeabo.component';
 import {InputNumberModule} from 'primeng/inputnumber';
 import { RecherchePrComponent } from './utilisateur/recherche-pr/recherche-pr.component';
+import { AjouterUserComponent } from './utilisateur/ajouter-user/ajouter-user.component';
 export function HttpLoaderFactory(http: HttpClient){
   return new TranslateHttpLoader(http);
 }
@@ -96,6 +97,7 @@ export function HttpLoaderFactory(http: HttpClient){
     AboboutiqueComponent,
     ListeaboComponent,
     RecherchePrComponent,
+    AjouterUserComponent,
   ],
   imports: [
     BrowserModule,

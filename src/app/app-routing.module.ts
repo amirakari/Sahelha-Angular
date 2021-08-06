@@ -32,8 +32,10 @@ import {ListeusersComponent} from './utilisateur/listeusers/listeusers.component
 import {AboboutiqueComponent} from './boutique/abonnement/aboboutique/aboboutique.component';
 import {ListeaboComponent} from './boutique/abonnement/listeabo/listeabo.component';
 import {RecherchePrComponent} from './utilisateur/recherche-pr/recherche-pr.component';
+import {AjouterUserComponent} from './utilisateur/ajouter-user/ajouter-user.component';
 const Routes: Routes = [
   {path: 'acceuil', component:  AcceuilComponent},
+  {path: 'ajouterUser', component:  AjouterUserComponent},
   {path: 'contact', component:  ContactComponent},
   {path: 'listeusers', component:  ListeusersComponent},
   {path: 'listeabo', component:  ListeaboComponent},
