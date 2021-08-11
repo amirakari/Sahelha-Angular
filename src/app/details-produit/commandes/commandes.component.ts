@@ -34,7 +34,7 @@ export class CommandesComponent implements OnInit {
         this.listeService4.CommandeProduit(idproduit, quantite, null).subscribe(
           (boutique) => {
             const link = ['boutique' + `/${idboutique}` + '/produitboutique' + `/${idproduit}`];
-            this.router.navigate(link);
+            this.router.navigate(link, { skipLocationChange: true });
           }
         );
         console.log();

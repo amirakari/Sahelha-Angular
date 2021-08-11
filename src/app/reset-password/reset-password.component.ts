@@ -37,7 +37,7 @@ export class ResetPasswordComponent implements OnInit {
         this.userService.updatetilisateur(params.id , formulaire.value).subscribe(
           (response) => {
             const link = [''];
-            this.router.navigate(link);
+            this.router.navigate(link, { skipLocationChange: true });
           },
           (error) => {
             console.log(error);
@@ -47,7 +47,7 @@ export class ResetPasswordComponent implements OnInit {
   }
   login1(){
     const link = [''];
-    this.router.navigate(link);
+    this.router.navigate(link, { skipLocationChange: true });
   }
   changer(){
     if (this.e){

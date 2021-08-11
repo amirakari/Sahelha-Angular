@@ -97,34 +97,34 @@ export class ProduitBoutiqueComponent implements OnInit {
   }
   gotoajoutProduit(){
     const link = ['boutique' + `/${this.boutique1.id}` + '/' + 'ajouterProduit'];
-    this.router.navigate(link);
+    this.router.navigate(link, { skipLocationChange: true });
   }
   gotodon(){
     const link = ['boutique' + `/${this.boutique1.id}` + '/' + 'produitboutique' + '/' + 'don'];
-    this.router.navigate(link);
+    this.router.navigate(link, { skipLocationChange: true });
   }
   gotoajout(){
     const link = ['boutique' + `/${this.boutique1.id}`];
-    this.router.navigate(link);
+    this.router.navigate(link, { skipLocationChange: true });
   }
   gotostatistique(){
     const link = ['boutique' + `/${this.boutique1.id}` + '/' + 'statistique'];
-    this.router.navigate(link);
+    this.router.navigate(link, { skipLocationChange: true });
   }
   gotomodifier(){}
   gotoproduit(){
     const link = ['produitboutique'];
-    this.router.navigate(link);
+    this.router.navigate(link, { skipLocationChange: true });
   }
   gotoabonnement(){
     const link = ['Abonnement'];
-    this.router.navigate(link);
+    this.router.navigate(link, { skipLocationChange: true });
   }
   gotoDetailsProduit( produitId: number){
     this.activatedRoute.params.subscribe(
       (params) => {
         const link = ['boutique' + `/${params.id}` + '/produitboutique' + `/${produitId}` ];
-        this.router.navigate(link);
+        this.router.navigate(link, { skipLocationChange: true });
 
         });
 

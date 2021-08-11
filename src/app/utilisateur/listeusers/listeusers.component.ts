@@ -32,7 +32,7 @@ export class ListeusersComponent implements OnInit {
     this.userService.supprimertilisateur(id).subscribe(
       (user) => {
         const link = ['listeusers'];
-        this.router.navigate(link);
+        this.router.navigate(link, { skipLocationChange: true });
       });
   }
 }

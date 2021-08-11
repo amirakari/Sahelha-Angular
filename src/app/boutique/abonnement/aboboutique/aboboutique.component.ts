@@ -81,36 +81,36 @@ export class AboboutiqueComponent implements OnInit {
   }
   gotodon(){
     const link = ['boutique' + `/${this.boutique2.id}` + '/' + 'produitboutique' + '/' + 'don'];
-    this.router.navigate(link);
+    this.router.navigate(link, { skipLocationChange: true });
   }
   gotoajout(){
     const link = ['boutique' + `/${this.boutique2.id}`];
-    this.router.navigate(link);
+    this.router.navigate(link, { skipLocationChange: true });
   }
   gotoajoutProduit(){
     const link = ['boutique' + `/${this.boutique2.id}` + '/' + 'ajouterProduit'];
-    this.router.navigate(link);
+    this.router.navigate(link, { skipLocationChange: true });
   }
   gotomodifier(){
   }
   gotostatistique(){
     const link = ['boutique' + `/${this.boutique2.id}` + '/' + 'statistique'];
-    this.router.navigate(link);
+    this.router.navigate(link, { skipLocationChange: true });
   }
   gotoproduit(){
     const link = ['boutique' + `/${this.boutique2.id}` + '/' + 'produitboutique'];
-    this.router.navigate(link);
+    this.router.navigate(link, { skipLocationChange: true });
   }
   gotoabonnement(){
     const link = ['boutique' + `/${this.boutique2.id}` + '/' + 'Abonnement'];
-    this.router.navigate(link);
+    this.router.navigate(link, { skipLocationChange: true });
   }
   paiement(id){
     if (this.status){
       this.listeService.Paiement(id).subscribe(
         (ressponse) => {
           const link = ['boutique' + `/${this.boutique2.id}`];
-          this.router.navigate(link);
+          this.router.navigate(link, { skipLocationChange: true });
         },
         (error) => {
           console.log(error);
@@ -122,7 +122,7 @@ export class AboboutiqueComponent implements OnInit {
     this.listeService.deleteboutique(id).subscribe(
       (response) => {
         const link = [ 'boutique' + `/${this.boutique2.id}`];
-        this.router.navigate(link);
+        this.router.navigate(link, { skipLocationChange: true });
       }
     );
   }
@@ -131,7 +131,7 @@ export class AboboutiqueComponent implements OnInit {
     const json = JSON.stringify(this.paymee);
     this.listeService.ajouterMaClasse(this.paymee).subscribe(
       (response) => {
-        this.url = 'https://sandbox.paymee.tn/gateway/' + `${response.data.token}`;
+        this.url = 'https://app.paymee.tn/gateway/' + `${response.data.token}`;
         this.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(this.url);
         console.log(response.data.token);
         console.log(this.url);

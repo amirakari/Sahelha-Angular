@@ -43,11 +43,11 @@ export class UtilisateurComponent implements OnInit {
   }
   forgotPassword(){
     const link = ['forgotPassword'];
-    this.router.navigate(link);
+    this.router.navigate(link , { skipLocationChange: true });
   }
   CreerCompte(){
     const link = ['ajouterUser'];
-    this.router.navigate(link);
+    this.router.navigate(link, { skipLocationChange: true });
   }
   changer(){
     if (this.e){
@@ -62,7 +62,7 @@ export class UtilisateurComponent implements OnInit {
   }
   login1(){
     const link = [''];
-    this.router.navigate(link);
+    this.router.navigate(link , { skipLocationChange: true });
   }
   show(){
     console.log(this.visibility);
@@ -84,14 +84,14 @@ export class UtilisateurComponent implements OnInit {
   }
   gotopageboutique(){
     const link = ['pageB'];
-    this.router.navigate(link);
+    this.router.navigate(link , { skipLocationChange: true });
   }
   login(credentials){
     this.loginService.login(credentials).subscribe(
       (response) => {
         localStorage.setItem('token', response.access_token);
         this.message = '';
-        this.router.navigate(['acceuil']);
+        this.router.navigate(['acceuil'], { skipLocationChange: true });
       },
       (error) => {
         console.log(error);

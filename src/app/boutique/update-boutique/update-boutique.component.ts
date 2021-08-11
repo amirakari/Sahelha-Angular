@@ -37,25 +37,25 @@ export class UpdateBoutiqueComponent implements OnInit {
   }
   gotodon(){
     const link = ['boutique' + `/${this.boutique1.id}` + '/' + 'produitboutique' + '/' + 'don'];
-    this.router.navigate(link);
+    this.router.navigate(link, { skipLocationChange: true });
   }
   gotoajout(){
     const link = ['boutique' + `/${this.boutique1.id}`];
-    this.router.navigate(link);
+    this.router.navigate(link, { skipLocationChange: true });
   }
   gotoajoutProduit(){
     const link = ['boutique' + `/${this.boutique1.id}` + '/' + 'ajouterProduit'];
-    this.router.navigate(link);
+    this.router.navigate(link, { skipLocationChange: true });
   }
   gotostatistique(){
     const link = ['boutique' + `/${this.boutique1.id}` + '/' + 'statistique'];
-    this.router.navigate(link);
+    this.router.navigate(link, { skipLocationChange: true });
   }
   gotomodifier(){
   }
   gotoproduit(){
     const link = ['boutique' + `/${this.boutique1.id}` + '/' + 'produitboutique'];
-    this.router.navigate(link);
+    this.router.navigate(link, { skipLocationChange: true });
   }
   show(){
     console.log(this.visibility);
@@ -64,7 +64,7 @@ export class UpdateBoutiqueComponent implements OnInit {
   }
   gotoabonnement(){
     const link = ['boutique' + `/${this.boutique1.id}` + '/' + 'Abonnement'];
-    this.router.navigate(link);
+    this.router.navigate(link, { skipLocationChange: true });
   }
   update(formulaire: NgForm){
     this.activatedRoute.params.subscribe(
@@ -73,7 +73,7 @@ export class UpdateBoutiqueComponent implements OnInit {
         this.updateboutique.updatetilisateur(params.id , formulaire.value).subscribe(
           (response) => {
             const link = ['boutique' + `/${params.id}`];
-            this.router.navigate(link);
+            this.router.navigate(link, { skipLocationChange: true });
           },
           (error) => {
             console.log(error);

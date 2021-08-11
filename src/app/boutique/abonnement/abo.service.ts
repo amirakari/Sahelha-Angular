@@ -14,7 +14,7 @@ import {Utilisateur} from '../../Model/Utilisateur';
 export class AboService {
   constructor(private http: HttpClient) {}
   link = environment.http + '/abonnement';
-  link1 = 'https://sandbox.paymee.tn/api/v1/payments/create';
+  link1 = 'https://app.paymee.tn/api/v1/payments/create';
   link2 = 'https://sandbox.paymee.tn/api/v1/payments/';
   link3 = environment.http + '/abonnement/paymee/';
   httpOptions = {

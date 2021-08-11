@@ -45,46 +45,46 @@ export class HeaderComponent implements OnInit {
   }
   gotoprofilutilisateur(){
     const link = ['profilutilisateur'];
-    this.router.navigate(link);
+    this.router.navigate(link, { skipLocationChange: true });
   }
   gotoacceuil(){
     const link = ['acceuil'];
-    this.router.navigate(link);
+    this.router.navigate(link, { skipLocationChange: true });
   }
   gotopageboutique(){
     const link = ['pageBoutique'];
-    this.router.navigate(link);
+    this.router.navigate(link, { skipLocationChange: true });
   }
   gotopageListeabo(){
     const link = ['listeabo'];
-    this.router.navigate(link);
+    this.router.navigate(link, { skipLocationChange: true });
   }
   gotoboutique(){
     const link = ['boutique'];
-    this.router.navigate(link);
+    this.router.navigate(link, { skipLocationChange: true });
   }
   gotoajboutique(){
     const link = ['boutique/addBoutique'];
-    this.router.navigate(link);
+    this.router.navigate(link, { skipLocationChange: true });
   }
   gotolisteUser(){
     const link = ['listeusers'];
-    this.router.navigate(link);
+    this.router.navigate(link, { skipLocationChange: true });
   }
   gotocommande(){
     const link = ['commande'];
-    this.router.navigate(link);
+    this.router.navigate(link, { skipLocationChange: true });
   }
   gotocontact(){
     const link = ['contact'];
-    this.router.navigate(link);
+    this.router.navigate(link, { skipLocationChange: true });
   }
 logout(){
     this.loginService.logout();
 }
 login(){
   const link = [''];
-  this.router.navigate(link);
+  this.router.navigate(link, { skipLocationChange: true });
 }
 show(){
     console.log(this.visibility);

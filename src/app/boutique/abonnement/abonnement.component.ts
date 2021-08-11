@@ -63,29 +63,29 @@ export class AbonnementComponent implements OnInit {
   }
   gotodon(){
     const link = ['boutique' + `/${this.boutique1.id}` + '/' + 'produitboutique' + '/' + 'don'];
-    this.router.navigate(link);
+    this.router.navigate(link, { skipLocationChange: true });
   }
   gotoajout(){
     const link = ['boutique' + `/${this.boutique1.id}`];
-    this.router.navigate(link);
+    this.router.navigate(link, { skipLocationChange: true });
   }
   gotoajoutProduit(){
     const link = ['boutique' + `/${this.boutique1.id}` + '/' + 'ajouterProduit'];
-    this.router.navigate(link);
+    this.router.navigate(link, { skipLocationChange: true });
   }
   gotomodifier(){
   }
   gotostatistique(){
     const link = ['boutique' + `/${this.boutique1.id}` + '/' + 'statistique'];
-    this.router.navigate(link);
+    this.router.navigate(link, { skipLocationChange: true });
   }
   gotoproduit(){
     const link = ['boutique' + `/${this.boutique1.id}` + '/' + 'produitboutique'];
-    this.router.navigate(link);
+    this.router.navigate(link, { skipLocationChange: true });
   }
   gotoabonnement(){
     const link = ['boutique' + `/${this.boutique1.id}` + '/' + 'Abonnement'];
-    this.router.navigate(link);
+    this.router.navigate(link, { skipLocationChange: true });
   }
   addAbo1(){
     this.activatedRoute.params.subscribe(
@@ -94,7 +94,7 @@ export class AbonnementComponent implements OnInit {
         this.aboService.addAbo1(params.id).subscribe(
           (response) => {
             const link = ['boutique' + `/${this.boutique1.id}`];
-            this.router.navigate(link);
+            this.router.navigate(link, { skipLocationChange: true });
           },
           (error) => {
           }
@@ -109,7 +109,7 @@ export class AbonnementComponent implements OnInit {
         this.aboService.addAbo2(params.id).subscribe(
           (response) => {
             const link = ['boutique' + `/${this.boutique1.id}`];
-            this.router.navigate(link);
+            this.router.navigate(link, { skipLocationChange: true });
           },
           (error) => {
           }
@@ -124,7 +124,7 @@ export class AbonnementComponent implements OnInit {
         this.aboService.addAbo3(params.id).subscribe(
           (response) => {
             const link = ['boutique' + `/${this.boutique1.id}`];
-            this.router.navigate(link);
+            this.router.navigate(link, { skipLocationChange: true });
           },
           (error) => {
           }

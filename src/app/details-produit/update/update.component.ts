@@ -49,19 +49,19 @@ export class UpdateComponent implements OnInit {
   }
   gotostatistique(){
     const link = ['boutique' + `/${this.boutique1.id}` + '/' + 'statistique'];
-    this.router.navigate(link);
+    this.router.navigate(link, { skipLocationChange: true });
   }
   gotoajout(){
     const link = ['boutique' + `/${this.boutique1.id}`];
-    this.router.navigate(link);
+    this.router.navigate(link, { skipLocationChange: true });
   }
   gotodon(){
     const link = ['boutique' + `/${this.boutique1.id}` + '/' + 'produitboutique' + '/' + 'don'];
-    this.router.navigate(link);
+    this.router.navigate(link, { skipLocationChange: true });
   }
   gotoajoutProduit(){
     const link = ['boutique' + `/${this.boutique1.id}` + '/' + 'ajouterProduit'];
-    this.router.navigate(link);
+    this.router.navigate(link, { skipLocationChange: true });
   }
   show(){
     console.log(this.visibility);
@@ -72,11 +72,11 @@ export class UpdateComponent implements OnInit {
   }
   gotoproduit(){
     const link = ['boutique' + `/${this.boutique1.id}` + '/' + 'produitboutique'];
-    this.router.navigate(link);
+    this.router.navigate(link, { skipLocationChange: true });
   }
   gotoabonnement(){
     const link = ['boutique' + `/${this.boutique1.id}` + '/' + 'Abonnement'];
-    this.router.navigate(link);
+    this.router.navigate(link, { skipLocationChange: true });
   }
   addProduit(formulaire: NgForm){
     this.activatedRoute.params.subscribe(
@@ -85,7 +85,7 @@ export class UpdateComponent implements OnInit {
         this.uploadService.addUtilisateur(formulaire.value, params.idproduit).subscribe(
           (response) => {
             const link = ['boutique' + `/${params.id}` + '/produitboutique' + `/${params.idproduit}` ];
-            this.router.navigate(link);
+            this.router.navigate(link, { skipLocationChange: true });
           },
           (error) => {
             console.log(formulaire.value);

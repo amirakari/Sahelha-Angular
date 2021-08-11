@@ -36,33 +36,25 @@
                   <div class="worker worker--profile">
                     <div class="worker__item">
                       <div class="worker__photo"><a  class="item-photo item-photo--static"><img src="{{http}}/boutique/profileimage/{{boutique1.photo}}" class="photo" width="200" height="200">
-                        <figure class="item-photo__hover"><span class="item-photo__more">View Details</span></figure></a></div>
+                        <figure class="item-photo__hover"></figure></a></div>
                       <div class="worker__intro">
                         <h3 class="worker__name fn">{{boutique1.nom}}</h3>
                         <div class="worker__post">{{boutique1.domaine}}</div>
                         <div class="clearfix"></div>
                         <div class="worker__contacts">
                           <div class="worker__intro-col">
-                            <div class="tel"><span class="type">{{ 'user.telephone' | translate }}</span><a class="uri value">{{boutique1.user.numtel}}</a></div>
-                            <div ><span class="type">{{ 'user.adresse' | translate }}</span><a  class="uri value">{{boutique1.adresse}}</a></div>
+                            <div class="tel">{{ 'user.telephone' | translate }} : <a class="uri value">{{boutique1.user.numtel}}</a></div>
+                            <div >{{ 'user.adresse' | translate }} : <a  class="uri value">{{boutique1.adresse}}</a></div>
                           </div>
                           <div class="worker__intro-col">
-                            <div ><span class="type">{{ 'user.email' | translate }}</span><a  class="uri value">{{boutique1.mailprofessionnelle}}</a></div>
+                            <div >{{ 'user.email' | translate }} : <a  class="uri value">{{boutique1.mailprofessionnelle}}</a></div>
                           </div>
                           <div class="worker__intro-col">
-                            <div ><span class="type">{{ 'profilboutique.horaire' | translate }}</span><a  class="uri value">{{boutique1.horaire}}</a></div>
+                            <div >{{ 'profilboutique.horaire' | translate }} : <a  class="uri value">{{boutique1.horaire}}</a></div>
                           </div>
                           <!-- end of block .worker__contacts-->
 
-                          <div *ngIf="lat && lng">
-                            <agm-map [latitude]="lat" [longitude]="lng" >
-                              <agm-marker [latitude]="lat" [longitude]="lng" >
-                                <agm-info-window>
-                                  <h3><strong>{{boutique1.nom}}</strong></h3>
-                                  <p>{{boutique1.domaine}}</p>
-                                </agm-info-window>
-                              </agm-marker></agm-map>
-                          </div>
+
 
                         </div>
                           <div class="social social--worker"><a href="{{boutique1.facebook}}" class="social__item"><i class="fa fa-facebook"></i></a><a href="{{boutique1.instagram}}" class="social__item"><i class="fa fa-instagram"></i></a></div>
@@ -73,6 +65,15 @@
                     </div>
                   </div>
                   <div>
+                    <div *ngIf="lat && lng">
+                      <agm-map [latitude]="lat" [longitude]="lng" >
+                        <agm-marker [latitude]="lat" [longitude]="lng" >
+                          <agm-info-window>
+                            <h3><strong>{{boutique1.nom}}</strong></h3>
+                            <p>{{boutique1.domaine}}</p>
+                          </agm-info-window>
+                        </agm-marker></agm-map>
+                    </div>
                     <iframe width="90%" height="500px"  allow="accelerometer; magnetometer; gyroscope" style="display:block; margin:20px auto; border:0 none; max-width:880px;border-radius:8px; box-shadow: 0 1px 1px rgba(0,0,0,0.11),0 2px 2px rgba(0,0,0,0.11),0 4px 4px rgba(0,0,0,0.11),0 6px 8px rgba(0,0,0,0.11),0 8px 16px rgba(0,0,0,0.11);"
                             [src]="controllerSrc"></iframe>
                   </div>

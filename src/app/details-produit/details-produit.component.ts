@@ -124,15 +124,15 @@ quantite: any;
   }
   gotodon(){
     const link = ['boutique' + `/${this.boutique1.id}` + '/' + 'produitboutique' + '/' + 'don'];
-    this.router.navigate(link);
+    this.router.navigate(link, { skipLocationChange: true });
   }
   gotoajout(){
     const link = ['boutique' + `/${this.boutique1.id}`];
-    this.router.navigate(link);
+    this.router.navigate(link, { skipLocationChange: true });
   }
   gotoajoutProduit(){
     const link = ['boutique' + `/${this.boutique1.id}` + '/' + 'ajouterProduit'];
-    this.router.navigate(link);
+    this.router.navigate(link, { skipLocationChange: true });
   }
   gotomodifier(){
   }
@@ -143,15 +143,15 @@ quantite: any;
   }
   gotoproduit(){
     const link = ['boutique' + `/${this.boutique1.id}` + '/' + 'produitboutique'];
-    this.router.navigate(link);
+    this.router.navigate(link, { skipLocationChange: true });
   }
   gotoabonnement(){
     const link = ['boutique' + `/${this.boutique1.id}` + '/' + 'Abonnement'];
-    this.router.navigate(link);
+    this.router.navigate(link, { skipLocationChange: true });
   }
   gotostatistique(){
     const link = ['boutique' + `/${this.boutique1.id}` + '/' + 'statistique'];
-    this.router.navigate(link);
+    this.router.navigate(link, { skipLocationChange: true });
   }
   addCommentaire(Ajouterboutique: NgForm){
     this.activatedRoute.params.subscribe(
@@ -219,7 +219,7 @@ quantite: any;
         this.listeService.CommandeProduit(params.idproduit, this.quantite, null).subscribe(
           (boutique) => {
             const link = ['commande'];
-            this.router.navigate(link);
+            this.router.navigate(link, { skipLocationChange: true });
           }
         );
       },
@@ -230,12 +230,12 @@ quantite: any;
   }
   modifier(boutiqueId: number, produitId: number){
         const link = ['boutique' + `/${boutiqueId}` + '/produitboutique' + `/${produitId}` + `/update` ];
-        this.router.navigate(link);
+        this.router.navigate(link, { skipLocationChange: true });
 
    }
   commandes(boutiqueId: number, produitId: number){
     const link = ['boutique' + `/${boutiqueId}` + '/produitboutique' + `/${produitId}` + `/commandes` ];
-    this.router.navigate(link);
+    this.router.navigate(link, { skipLocationChange: true });
 
   }
   supprimerProduit(){
@@ -245,10 +245,10 @@ quantite: any;
           (response) => {
             if (this.boutique.status === 'à vendre'){
               const link = ['boutique' + `/${params.id}` + '/produitboutique' ];
-              this.router.navigate(link);
+              this.router.navigate(link, { skipLocationChange: true });
             } else {
               const link = ['boutique' + `/${params.id}` + '/produitboutique' + '/don' ];
-              this.router.navigate(link);
+              this.router.navigate(link, { skipLocationChange: true });
             }
             console.log();
           },

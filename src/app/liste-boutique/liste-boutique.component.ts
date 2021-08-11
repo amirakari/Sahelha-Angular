@@ -29,6 +29,6 @@ export class ListeBoutiqueComponent implements OnInit {
   }
   afficherboutique(id: number){
     const link = [ 'boutique' , id ];
-    this.router.navigate(link);
+    this.router.navigate(link, { skipLocationChange: true });
   }
 }

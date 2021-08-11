@@ -26,7 +26,7 @@ export class ProfilComponent implements OnInit {
       (response) => {
         console.log(Ajouterboutique);
         const link = ['boutique'];
-        this.router.navigate(link);
+        this.router.navigate(link, { skipLocationChange: true });
       },
       (error) => {
         this.errorMessage = 'Problème de création de la boutique';
@@ -36,19 +36,19 @@ export class ProfilComponent implements OnInit {
   }
   gotoajout(){
     const link = ['boutique'];
-    this.router.navigate(link);
+    this.router.navigate(link, { skipLocationChange: true });
   }
   gotoprofil(){
     const link = ['profilBoutique'];
-    this.router.navigate(link);
+    this.router.navigate(link, { skipLocationChange: true });
   }
   gotomodifier(){}
   gotoproduit(){
     const link = ['produitboutique'];
-    this.router.navigate(link);
+    this.router.navigate(link, { skipLocationChange: true });
   }
   gotoabonnement(){
     const link = ['Abonnement'];
-    this.router.navigate(link);
+    this.router.navigate(link, { skipLocationChange: true });
   }
 }

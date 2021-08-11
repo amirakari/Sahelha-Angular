@@ -30,6 +30,6 @@ export class LoginService {
   logout(){
     localStorage.removeItem('token');
     const link = [''];
-    this.router.navigate(link);
+    this.router.navigate(link , { skipLocationChange: true });
   }
 }

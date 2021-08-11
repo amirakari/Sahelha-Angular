@@ -107,35 +107,35 @@ export class AfficherComponent implements OnInit {
     this.listeService.deleteboutique(this.boutique1.id).subscribe(
       (response) => {
         const link = [ 'boutique' ];
-        this.router.navigate(link);
+        this.router.navigate(link, { skipLocationChange: true });
       }
     );
   }
   gotostatistique(){
     const link = ['boutique' + `/${this.boutique1.id}` + '/' + 'statistique'];
-    this.router.navigate(link);
+    this.router.navigate(link, { skipLocationChange: true });
   }
   gotodon(){
     const link = ['boutique' + `/${this.boutique1.id}` + '/' + 'produitboutique' + '/' + 'don'];
-    this.router.navigate(link);
+    this.router.navigate(link, { skipLocationChange: true });
   }
   gotoajout(){
     const link = ['boutique' + `/${this.boutique1.id}`];
-    this.router.navigate(link);
+    this.router.navigate(link, { skipLocationChange: true });
   }
   gotoajoutProduit(){
     const link = ['boutique' + `/${this.boutique1.id}` + '/' + 'ajouterProduit'];
-    this.router.navigate(link);
+    this.router.navigate(link, { skipLocationChange: true });
   }
   gotomodifier(){
     }
   gotoproduit(){
     const link = ['boutique' + `/${this.boutique1.id}` + '/' + 'produitboutique'];
-    this.router.navigate(link);
+    this.router.navigate(link, { skipLocationChange: true });
   }
   gotoabonnement(){
     const link = ['boutique' + `/${this.boutique1.id}` + '/' + 'Abonnement'];
-    this.router.navigate(link);
+    this.router.navigate(link, { skipLocationChange: true });
   }
   show(){
     console.log(this.visibility);
@@ -144,7 +144,7 @@ export class AfficherComponent implements OnInit {
   }
   gotoaboboutique(){
     const link = ['boutique' + `/${this.boutique1.id}` + '/' + 'AfficherAbo'];
-    this.router.navigate(link);
+    this.router.navigate(link, { skipLocationChange: true });
   }
   UploadImage(event: any){
     this.file = event.target.files[0];
@@ -165,6 +165,6 @@ export class AfficherComponent implements OnInit {
       (params) => {
         console.log(params.value);
         const link = ['/boutique' + `/${params.id}` + '/update'];
-        this.router.navigate(link);
+        this.router.navigate(link, { skipLocationChange: true });
   } ); }
 }

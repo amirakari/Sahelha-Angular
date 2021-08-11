@@ -3,8 +3,8 @@ import {Observable} from 'rxjs';
 
 export class LoginInterceptor implements HttpInterceptor{
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    if (req.url === 'https://sandbox.paymee.tn/api/v1/payments/create' || req.url.endsWith('/check')){
-      const token = 'Token ad43fbe65022ec8f63f8a961cadf7f783843a768';
+    if (req.url === 'https://app.paymee.tn/api/v1/payments/create' || req.url.endsWith('/check')){
+      const token = 'Token 41c73baef68906728d145088fbad369ed14edd2e';
       const keys = req.params.keys();
       const headers = new HttpHeaders().set('Authorization', `${token}`);
       const cloneReq = req.clone(

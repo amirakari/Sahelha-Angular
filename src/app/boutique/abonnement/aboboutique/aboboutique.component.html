@@ -46,13 +46,12 @@
                     </dl>
                     <div class="pricing__actions">
                       <form class="form form--flex form--auth form--restore js-restore-form js-parsley">
-                        <input [(ngModel)]="vendor" *ngIf="abonnement.status==='non payé'" type="number" placeholder="Numéro de compte" name="vendor" id="vendor" required class="form-control">
 
                         <input [(ngModel)]="note" *ngIf="abonnement.status==='non payé'" type="text" placeholder="Note" name="note"  id="note" required class="form-control">
 
                       </form>
                       <br>
-                      <button class="pricing__button" *ngIf="abonnement.status==='non payé'" (click)="Paymee(abonnement.id, vendor, abonnement.prix, note)">Payer</button>
+                      <button class="pricing__button" *ngIf="abonnement.status==='non payé'" (click)="Paymee(abonnement.id, 13041, abonnement.prix, note)">Payer</button>
                       <br><br>
                       <button class="pricing__button" (click)="deleteBoutique(abonnement.id)">Supprimer</button>
 

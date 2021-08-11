@@ -34,7 +34,7 @@
                 <div class="worker worker--profile">
                   <div class="worker__item">
                     <div class="worker__photo" ><a href="agent_profile.html" class="item-photo item-photo--static"><img src="{{http}}/utilisateur/profileimage/{{user.photodeprofil}}" class="photo">
-                      <figure class="item-photo__hover"><span class="item-photo__more">View Details</span></figure></a></div>
+                      <figure class="item-photo__hover"></figure></a></div>
                     <div class="worker__intro">
                       <h3 class="worker__name fn">{{user.nom}} {{user.prenom}}</h3>
 
@@ -42,12 +42,12 @@
                       <div class="clearfix"></div>
                       <div class="worker__contacts">
                         <div class="worker__intro-col">
-                          <div class="tel"><span class="type">{{ 'user.telephone' | translate }}</span>{{user.numtel}}</div>
-                          <div class="text"><span class="type">{{ 'user.email' | translate }}</span>{{user.adresse}}</div>
+                          <div class="tel">{{ 'user.telephone' | translate }} : <a  class="uri value">{{user.numtel}}</a></div>
+                          <div class="text">{{ 'user.email' | translate }} : <a  class="uri value">{{user.adresse}}</a></div>
                         </div>
                         <div class="worker__intro-col">
-                          <div class="email"><span class="type">{{ 'user.adresse' | translate }}</span>{{user.mail}}</div>
-                          <div class="skype"><span class="type">{{ 'user.type' | translate }}</span>{{user.type}}</div>
+                          <div class="email">{{ 'user.adresse' | translate }} : <a  class="uri value">{{user.mail}}</a></div>
+                          <div class="skype">{{ 'user.type' | translate }} : <a  class="uri value">{{user.type}}</a></div>
                         </div>
                         <!-- end of block .worker__contacts-->
                       </div>
