@@ -35,9 +35,9 @@ becomes
     <nav class="breadcrumbs">
       <div class="container">
         <ul>
-          <li class="breadcrumbs__item"><a href="" class="breadcrumbs__link">Home</a></li>
-          <li class="breadcrumbs__item"><a href="" class="breadcrumbs__link">Liste des boutiques</a></li>
-          <li class="breadcrumbs__item"><a href="" class="breadcrumbs__link">Détail produit</a></li>
+          <li class="breadcrumbs__item"><a  class="breadcrumbs__link">Home</a></li>
+          <li class="breadcrumbs__item"><a  class="breadcrumbs__link">Liste des boutiques</a></li>
+          <li class="breadcrumbs__item"><a  class="breadcrumbs__link">Détail produit</a></li>
         </ul>
       </div>
     </nav>
@@ -63,7 +63,7 @@ becomes
                 <div class="listing listing--list js-properties-list">
                   <div class="listing__item">
                     <div class="properties properties--list">
-                      <div class="properties__thumb"><a href="property_details.html" class="item-photo"><img src="{{http}}/produit/image/{{boutique.photo1}}" alt=""/>
+                      <div class="properties__thumb"><a  class="item-photo"><img src="{{http}}/produit/image/{{boutique.photo1}}" alt=""/>
 
                         <figure class="item-photo__hover item-photo__hover--params"><span class="properties__time">Réference: {{boutique.reference}}</span>
                         </figure></a>
@@ -76,7 +76,7 @@ becomes
                       </div>
                       <!-- end of block .properties__thumb-->
                       <div class="properties__details">
-                        <div class="properties__info"><a href="property_details.html" class="properties__address"><span class="properties__address-street">{{boutique.nom}}</span><span class="properties__address-city">{{boutique.boutique.adresse}}</span></a>
+                        <div class="properties__info"><a  class="properties__address"><span class="properties__address-street">{{boutique.nom}}</span><span class="properties__address-city">{{boutique.boutique.adresse}}</span></a>
                           <div class="properties__offer" *ngIf="boutique.status==='à vendre'">
                             <div class="properties__offer-column">
                               <div class="properties__offer-label">{{ 'pageboutique.prixsansremise' | translate }}</div>

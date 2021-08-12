@@ -180,29 +180,29 @@ export class StatistiqueComponent implements OnInit {
   }
   gotoajout(){
     const link = ['boutique' + `/${this.boutique1.id}`];
-    this.router.navigate(link, { skipLocationChange: true });
+    this.router.navigate(link);
   }
   gotoajoutProduit(){
     const link = ['boutique' + `/${this.boutique1.id}` + '/' + 'ajouterProduit'];
-    this.router.navigate(link, { skipLocationChange: true });
+    this.router.navigate(link);
   }
   gotomodifier(){
   }
   gotostatistique(){
     const link = ['boutique' + `/${this.boutique1.id}` + '/' + 'statistique'];
-    this.router.navigate(link, { skipLocationChange: true });
+    this.router.navigate(link);
   }
   gotodon(){
     const link = ['boutique' + `/${this.boutique1.id}` + '/' + 'produitboutique' + '/' + 'don'];
-    this.router.navigate(link, { skipLocationChange: true });
+    this.router.navigate(link);
   }
   gotoproduit(){
     const link = ['boutique' + `/${this.boutique1.id}` + '/' + 'produitboutique'];
-    this.router.navigate(link, { skipLocationChange: true });
+    this.router.navigate(link);
   }
   gotoabonnement(){
     const link = ['boutique' + `/${this.boutique1.id}` + '/' + 'Abonnement'];
-    this.router.navigate(link, { skipLocationChange: true });
+    this.router.navigate(link);
   }
   show(){
     console.log(this.visibility);

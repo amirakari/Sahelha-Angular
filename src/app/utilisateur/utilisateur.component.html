@@ -1,7 +1,7 @@
 <div class="box js-box">
   <header class="header header--brand">
     <div class="container">
-      <div class="header__row"><a href="index.html" class="header__logo">
+      <div class="header__row"><a  class="header__logo">
         <div>
           <img src="/assets/img/acceuil/zéro-gaspii-3 (2).png" height="30" width="200">
         </div></a>
@@ -102,7 +102,7 @@
   <div id="header1-nav-offset"></div>
   <nav id="header-nav" class="navbar navbar--header">
     <div class="container">
-      <div class="navbar__row js-navbar-row"><a href="index.html" class="navbar__brand">
+      <div class="navbar__row js-navbar-row"><a  class="navbar__brand">
         <div class="navbar__brand-logo">
           <img src="/assets/img/acceuil/CHARTE-GRAPHIQUE-ZERO-GASPII-3.png" height="90" width="200">
         </div></a>
@@ -125,8 +125,8 @@
 
       <div class="container">
         <ul>
-          <li class="breadcrumbs__item"><a href="" class="breadcrumbs__link">Home</a></li>
-          <li class="breadcrumbs__item"><a href="" class="breadcrumbs__link">Login</a></li>
+          <li class="breadcrumbs__item"><a  class="breadcrumbs__link">Home</a></li>
+          <li class="breadcrumbs__item"><a  class="breadcrumbs__link">Login</a></li>
         </ul>
       </div>
       </nav>
@@ -184,10 +184,11 @@
 
                               </div>
                               <button type="submit" [disabled]="loginformulaire.invalid" (click)="login(loginformulaire.value)" class="form__submit" >{{ 'login.Connexion' | translate }}</button>
-                                <div class="form__options">Mot de passe oublié?<a (click)="forgotPassword()">{{ 'login.oublie' | translate }}</a>
+                              <div class="form__options">Mot de passe oublié?<a (click)="forgotPassword1()">Mot de passe oublié?</a>
+                              </div>
                                   <div class="form__options">Vous n'avez pas de compte ?<a (click)="CreerCompte()">Créer Compte</a>
                                   </div>
-                                </div>
+
 
 <br><br><br>
 

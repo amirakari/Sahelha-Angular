@@ -81,36 +81,36 @@ export class AboboutiqueComponent implements OnInit {
   }
   gotodon(){
     const link = ['boutique' + `/${this.boutique2.id}` + '/' + 'produitboutique' + '/' + 'don'];
-    this.router.navigate(link, { skipLocationChange: true });
+    this.router.navigate(link);
   }
   gotoajout(){
     const link = ['boutique' + `/${this.boutique2.id}`];
-    this.router.navigate(link, { skipLocationChange: true });
+    this.router.navigate(link);
   }
   gotoajoutProduit(){
     const link = ['boutique' + `/${this.boutique2.id}` + '/' + 'ajouterProduit'];
-    this.router.navigate(link, { skipLocationChange: true });
+    this.router.navigate(link);
   }
   gotomodifier(){
   }
   gotostatistique(){
     const link = ['boutique' + `/${this.boutique2.id}` + '/' + 'statistique'];
-    this.router.navigate(link, { skipLocationChange: true });
+    this.router.navigate(link);
   }
   gotoproduit(){
     const link = ['boutique' + `/${this.boutique2.id}` + '/' + 'produitboutique'];
-    this.router.navigate(link, { skipLocationChange: true });
+    this.router.navigate(link);
   }
   gotoabonnement(){
     const link = ['boutique' + `/${this.boutique2.id}` + '/' + 'Abonnement'];
-    this.router.navigate(link, { skipLocationChange: true });
+    this.router.navigate(link);
   }
   paiement(id){
     if (this.status){
       this.listeService.Paiement(id).subscribe(
         (ressponse) => {
           const link = ['boutique' + `/${this.boutique2.id}`];
-          this.router.navigate(link, { skipLocationChange: true });
+          this.router.navigate(link);
         },
         (error) => {
           console.log(error);
@@ -122,7 +122,7 @@ export class AboboutiqueComponent implements OnInit {
     this.listeService.deleteboutique(id).subscribe(
       (response) => {
         const link = [ 'boutique' + `/${this.boutique2.id}`];
-        this.router.navigate(link, { skipLocationChange: true });
+        this.router.navigate(link);
       }
     );
   }

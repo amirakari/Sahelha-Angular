@@ -54,13 +54,13 @@ export class AjouterUserComponent implements OnInit {
   }
   login1(){
     const link = [''];
-    this.router.navigate(link, { skipLocationChange: true });
+    this.router.navigate(link);
   }
   addUtilisateur(formulaire: NgForm){
     this.userService.addUtilisateur(formulaire.value).subscribe(
       (response) => {
         console.log(formulaire);
-        this.router.navigate([''], { skipLocationChange: true });
+        this.router.navigate(['']);
       },
       (error) => {
         this.errorMessage1 = 'probléme de création du compte . vérifier les champs';

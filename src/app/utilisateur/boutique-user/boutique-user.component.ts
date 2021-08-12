@@ -38,7 +38,7 @@ export class BoutiqueUserComponent implements OnInit {
   }
   afficherboutique(id: number){
     const link = [ 'boutique' , id ];
-    this.router.navigate(link, { skipLocationChange: true });
+    this.router.navigate(link);
   }
   show(){
     console.log(this.visibility);
@@ -47,6 +47,6 @@ export class BoutiqueUserComponent implements OnInit {
   }
   gotoprofil(){
     const link = ['profilutilisateur' ];
-    this.router.navigate(link, { skipLocationChange: true });
+    this.router.navigate(link);
   }
 }

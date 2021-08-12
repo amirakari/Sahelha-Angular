@@ -40,8 +40,8 @@ const Routes: Routes = [
   {path: 'listeusers', component:  ListeusersComponent},
   {path: 'listeabo', component:  ListeaboComponent},
   {path: '', component:  UtilisateurComponent},
-  {path: 'forgotPassword', component:  ForgotPasswordComponent, canActivate: [LogoutGuard]},
-  {path: 'resetPassword/:id', component:  ResetPasswordComponent, canActivate: [LogoutGuard]},
+  {path: 'forgotPassword', component:  ForgotPasswordComponent},
+  {path: 'resetPassword/:id', component:  ResetPasswordComponent},
   {path: 'profilutilisateur', children : [
       {path: '', component: ProfilutilisateurComponent , canActivate: [LoginGuard]},
       {path: 'update/:id', component: UpdateuserComponent , canActivate: [LoginGuard]},

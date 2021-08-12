@@ -56,7 +56,7 @@ export class PageBoutiqueComponent implements OnInit {
   }
   gotodetails(idBoutique: number, idProduit: number){
     const link = ['boutique' + `/${idBoutique}` + '/produitboutique' + `/${idProduit}` ];
-    this.router.navigate(link, { skipLocationChange: true });
+    this.router.navigate(link);
   }
   private getUserLocation(){
     if (navigator.geolocation){

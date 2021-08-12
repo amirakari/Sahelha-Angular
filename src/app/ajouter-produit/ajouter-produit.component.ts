@@ -102,29 +102,29 @@ export class AjouterProduitComponent implements OnInit {
   }
   gotoajout(){
     const link = ['boutique' + `/${this.boutique1.id}`];
-    this.router.navigate(link, { skipLocationChange: true });
+    this.router.navigate(link);
   }
   gotodon(){
     const link = ['boutique' + `/${this.boutique1.id}` + '/' + 'produitboutique' + '/' + 'don'];
-    this.router.navigate(link, { skipLocationChange: true });
+    this.router.navigate(link);
   }
   gotostatistique(){
     const link = ['boutique' + `/${this.boutique1.id}` + '/' + 'statistique'];
-    this.router.navigate(link, { skipLocationChange: true });
+    this.router.navigate(link);
   }
   gotoajoutProduit(){
     const link = ['boutique' + `/${this.boutique1.id}` + '/' + 'ajouterProduit'];
-    this.router.navigate(link, { skipLocationChange: true });
+    this.router.navigate(link);
   }
   gotomodifier(){
   }
   gotoproduit(){
     const link = ['boutique' + `/${this.boutique1.id}` + '/' + 'produitboutique'];
-    this.router.navigate(link, { skipLocationChange: true });
+    this.router.navigate(link);
   }
   gotoabonnement(){
     const link = ['boutique' + `/${this.boutique1.id}` + '/' + 'Abonnement'];
-    this.router.navigate(link, { skipLocationChange: true });
+    this.router.navigate(link);
   }
   addProduit(formulaire: NgForm){
     this.activatedRoute.params.subscribe(
@@ -134,7 +134,7 @@ export class AjouterProduitComponent implements OnInit {
       (response) => {
         console.log(formulaire);
         const link = ['pageBoutique' ];
-        this.router.navigate(link, { skipLocationChange: true });
+        this.router.navigate(link);
       },
       (error) => {
         console.log(formulaire.value);

@@ -49,7 +49,7 @@ export class CommandeComponent implements OnInit {
             this.listeService.CommandeProduit(idproduit, quantite, null).subscribe(
               (boutique) => {
                 const link = ['boutique' + `/${idboutique}` + '/produitboutique' + `/${idproduit}`];
-                this.router.navigate(link, { skipLocationChange: true });
+                this.router.navigate(link);
               }
             );
             console.log();
@@ -61,10 +61,10 @@ export class CommandeComponent implements OnInit {
   }
   generatePdf(id: number){
     const link = [ 'commande' , id ];
-    this.router.navigate(link, { skipLocationChange: true });
+    this.router.navigate(link);
   }
   ajouterEvaluation(idboutique: number, idproduit: number ){
     const link = [ 'boutique' + `/${idboutique}` + '/produitboutique' + `/${idproduit}` + '/evaluer' ];
-    this.router.navigate(link, { skipLocationChange: true });
+    this.router.navigate(link);
   }
 }

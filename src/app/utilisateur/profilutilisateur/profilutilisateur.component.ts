@@ -51,7 +51,7 @@ export class ProfilutilisateurComponent implements OnInit {
   }
   gotoboutique(){
     const link = ['profilutilisateur' + '/boutique'];
-    this.router.navigate(link, { skipLocationChange: true });
+    this.router.navigate(link);
   }
   UploadImage(event: any){
        this.file = event.target.files[0];
@@ -82,7 +82,7 @@ export class ProfilutilisateurComponent implements OnInit {
   }
   modifier(id: number){
     const link = ['/profilutilisateur/update' , id];
-    this.router.navigate(link, { skipLocationChange: true });
+    this.router.navigate(link);
   }
   supprimerUtilisateur(id: number){
     this.userservice.supprimertilisateur(id).subscribe(

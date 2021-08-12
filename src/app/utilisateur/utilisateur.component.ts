@@ -41,13 +41,13 @@ export class UtilisateurComponent implements OnInit {
       recaptcha: ['', Validators.required]
     });
   }
-  forgotPassword(){
-    const link = ['forgotPassword'];
-    this.router.navigate(link , { skipLocationChange: true });
+  forgotPassword1(){
+    const link1 = ['forgotPassword'];
+    this.router.navigate(link1);
   }
   CreerCompte(){
     const link = ['ajouterUser'];
-    this.router.navigate(link, { skipLocationChange: true });
+    this.router.navigate(link);
   }
   changer(){
     if (this.e){
@@ -62,7 +62,7 @@ export class UtilisateurComponent implements OnInit {
   }
   login1(){
     const link = [''];
-    this.router.navigate(link , { skipLocationChange: true });
+    this.router.navigate(link);
   }
   show(){
     console.log(this.visibility);
@@ -84,14 +84,14 @@ export class UtilisateurComponent implements OnInit {
   }
   gotopageboutique(){
     const link = ['pageB'];
-    this.router.navigate(link , { skipLocationChange: true });
+    this.router.navigate(link);
   }
   login(credentials){
     this.loginService.login(credentials).subscribe(
       (response) => {
         localStorage.setItem('token', response.access_token);
         this.message = '';
-        this.router.navigate(['acceuil'], { skipLocationChange: true });
+        this.router.navigate(['acceuil']);
       },
       (error) => {
         console.log(error);

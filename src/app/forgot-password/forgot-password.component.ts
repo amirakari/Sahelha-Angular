@@ -37,7 +37,7 @@ export class ForgotPasswordComponent implements OnInit {
   }
   login1(){
     const link = [''];
-    this.router.navigate(link, { skipLocationChange: true });
+    this.router.navigate(link);
   }
   changeLang1(): void{
     this.translate.use('fr');

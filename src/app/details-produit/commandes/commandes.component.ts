@@ -2,7 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {CommandeService} from '../../commande/commande.service';
 import {CommandesService} from './commandes.service';
 import {Commande} from '../../Model/commande';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {environment} from '../../../environments/environment';
 
 @Component({
@@ -17,16 +17,20 @@ export class CommandesComponent implements OnInit {
   page = 1;
   constructor(private listeService: CommandesService,
               private listeService4: CommandeService,
+              private activatedRoute: ActivatedRoute,
               private router: Router, ) { }
 
   ngOnInit(): void {
     this.http = environment.http;
-    this.listeService.getCommande(1).subscribe(
+    this.activatedRoute.params.subscribe(
+      (params) => {
+        console.log(params);
+        this.listeService.getCommande(params.idproduit).subscribe(
       (boutique) => { this.boutique = boutique;
                       this.totalRecords = boutique.length; },
       (error) => {alert(`erreur d'accés à l'api`);
                   console.log(error); }
-    );
+    ); });
   }
   supprimerCommande(id, idproduit, quantite, idboutique){
     this.listeService4.supprimerCommande(id).subscribe(
@@ -34,7 +38,7 @@ export class CommandesComponent implements OnInit {
         this.listeService4.CommandeProduit(idproduit, quantite, null).subscribe(
           (boutique) => {
             const link = ['boutique' + `/${idboutique}` + '/produitboutique' + `/${idproduit}`];
-            this.router.navigate(link, { skipLocationChange: true });
+            this.router.navigate(link);
           }
         );
         console.log();

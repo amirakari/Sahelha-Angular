@@ -48,11 +48,11 @@ export class UpdateuserComponent implements OnInit {
   }
   gotoboutique(){
     const link = ['profilutilisateur' + '/boutique'];
-    this.router.navigate(link , { skipLocationChange: true });
+    this.router.navigate(link);
   }
   gotoprofil(){
     const link = ['profilutilisateur'];
-    this.router.navigate(link, { skipLocationChange: true });
+    this.router.navigate(link);
   }
   getPhotodeProfil(){
     this.imageservice.getImageProfil(this.user.photodeprofil).subscribe(
@@ -74,7 +74,7 @@ export class UpdateuserComponent implements OnInit {
         this.updateservice.updatetilisateur(params.id , formulaire.value).subscribe(
       (response) => {
         const link = ['profilutilisateur'];
-        this.router.navigate(link , { skipLocationChange: true });
+        this.router.navigate(link);
       },
       (error) => {
         console.log(error);

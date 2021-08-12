@@ -36,7 +36,7 @@ export class EvaluerProduitComponent implements OnInit {
         this.evaluerService.evaluerProduit(params.idproduit, this.val, null ).subscribe(
           (response) => {
             const link = ['boutique' + `/${idboutique}` + '/produitboutique' + `/${idproduit}`];
-            this.router.navigate(link, { skipLocationChange: true });
+            this.router.navigate(link);
             console.log();
           },
           (error) => {
