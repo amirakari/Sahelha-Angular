@@ -22606,9 +22606,14 @@ fieldset[disabled] .subscribe__field {
   background: #015bbb;
   color: #fff;
   border: none;
-  font-size: 13px;
+  font-size: 11px;
 }
-
+.form-property__upload-btn-choose1 {
+  background: #015bbb;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+}
 .form-property__ranges {
   position: relative;
 }

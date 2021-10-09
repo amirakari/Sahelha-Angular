@@ -62,7 +62,7 @@
                         <td class="datatable__cell-10">{{boutiques.quantite}}</td>
                         <td class="datatable__cell-11">{{boutiques.produit.prixavecremise}}</td>
                         <td class="datatable__cell-12">{{boutiques.prixtotale}}</td>
-                        <td class="datatable__cell-13">{{boutiques.date}}</td>
+                        <td class="datatable__cell-13">{{boutiques.date | date:'short'}}</td>
                         <td class="datatable__cell-14">
                           <button pButton type="button" label="Annuler" icon="pi pi-trash" (click)="supprimerCommande(boutiques.id,boutiques.produit.id,boutiques.quantite,boutiques.produit.boutique.id )" class="p-button-danger"></button>
                         </td>

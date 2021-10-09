@@ -33,6 +33,8 @@ import {AboboutiqueComponent} from './boutique/abonnement/aboboutique/aboboutiqu
 import {ListeaboComponent} from './boutique/abonnement/listeabo/listeabo.component';
 import {RecherchePrComponent} from './utilisateur/recherche-pr/recherche-pr.component';
 import {AjouterUserComponent} from './utilisateur/ajouter-user/ajouter-user.component';
+import {EssaigratuitComponent} from './essaigratuit/essaigratuit.component';
+import {ValideressaiComponent} from './essaigratuit/valideressai/valideressai.component';
 const Routes: Routes = [
   {path: 'acceuil', component:  AcceuilComponent},
   {path: 'ajouterUser', component:  AjouterUserComponent},
@@ -73,6 +75,10 @@ const Routes: Routes = [
             ]},
           {path: 'Abonnement' , component : AbonnementComponent},
           {path: 'AfficherAbo' , component : AboboutiqueComponent},
+          {path: 'essaigratuit' , children : [
+              {path: '', component : EssaigratuitComponent},
+              {path: 'valideressai' , component : ValideressaiComponent},
+                ]},
         ]}
     ]},
 ];

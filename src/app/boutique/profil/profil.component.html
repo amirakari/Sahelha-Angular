@@ -49,8 +49,9 @@
                         </div>
 
                         <div class="form-group">
-                          <label for="in-6" class="control-label">{{ 'ajoutboutique.mail' | translate }}</label>
-                          <input ngModel name="mailprofessionnelle" id="in-6" type="text" placeholder="" required class="form-control">
+                          <label for="in-7" class="control-label">{{ 'ajoutboutique.adresse' | translate }}</label>
+                          <input ngModel name="adresse" id="in-7" type="text" placeholder="" required  class="form-control">
+
                         </div>
                       </div>
                     </div>
@@ -58,8 +59,9 @@
                     <div id="form-block-2" class="form__block js-form-block">
                       <div class="row">
                         <div class="form-group">
-                          <label for="in-7" class="control-label">{{ 'ajoutboutique.adresse' | translate }}</label>
-                          <input ngModel name="adresse" id="in-7" type="text" placeholder="" required  class="form-control">
+                          <label for="in-6" class="control-label">{{ 'ajoutboutique.mail' | translate }}</label>
+                          <div class="alert alert-danger" role="alert" *ngIf="errorMessage1">{{errorMessage1}}</div>
+                          <input ngModel name="mailprofessionnelle" id="in-6" type="text" placeholder="" required class="form-control">
                         </div>
 
 
@@ -84,10 +86,12 @@
                       <div class="row">
                         <div class="form-group form-group--social">
                           <label for="facebook-field" class="control-label">{{ 'ajoutboutique.facebook' | translate }}</label>
+                          <div class="alert alert-danger" role="alert" *ngIf="errorMessage2">{{errorMessage2}}</div>
                           <input ngModel name="facebook" id="facebook-field" type="text" placeholder="http://facebook.com/youraccount" required class="form-control">
                         </div>
                         <div class="form-group form-group--social">
                           <label for="twitter-field" class="control-label">{{ 'ajoutboutique.instagram' | translate }}</label>
+                          <div class="alert alert-danger" role="alert" *ngIf="errorMessage3">{{errorMessage3}}</div>
                           <input ngModel name="instagram" id="twitter-field" type="text" placeholder="http://instagram.com/youraccount" required  class="form-control">
                         </div>
 
@@ -95,6 +99,7 @@
                     </div>
                     <header class="form__header">
                       <h3 data-rel="#form-block-4" class="form__title js-form-title">{{ 'ajoutboutique.googlemaps' | translate }}</h3>
+                      <div class="alert alert-danger" role="alert" *ngIf="errorMessage5">{{errorMessage5}}</div>
                     </header>
                     <div id="form-block-454" class="form__block js-form-block">
                       <div class="row">
@@ -111,6 +116,7 @@
                     </div>
                     <header class="form__header">
                       <h3 data-rel="#form-block-4" class="form__title js-form-title">{{ 'ajoutboutique.visitevirtuelle' | translate }}</h3>
+                      <div class="alert alert-danger" role="alert" *ngIf="errorMessage4">{{errorMessage4}}</div>
                     </header>
                     <div class="site__panel"><span class="site__header-text">{{ 'ajoutboutique.description1' | translate }}  <a href="https://panoraven.com/fr/share-360-photo">{{ 'ajoutboutique.description2' | translate }}</a> {{ 'ajoutboutique.description3' | translate }}</span></div>
                     <div id="form-block-4547" class="form__block js-form-block">

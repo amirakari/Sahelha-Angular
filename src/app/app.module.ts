@@ -58,6 +58,8 @@ import { ListeaboComponent } from './boutique/abonnement/listeabo/listeabo.compo
 import {InputNumberModule} from 'primeng/inputnumber';
 import { RecherchePrComponent } from './utilisateur/recherche-pr/recherche-pr.component';
 import { AjouterUserComponent } from './utilisateur/ajouter-user/ajouter-user.component';
+import { EssaigratuitComponent } from './essaigratuit/essaigratuit.component';
+import { ValideressaiComponent } from './essaigratuit/valideressai/valideressai.component';
 export function HttpLoaderFactory(http: HttpClient){
   return new TranslateHttpLoader(http);
 }
@@ -98,6 +100,8 @@ export function HttpLoaderFactory(http: HttpClient){
     ListeaboComponent,
     RecherchePrComponent,
     AjouterUserComponent,
+    EssaigratuitComponent,
+    ValideressaiComponent,
   ],
   imports: [
     BrowserModule,

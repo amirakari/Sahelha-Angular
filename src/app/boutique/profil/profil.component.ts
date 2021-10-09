@@ -13,6 +13,11 @@ import {ProfilService} from './profil.service';
 })
 export class ProfilComponent implements OnInit {
   errorMessage = '';
+  errorMessage1 = '';
+  errorMessage2 = '';
+  errorMessage3 = '';
+  errorMessage4 = '';
+  errorMessage5 = '';
   message = '';
   constructor(private formBuilder: FormBuilder,
               private boutiqueService: ProfilService,
@@ -29,7 +34,12 @@ export class ProfilComponent implements OnInit {
         this.router.navigate(link);
       },
       (error) => {
-        this.errorMessage = 'Problème de création de la boutique';
+        this.errorMessage = 'Problème de création de la boutique : tous les champs sont obligatoires sauf la visite virtuelle';
+        this.errorMessage1 = `l'adresse mail de la boutique doit être unique`;
+        this.errorMessage2 = `Il faut donner la totalité du lien vers le profil Facebook de la votre boutique`;
+        this.errorMessage3 = `Il faut donner la totalité du lien vers le profil instagram de la votre boutique`;
+        this.errorMessage5 = `Il faut donner correctement la localisation de la votre boutique sur googler maps : par exemple 35.76471422196534, 10.809237402331933 avant la virgule est la latitude et après la virgule est la longitude`;
+        this.errorMessage4 = `Il faut donner le lien direct offert par panoraven de la votre visite virtuelle boutique`;
         console.log(error);
       }
     );

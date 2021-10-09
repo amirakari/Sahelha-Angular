@@ -30,11 +30,11 @@
               <td *ngIf="boutiques.produit" class="datatable__cell-3"><strong> {{boutiques.produit.categorie}}</strong>
               </td>
               <td *ngIf="boutiques.produit" class="datatable__cell-4">{{boutiques.produit.status}}</td>
-              <td *ngIf="boutiques.produit" class="datatable__cell-5">{{boutiques.produit.DLC}}</td>
+              <td *ngIf="boutiques.produit" class="datatable__cell-5">{{boutiques.produit.DLC | date:'shortDate'}}</td>
               <td *ngIf="boutiques.produit" class="datatable__cell-6">{{boutiques.quantite}}</td>
               <td *ngIf="boutiques.produit" class="datatable__cell-7">{{boutiques.produit.prixavecremise}}</td>
               <td *ngIf="boutiques.produit" class="datatable__cell-8">{{boutiques.prixtotale}}</td>
-              <td *ngIf="boutiques.produit" class="datatable__cell-9">{{boutiques.date}}</td>
+              <td *ngIf="boutiques.produit" class="datatable__cell-9">{{boutiques.date | date:'shortDate'}}</td>
 
               <td *ngIf="boutiques.produit" class="datatable__cell-10"> <button  type="submit" class="btn btn-blue" (click)="generatePdf(boutiques.id)"><i class="fa fa-file-pdf-o"></i></button>
                 </td>

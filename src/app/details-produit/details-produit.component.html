@@ -69,7 +69,7 @@ becomes
                         </figure></a>
                         <br>
                         <div *ngIf="status" class="form-property__upload-border">
-                          <input type="file" (change)="UploadImage($event)" class="form-property__upload-btn-choose">
+                          <input type="file" (change)="UploadImage($event)" class="form-property__upload-btn-choose1">
 
                         </div>
                         <span class="properties__ribon">{{boutique.categorie}}</span>
@@ -98,7 +98,7 @@ becomes
                             </div>
                           </div>
                           <div class="properties__params--mob">
-                            {{ 'pageboutique.dlc' | translate }} : {{boutique.DLC}}
+                            {{ 'pageboutique.dlc' | translate }} : {{boutique.DLC | date:'shortDate'}}
                             <br>
                             {{ 'pageboutique.quantite' | translate }} : {{boutique.quantite}}
                             <p-rating cancel="false" readonly="true" [(ngModel)]="val"></p-rating>
@@ -120,7 +120,7 @@ becomes
                           </div>
                         </div>
                         <div class="properties__intro">
-                          {{ 'pageboutique.dlc' | translate }} : {{boutique.DLC}}
+                          {{ 'pageboutique.dlc' | translate }} : {{boutique.DLC | date:'shortDate'}}
                           <br>
                           {{ 'pageboutique.quantite' | translate }} : {{boutique.quantite}}
                           <p-rating cancel="false" readonly="true" [(ngModel)]="val"></p-rating>
@@ -172,7 +172,7 @@ becomes
                             </div>
                             <div class="comment__info">
                               <span class="comment__author"></span><span class="comment__date">{{commentaires.user.nom}} {{commentaires.user.prenom}}</span>
-                              <span class="comment__author"></span><span class="comment__date">{{commentaires.createdAt}}</span>
+                              <span class="comment__author"></span><span class="comment__date">{{commentaires.createdAt | date:'short'}}</span>
                               <div [hidden]="status1" class="comment__content">
                                {{commentaires.message}}</div>
                               <form  #Ajouterboutique1="ngForm" action="#" class="form form--flex js-parsley form--comment">

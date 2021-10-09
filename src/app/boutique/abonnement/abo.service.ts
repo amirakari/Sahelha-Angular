@@ -15,7 +15,7 @@ export class AboService {
   constructor(private http: HttpClient) {}
   link = environment.http + '/abonnement';
   link1 = 'https://app.paymee.tn/api/v1/payments/create';
-  link2 = 'https://sandbox.paymee.tn/api/v1/payments/';
+  link2 = 'https://app.paymee.tn/api/v1/payments/';
   link3 = environment.http + '/abonnement/paymee/';
   httpOptions = {
     headers: new HttpHeaders({

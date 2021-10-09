@@ -410,7 +410,7 @@ becomes
               totalItems: totalRecords}">
                 <div class="properties properties--grid">
                   <div class="properties__thumb"><a   class="item-photo"><img src="{{http}}/produit/image/{{boutiques.photo1}}" max-width="20px" max-height="20px" alt=""/>
-                    <figure class="item-photo__hover item-photo__hover--params"> <span class="properties__time">{{ 'pageboutique.ajouter' | translate }}: {{boutiques.createdAt}}</span><span class="properties__time">{{ 'pageboutique.dlc' | translate }}: {{boutiques.DLC}}</span><span class="properties__time">{{ 'pageboutique.quantite' | translate }}: {{boutiques.quantite}}</span>
+                    <figure class="item-photo__hover item-photo__hover--params"> <span class="properties__time">{{ 'pageboutique.ajouter' | translate }}: {{boutiques.createdAt | date:'shortDate'}}</span><span class="properties__time">{{ 'pageboutique.dlc' | translate }}: {{boutiques.DLC | date:'shortDate'}}</span><span class="properties__time">{{ 'pageboutique.quantite' | translate }}: {{boutiques.quantite}}</span>
                     </figure></a><span class="properties__ribon">{{boutiques.categorie}}</span>
                   </div>
                   <!-- end of block .properties__thumb-->

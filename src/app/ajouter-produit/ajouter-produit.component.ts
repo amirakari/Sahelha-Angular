@@ -33,6 +33,12 @@ export class AjouterProduitComponent implements OnInit {
   statis: boolean;
   urls = [];
   visibility = false;
+  errorMessage = '';
+  errorMessage1 = '';
+  errorMessage2 = '';
+  errorMessage3 = '';
+  errorMessage4 = '';
+  errorMessage5 = '';
   ngOnInit(): void {
     this.http = environment.http;
     console.log(this.status);
@@ -138,6 +144,9 @@ export class AjouterProduitComponent implements OnInit {
       },
       (error) => {
         console.log(formulaire.value);
+        this.errorMessage = `Problème d'ajout du produit : tous les champs sont obligatoires `;
+        this.errorMessage1 = `la référence du produit doit être unique`;
+        this.errorMessage2 = `Il faut bien scanner le code à barres du produit : le code à barres doit être composé des 13 chiffres`;
       }
     ); }
     );
