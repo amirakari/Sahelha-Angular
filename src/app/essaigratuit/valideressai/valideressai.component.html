@@ -1,0 +1,134 @@
+<app-header></app-header>
+
+<!-- END NAVBAR-->
+<div class="site-wrap js-site-wrap">
+  <!-- BEGIN BREADCRUMBS-->
+  <nav class="breadcrumbs">
+    <div class="container">
+      <ul>
+        <li class="breadcrumbs__item"><a  class="breadcrumbs__link">Acceuil</a></li>
+        <li class="breadcrumbs__item"><a  class="breadcrumbs__link">Boutique</a></li>
+        <li class="breadcrumbs__item"><a  class="breadcrumbs__link">Abonnement</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+</div>
+
+
+
+<div class="center">
+  <div class="container">
+    <div class="row">
+      <div class="site site--main">
+
+
+        <div class="site__main">
+          <div class="widget js-widget widget--main">
+            <div class="widget__content">
+              <div class="pricing__row">
+
+
+                <div class="pricing__row">
+
+                  <div class="pricing__col3" *ngFor="let abonnement of boutique3">
+                    <div class="pricing__item">
+                      <dl class="pricing__list">
+                        <dt class="pricing__type" *ngIf="abonnement.prix===10">Standard</dt>
+                        <dt class="pricing__type" *ngIf="abonnement.prix===20">Premium</dt>
+                        <dt class="pricing__type" *ngIf="abonnement.prix===100">Gold</dt>
+                        <dd class="pricing__total"><span class="pricing__favorite">Status: {{abonnement.status}}</span><span class="pricing__summa">{{abonnement.prix}}</span><span class="pricing__currency">dt</span>
+                          <span class="pricing__period" *ngIf="abonnement.prix===10">/1 moi</span>
+                          <span class="pricing__period" *ngIf="abonnement.prix===20">/3 mois</span>
+                          <span class="pricing__period" *ngIf="abonnement.prix===100">/12 mois</span></dd>
+
+
+
+                        <img src="/assets/img/payments.png" width="260">
+                      </dl>
+                      <div class="pricing__actions">
+
+
+                        <button class="pricing__button"  (click)="paiement(abonnement.id)">Confirmer</button>
+
+
+                      </div>
+                    </div>
+                  </div>
+
+                  <br>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sidebar">
+        <div class="widget js-widget widget--sidebar widget--first-no-head">
+          <div class="widget__header"><a class="widget__btn js-widget-btn widget__btn--toggle" (click)="show()">barre de navigation boutique</a>
+          </div>
+          <div class="widget__content" *ngIf="visibility" [ngClass]="{'show':visibility}">
+            <!-- BEGIN WORKER PROFILE-->
+            <div class="worker sidebar-advanced">
+              <h3 class="worker__name">{{boutique1.nom}}</h3>
+              <div class="worker__photo">
+                <img src="http://localhost:3000/boutique/profileimage/{{boutique1.photo}}" class="photo" width="200" height="200">
+
+              </div>
+              <nav class="worker__nav">
+                <ul>
+                  <li><a  (click)="gotoajout()">Profil</a></li>
+                  <li><a *ngIf="payement" (click)="gotoajoutProduit()" >Ajouter produit</a></li>
+                  <li><a (click)="gotoproduit()" >produits (à vendre)</a></li>
+                  <li><a (click)="gotodon()" >produits (à donner)</a></li>
+                  <li><a (click)="gotoabonnement()" >Faire un abonnement</a></li>
+                  <li><a  >Vos abonnement</a></li>
+                  <li><a  (click)="gotostatistique()">Statistique</a></li>
+                </ul>
+              </nav>
+              <!-- end of block .worker__nav-->
+            </div>
+            <!-- end of block .worker__item-->
+            <!-- END WORKER PROFILE-->
+          </div>
+          <div class="widget__content">
+            <!-- BEGIN WORKER PROFILE-->
+            <div class="worker sidebar-advanced">
+              <h3 class="worker__name">{{boutique1.nom}}</h3>
+              <div class="worker__photo">
+                <img src="{{http}}/boutique/profileimage/{{boutique1.photo}}" class="photo" width="200" height="200">
+
+              </div>
+              <nav class="worker__nav">
+                <ul>
+                  <li><a  (click)="gotoajout()">Profil</a></li>
+                  <li><a *ngIf="payement" (click)="gotoajoutProduit()" >Ajouter produit</a></li>
+                  <li><a (click)="gotoproduit()" >produits (à vendre)</a></li>
+                  <li><a (click)="gotodon()" >produits (à donner)</a></li>
+                  <li><a (click)="gotoabonnement()" >Faire un abonnement</a></li>
+                  <li><a  >Vos abonnement</a></li>
+                  <li><a  (click)="gotostatistique()">Statistique</a></li>
+                </ul>
+              </nav>
+              <!-- end of block .worker__nav-->
+            </div>
+            <!-- end of block .worker__item-->
+            <!-- END WORKER PROFILE-->
+          </div>
+        </div>
+        <div class="widget js-widget widget--sidebar widget--dark">
+
+
+        </div>
+      </div></div>
+    <div class="clearfix"></div>
+  </div>
+  <!-- END CENTER SECTION-->
+  <!-- BEGIN AFTER CENTER SECTION-->
+  <!-- END AFTER CENTER SECTION-->
+
+
+  <!-- BEGIN FOOTER--></div>
