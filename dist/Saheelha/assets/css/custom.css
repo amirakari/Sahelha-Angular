@@ -1,0 +1,56 @@
+.imge{
+  width: 520px;
+  height: 410px;
+}
+.image{
+  width: 1px;
+  height: 1px;
+}
+.form__ {
+  display: inline-block;
+  margin-bottom: 0;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  padding: 6px 20px;
+  font-size: 15px;
+  line-height: 1.6;
+  border-radius: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-weight: 700;
+  font-size: 15px;
+  position: relative;
+  border: none;
+  border-bottom: 4px solid #679700;
+  background: #8db500;
+  color: #222;
+  margin-top: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.displayed {
+  display: block;
+  margin-left: auto;
+  margin-right: auto }
+.right{
+  right: 0;
+}
+.containerr{
+  display: flex;
+  justify-content: space-between;
+}
+.left{
+  float: left;
+}
+.ng-invalid.ng-touched{
+  border-color: red;
+}
